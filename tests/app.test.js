@@ -1,0 +1,11 @@
+const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');const {annual,validBackup}=require('../assets/calculator-core.js');
+test('annual revenue includes saleable lactating milk only',()=>{const r=annual({herd:4,lactDays:260,yield:6,salePct:95,price:70});assert.equal(r.liters,5928);assert.equal(r.revenue,414960)});
+test('operating costs annualize monthly values and include annual costs',()=>{const r=annual({herd:1,lactDays:300,yield:5,salePct:100,price:50,feed:100,labor:200,lease:300,vet:400,ops:500,otherCost:600});assert.equal(r.cost,14200)});
+test('break-even price includes cost and subtracts other income',()=>{const r=annual({herd:1,lactDays:100,yield:10,salePct:100,other:1000,feed:100});assert.equal(r.breakEvenPrice,0.2)});
+test('zero milk volume produces no break-even price',()=>assert.equal(annual({herd:0}).breakEvenPrice,null));
+test('negative production inputs are clamped and days cannot exceed a year',()=>{const r=annual({herd:2,lactDays:400,yield:-4,salePct:150,price:20});assert.equal(r.liters,0);assert.equal(r.breakEvenPrice,null)});
+test('backup import accepts valid simple tables',()=>assert.equal(validBackup({animals:[{id:'A1'}],milk:[{date:'2026-01-01',animalId:'A1'}],expenses:[{date:'2026-01-01',category:'feed'}]}),true));
+test('backup import rejects missing tables, required identifiers and nested payloads',()=>{assert.equal(validBackup({animals:[],milk:[]}),false);assert.equal(validBackup({animals:[{}],milk:[],expenses:[]}),false);assert.equal(validBackup({animals:[{id:'A',notes:{secret:true}}],milk:[],expenses:[]}),false)});
+test('local page links resolve to files in the static app',()=>{const root=path.join(__dirname,'..');const files=[];function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())walk(p);else if(e.name.endsWith('.html'))files.push(p)}}walk(root);const broken=[];for(const file of files){const html=fs.readFileSync(file,'utf8');for(const m of html.matchAll(/(?:href|src)="([^"]+)"/g)){const url=m[1];if(/^(https?:|mailto:|#|data:|javascript:)/i.test(url))continue;const target=path.resolve(path.dirname(file),url.split('#')[0].split('?')[0]);if(!fs.existsSync(target))broken.push(`${path.relative(root,file)} -> ${url}`)}}assert.deepEqual(broken,[])});
+
+

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.playwright-cli/
+output/playwright/*.zip
+output/playwright/*.trace
+.DS_Store
+Thumbs.db
+output/
