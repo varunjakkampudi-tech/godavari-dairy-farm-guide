@@ -17,7 +17,7 @@ npm test
 
 ## App features
 
-- Responsive multi-page guide covering feasibility, breed comparison, buying, layout, feed, daily operations, milking, health, seasonal care, breeding/calves, markets, staff, vaccination, pests, legal questions and local fieldwork.
+- Responsive multi-page guide covering feasibility, breed comparison, buying, layout, feed, daily operations, milking, health/emergency contacts, seasonal care, breeding/calves, markets, staff, vaccination, pests, legal questions and local fieldwork.
 - Search filters page content; light/dark preference persists in this browser.
 - Calculator annualizes saleable milk by lactating days, separately totals monthly and annual costs, and calculates a break-even milk price. Enter the actual buyer settlement rate and dated cost quotes. Results are not a forecast.
 - Animal, milk and expense registers are stored in browser local storage. JSON/CSV export and validated JSON import are included.
