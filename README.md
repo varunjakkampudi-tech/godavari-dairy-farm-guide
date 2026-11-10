@@ -22,7 +22,7 @@ npm test
 - Responsive multi-page guide covering feasibility, breed comparison, buying, layout, feed, daily operations, milking, health/emergency contacts, seasonal care, breeding/calves, markets, staff, vaccination, pests, legal questions and local fieldwork.
 - Search filters page content; light/dark preference persists in this browser.
 - The [annual calculator](pages/finance.html) and [finance studio](pages/finance-studio.html) estimate animal-level 365-day production calendars, monthly cash flow, EMI, depreciation, break-even, working capital and price/staff/herd/yield stress cases. Save scenarios locally, print a planning report, or export CSV/JSON. They are assumption-driven models, not forecasts; missing local evidence is reported as `INSUFFICIENT EVIDENCE`.
-- Animal, milk and expense registers are stored in browser local storage. JSON/CSV export and validated JSON import are included.
+- Animal, milk, expense and 15-category farm activity registers support edit/delete, search, module/date filters, versioned local records, JSON/CSV export and validated JSON import. Version-1 records are migrated while retaining the original recovery copy.
 - A service worker caches the static app for repeat/offline use after the first successful load.
 - A printable [90-day launch and employee workbook](pages/launch-workbook.html) organizes buyer, site, veterinary, finance and startup checks.
 - The [milk settlement comparison](pages/buyer-comparison.html) applies user-entered per-litre, per-kg-milk or per-kg-fat rates, rejected volume, quality adjustments and deductions. It is a calculation aid, not a directory or source of actual buyer prices.

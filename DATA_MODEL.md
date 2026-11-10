@@ -1,23 +1,28 @@
-# Data model
+# Farm data model
 
-## Current browser register schema (version 1)
+## Storage boundary
 
-Storage key: `gdfg-records-v1`. The app stores three arrays locally:
+Farm register data stays in the current browser profile under localStorage key `gdfg-records-v2`. It is not sent to GitHub Pages, a remote API, or the service worker cache. The app has no login, encryption, cross-device sync, or automatic backup. Browser storage can be read by other people using that profile, cleared by the browser, or unavailable when quota is exhausted.
 
-- `animals`: `id`, `breed`, `dob`, `purchaseDate`, `cost`, `lactation`, `calving`, `yield`, `notes`.
-- `milk`: `date`, `animalId`, `session`, `litres`, `notes`.
-- `expenses`: `date`, `category`, `amount`, `notes`.
+## Version 2 schema
 
-Backups include a top-level version/export time and the three arrays. JSON import validates the high-level shape and rejects nested field objects, caps upload size and asks before replacing existing records. CSV output neutralizes formula-leading cells.
+The root object has `schemaVersion: 2` and four flat arrays:
 
-## Limits and migration plan
+- `animals`: business ID, breed/type, estimated birth date, purchase date/cost, lactation number, last calving, current yield, notes, and generated stable `_key`.
+- `milk`: date, animal ID, milking session, volume, notes, and stable `_key`.
+- `expenses`: date, category, amount, notes, and stable `_key`.
+- `events`: generated `id`/`_key`, module, date, optional animal ID, description, optional quantity/unit and amount, status, follow-up date, optional milk-withdrawal end date, and notes.
 
-There is no edit/search/filter flow, stable record UUID, date-range validation, schema migration or cross-device sync. The register has no health, feed, pregnancy/calving, calf, buyer settlement, labor/task, inventory, maintenance or incident stores. `localStorage` is appropriate for the current small first version but has size and profile-local limits. Before expanding, define stable IDs and a versioned schema; migrate data conservatively with a preserved backup and explicit failure reporting. IndexedDB is the likely next browser-only store if record volume grows.
+Event modules cover purchases/transport; milk sales and buyer settlements; feed/fodder/stock; health, vaccines and milk withdrawal; breeding/pregnancy/calving; calves; labor/handovers; daily/seasonal tasks; inventory; equipment/maintenance; cleaning/milking; weather; incidents/emergencies; other income; and water/power/utilities. This is a user-entered activity ledger: it does not compute a medicine withdrawal time, validate animal health, or replace required domain-specific professional records.
 
-## Buyer comparison (local work in progress)
+## Migration, validation and backup
 
-The settlement calculator accepts a user-entered delivered volume, rejected volume, rate basis, price, optional kg/L density and fat percentage, documented adjustment and deductions. It returns payable units, gross/net amount and net per accepted litre. It does not persist an offer or establish a buyer formula. CSV export is a local download.
+On first use, a valid version-1 store under `gdfg-records-v1` is copied into version 2 with stable row keys. The original key is retained as a recovery copy; “Clear all records” removes both versions after confirmation. If storage cannot accept the migration, version-1 data is still loaded in memory and the page asks the user to export a backup.
 
-## Future records
+JSON export includes the schema version and all four tables. Import accepts version 1 or 2, checks required tables, flat field values, event module IDs, duplicate animal/event IDs, numeric non-negativity, ISO calendar dates, and the 5 MB size cap; it asks for confirmation before replacing current records. CSV export produces a separate file per table and prefixes formula-leading values with an apostrophe. Import/export roundtrip behavior still needs broader browser and malformed-file testing.
 
-Do not add guessed fields or claim complete farm management until the full record catalog in the master brief has a reviewed schema, validation, export/import coverage and user-facing safeguards.
+Record search spans the visible register tables. The activity ledger adds module and date range filtering. Animal, milk, expense, and activity records support create, edit, and confirmed delete. There is no deletion audit trail, multi-user access, database backup, or synchronization.
+
+## Extension rules
+
+Keep fields flat and bounded; never store credentials, identity documents, bank details, or unnecessary personal information. Add a module only with documented field meanings, validation, export/import compatibility, migration tests, and safe worker-facing instructions. Maintain backward-compatible readers where practical and never delete a legacy store during migration.

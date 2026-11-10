@@ -16,7 +16,7 @@ The app is a static multi-page site. GitHub Actions builds the site into `dist/`
 
 ## Data and offline boundary
 
-User-entered records currently use browser `localStorage`; they are profile/device-local, not encrypted or synced. JSON/CSV export is user-operated. The service worker caches static app resources only, not the register database. There is no authentication boundary between users of one browser profile. The app warns users to avoid sensitive personal/banking data.
+User-entered records use versioned browser `localStorage` (`gdfg-records-v2`); they are profile/device-local, not encrypted or synced. JSON/CSV export is user-operated. The service worker caches static app resources only, not the register database. There is no authentication boundary between users of one browser profile. The app warns users to avoid sensitive personal/banking data.
 
 ## Extension rules
 
@@ -28,4 +28,4 @@ User-entered records currently use browser `localStorage`; they are profile/devi
 
 ## Known architectural debt
 
-The site uses shared scripts injected into each page and some generated pages are compact single-line HTML. There is no centralized structured localization or health/breed content schema, no versioned IndexedDB data layer, no manifest, no E2E harness, and no automated accessibility/security analysis. The current buyer comparison is isolated in `assets/market-core.js` and `assets/market-tool.js`.
+The site uses shared scripts injected into each page and some generated pages are compact single-line HTML. There is no centralized structured localization or health/breed content schema, no IndexedDB data layer, no install manifest, no automated E2E harness, and no automated accessibility/security analysis. Finance and buyer comparison use separate static modules; farm data uses a generic event ledger alongside animal, milk and expense tables.
