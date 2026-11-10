@@ -10,5 +10,13 @@ test('local page links resolve to files in the static app',()=>{const root=path.
 test('global search index covers every guide page',()=>{const root=path.join(__dirname,'..');const idx=JSON.parse(fs.readFileSync(path.join(root,'assets','search-index.json'),'utf8'));for(const f of fs.readdirSync(path.join(root,'pages')).filter(x=>x.endsWith('.html')))assert.ok(idx.some(x=>x.url===`pages/${f}`),`missing search entry for ${f}`);assert.ok(idx.some(x=>x.url==='index.html'))});
 test('farm layout diagram is packaged with accessible alternative text',()=>{const root=path.join(__dirname,'..');const html=fs.readFileSync(path.join(root,'pages','layout.html'),'utf8');assert.match(html,/src="\.\.\/assets\/one-acre-zones\.svg"/);assert.match(html,/alt="Concept diagram separating clean access/);assert.ok(fs.existsSync(path.join(root,'assets','one-acre-zones.svg')))});
 
-
-
+test('launch workbook has navigation, accessible checklist sections and actionable milestones',()=>{
+  const root=path.join(__dirname,'..');
+  const workbook=fs.readFileSync(path.join(root,'pages','launch-workbook.html'),'utf8');
+  const nav=fs.readFileSync(path.join(root,'assets','nav.js'),'utf8');
+  const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
+  for(const phrase of ['First 90 days','Veterinary gate','milk payment formula','Farm launch','data-checklist','window.print()'])
+    assert.ok(workbook.includes(phrase), 'Workbook missing '+phrase);
+  assert.match(nav,/pages\/launch-workbook\.html/);
+  assert.match(home,/pages\/launch-workbook\.html/);
+});
