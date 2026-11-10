@@ -8,6 +8,8 @@ Farm register data stays in the current browser profile under localStorage key `
 
 The root object has `schemaVersion: 2` and four flat arrays:
 
+The individual breeding calendar writes to the existing `events` array with `module: "breeding"`; it does not add a separate storage table. Event dates and follow-up/window dates are user-entered and validated for format/order, not clinically calculated.
+
 - `animals`: business ID, breed/type, estimated birth date, purchase date/cost, lactation number, last calving, current yield, notes, and generated stable `_key`.
 - `milk`: date, animal ID, milking session, volume, notes, and stable `_key`.
 - `expenses`: date, category, amount, notes, and stable `_key`.

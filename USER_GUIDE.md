@@ -23,6 +23,10 @@ Enter the same delivered quantity for both offers, then input only rates/quality
 
 Animal, milk, expense and activity-log entries are kept in the current browser profile. Use the activity ledger for purchases, feed, health observations, vaccinations, milk withdrawal dates supplied by a vet/label, breeding, calves, labor, tasks, inventory, equipment, cleaning, weather, incidents, income and utilities. It records user entries; it does not diagnose or calculate medicine withdrawal periods. Search the registers, and filter farm logs by module and date. Use Edit to update a row and Delete for confirmed removal. Export JSON backups regularly and keep copies outside the device. CSV is for spreadsheets, not a backup restore. Version-1 records are migrated while retaining a recovery copy. Imported backups replace local rows only after confirmation. Do not put private banking or highly sensitive personal data in the app.
 
+### Individual breeding calendar
+
+On [Breeding & calves](pages/breeding-calves.html#breeding-calendar), enter the animal ID, milestone and observed event date. Use the window-end/follow-up field only for a date supplied by a veterinarian or AI technician. Filter the displayed entries by animal ID. To edit or delete one, open Farm Records and filter the activity log to Breeding and calving. These entries are included in the same JSON backup and CSV export as other activity events. The calendar does not determine pregnancy status or calculate a due date.
+
 ## Veterinary and legal limits
 
 Use health content to notice changes and communicate with a veterinarian. It cannot diagnose or authorize treatment. Confirm vaccine timing and withdrawal periods with the veterinarian. Confirm licensing and labor/building rules for the actual business and parcel with the relevant authority or qualified adviser.

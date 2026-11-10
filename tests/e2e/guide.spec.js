@@ -1,7 +1,7 @@
 const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -137,6 +137,49 @@ test('purchase comparison reports observed evidence gaps without ranking animals
   await expect(results).toContainText('Independent vet examination arranged');
   await expect(results).toContainText(/does not verify them|not a recommendation/i);
   await expect(results).not.toContainText(/winner|best animal/i);
+});
+
+test('per-animal breeding events persist in the calendar and Farm Records backup',async({page})=>{
+  await page.goto('/pages/breeding-calves.html');
+  const form=page.locator('#breeding-event-form');
+  await form.locator('[name="animalId"]').fill('BUF-BREED-01');
+  await form.locator('[name="milestone"]').selectOption({label:'Veterinarian-estimated calving window'});
+  await form.locator('[name="date"]').fill('2027-02-01');
+  await form.locator('[name="followUpDate"]').fill('2027-02-15');
+  await form.locator('[name="detail"]').fill('Copied from vet record');
+  await form.locator('[name="notes"]').fill('Call for professional review if concerns arise');
+  await form.getByRole('button',{name:'Save breeding event'}).click();
+  const calendar=page.locator('#breeding-calendar-list');
+  await expect(calendar).toContainText('BUF-BREED-01');
+  await expect(calendar).toContainText('2027-02-01');
+  await expect(calendar).toContainText('2027-02-15');
+  await expect(calendar).toContainText('Veterinarian-estimated calving window');
+  await expect(page.locator('#breeding-calendar-status')).toContainText('included in Farm Records JSON and CSV backups');
+  await page.reload();
+  await expect(calendar).toContainText('BUF-BREED-01');
+  await page.locator('#breeding-animal-filter').fill('not-this-animal');
+  await expect(calendar).not.toContainText('BUF-BREED-01');
+  await page.locator('#breeding-animal-filter').fill('');
+  await page.goto('/pages/records.html');
+  await page.locator('#event-module-filter').selectOption('breeding');
+  await expect(page.locator('#event-list')).toContainText('BUF-BREED-01');
+  const downloadPromise=page.waitForEvent('download');
+  await page.getByRole('button',{name:'Export JSON backup'}).click();
+  const download=await downloadPromise;
+  const fs=require('node:fs/promises');
+  const backup=JSON.parse(await fs.readFile(await download.path(),'utf8'));
+  expect(backup.events.some(row=>row.animalId==='BUF-BREED-01'&&row.date==='2027-02-01'&&row.followUpDate==='2027-02-15')).toBeTruthy();
+});
+
+test('breeding calendar rejects a follow-up date before the entered event date',async({page})=>{
+  await page.goto('/pages/breeding-calves.html');
+  const form=page.locator('#breeding-event-form');
+  await form.locator('[name="animalId"]').fill('BUF-BREED-BAD');
+  await form.locator('[name="date"]').fill('2027-02-15');
+  await form.locator('[name="followUpDate"]').fill('2027-02-01');
+  await form.getByRole('button',{name:'Save breeding event'}).click();
+  await expect(page.locator('#breeding-calendar-status')).toContainText('cannot be earlier');
+  await expect(page.locator('#breeding-calendar-list')).not.toContainText('BUF-BREED-BAD');
 });
 
 test('farm records support create, edit, search, and confirmed delete across register types',async({page})=>{
