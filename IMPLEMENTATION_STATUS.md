@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot: remote `main` at `137d7796a232fba92ca54661267775b7d61a837f`; health app code shipped at `dcd5f302b5f7f8ecd1b3b4f70bf86aefc24a29f2`. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot: remote `main` at `a683f377d289cbb59a98949e7129abb0b7f74052`; purchase-comparison work in this checkout is not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -12,6 +12,7 @@ Snapshot: remote `main` at `137d7796a232fba92ca54661267775b7d61a837f`; health ap
 - Official-source research list and explicit local verification tasks.
 - Published at `cd87d1b`: buyer comparison and the finance studio. Finance has a 365-day animal calendar, monthly cash flow, price and stress comparisons, local save/load, and print/CSV/JSON controls. Local browser smoke covered save/load, both downloads, chart rendering and mobile stacking; print/offline/accessibility and all stress calculations remain incomplete.
 - Published records v2: stable keys, v1 migration, create/edit/delete, search and module/date filters, and 15 activity-ledger categories. Local browser smoke covered v1 migration, preserving the original key, duplicate-ID rejection, animal/milk/expense/log edits, event search, v2 JSON export/import and all four CSV download events. PWA shell is deployed; 27 local tests pass. Packaged desktop offline navigation/fallback and local symptom triage browser smoke are recorded.
+- Working tree adds an on-page four-animal purchase comparison worksheet with dated AM/PM yield observations and evidence-gap display; it is private to the page session, non-ranking, and not a professional assessment. Awaiting exact-SHA CI and Pages deployment.
 
 ## Major gaps
 
@@ -23,4 +24,4 @@ Snapshot: remote `main` at `137d7796a232fba92ca54661267775b7d61a837f`; health ap
 
 ## Release evidence
 
-Health code release `dcd5f30`: [42772156153](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772156153), both build-test and deploy-pages passed; live Health page and triage scripts returned HTTP 200. Current documentation head `137d779`: [42772587512](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772587512), both jobs passed. The larger health encyclopedia and licensed local clinical review remain incomplete.
+Health code release `dcd5f30`: [42772156153](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772156153), both build-test and deploy-pages passed; live Health page and triage scripts returned HTTP 200. Prior documentation head `a683f37`: [42772800227](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772800227), both jobs passed. Current purchase-comparison changes are not yet published. The larger health encyclopedia and licensed local clinical review remain incomplete.

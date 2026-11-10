@@ -28,6 +28,7 @@ npm test
 - The PWA manifest and service worker provide an install prompt on supported browsers, a versioned offline guide shell, network-first page navigation, and an offline fallback page. Open the app online once to install and populate the offline cache; confirm a page is available offline before relying on it.
 - A printable [90-day launch and employee workbook](pages/launch-workbook.html) organizes buyer, site, veterinary, finance and startup checks.
 - The [milk settlement comparison](pages/buyer-comparison.html) applies user-entered per-litre, per-kg-milk or per-kg-fat rates, rejected volume, quality adjustments and deductions. It is a calculation aid, not a directory or source of actual buyer prices.
+- The [buffalo purchase worksheet](pages/buying.html#purchase-comparison) compares up to four animals' entered claims and dated morning/evening observations, then lists missing evidence. Entries are page-only and are not saved. It does not rank animals or provide veterinary clearance.
 
 ## Local data safety
 

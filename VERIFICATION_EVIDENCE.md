@@ -10,6 +10,7 @@
 - Public repository: [GitHub](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide).
 - Public Pages site: [Live app](https://varunjakkampudi-tech.github.io/godavari-dairy-farm-guide/).
 - Health app release `dcd5f302b5f7f8ecd1b3b4f70bf86aefc24a29f2` passed exact-SHA workflow run [42772156153](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772156153), including build-test and Pages deployment. A documentation-only follow-up at `137d7796a232fba92ca54661267775b7d61a837f` passed [42772587512](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772587512), including build-test and Pages deployment.
+- Purchase comparison implementation is in progress at the current local checkout; `npm run build`, `npm test` (32/32), and `git diff --check` pass locally. It has not yet been pushed or verified on Pages.
 - Earlier browser evidence verified homepage, calculator navigation/scenario, global search, an animal record, mobile display at 390×844, and the live conceptual layout SVG. This was a focused smoke check, not full E2E, offline, screen-reader, or accessibility certification.
 
 ## Finance studio release

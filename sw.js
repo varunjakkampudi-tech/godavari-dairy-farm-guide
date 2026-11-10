@@ -1,4 +1,4 @@
-const CACHE = 'gdfg-static-v11';
+const CACHE = 'gdfg-static-v12';
 const SHELL = [
   './', './index.html', './offline.html', './manifest.webmanifest',
   './assets/site.css', './assets/favicon.svg', './assets/search-index.json',
@@ -6,6 +6,7 @@ const SHELL = [
   './assets/finance-simulator.js', './assets/records-core.js', './assets/records.js',
   './assets/market-core.js', './assets/market-tool.js', './assets/register-sw.js',
   './assets/health-triage-core.js', './assets/health-triage.js',
+  './assets/purchase-compare-core.js', './assets/purchase-compare.js',
   './assets/one-acre-zones.svg', './pages/getting-started.html', './pages/breeds.html',
   './pages/buying.html', './pages/layout.html', './pages/feeding.html', './pages/operations.html',
   './pages/milking.html', './pages/health.html', './pages/seasons.html', './pages/breeding-calves.html',
