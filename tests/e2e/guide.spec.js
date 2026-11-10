@@ -191,12 +191,39 @@ test('buyer-entered fat/SNF settlement calculates net realization without supply
   await expect(page.locator('#settlement-result')).toContainText('₹16/L');
   await expect(page.locator('#settlement-result')).toContainText('does not verify');
 });
-test('finance studio flags absent buyer, animal, feed, lease, water, labor and veterinary evidence',async({page})=>{
+test("finance monthly plan applies buyer fat/SNF rates and each month pooled test results",async({page})=>{
+  await page.goto('/pages/finance-studio.html');
+  await page.locator('[name="pricingMode"]').selectOption('fat-snf');
+  await page.locator('[name="fatRate"]').fill('180');
+  await page.locator('[name="snfRate"]').fill('40');
+  await page.locator('[name="deductionPerLitre"]').fill('0.3');
+  await page.locator('[name="monthlyDeduction"]').fill('10');
+  for(let month=1;month<=12;month++){
+    await page.locator(`[name="milkFat${month}"]`).fill('7');
+    await page.locator(`[name="milkSnf${month}"]`).fill('9');
+  }
+  await page.locator('[name="lease"]').fill('10000');
+  await page.locator('[name="water"]').fill('1000');
+  await page.locator('[name="wages"]').fill('15000');
+  await page.locator('[name="vetAnnual"]').fill('12000');
+  await page.locator('[name="fodderMonthly"]').fill('1000');
+  for(let i=1;i<=4;i++){
+    await page.locator(`[name="yield${i}"]`).fill('5');
+    await page.locator(`[name="purchase${i}"]`).fill('100000');
+    await page.locator(`[name="animalFeed${i}"]`).fill('5000');
+  }
+  await page.getByRole('button',{name:'Build monthly plan'}).click();
+  const result=page.locator('#studio-results');
+  await expect(result).toContainText('SCENARIO ONLY');
+  await expect(result).toContainText('Buyer rate(s) −15%');
+  await expect(result.locator('table').first()).toContainText('₹16/L');
+  await expect(result.locator('table').first()).toContainText('₹2,260');
+});test('finance studio flags absent buyer, animal, feed, lease, water, labor and veterinary evidence',async({page})=>{
   await page.goto('/pages/finance-studio.html');
   await page.getByRole('button',{name:'Build monthly plan'}).click();
   const result=page.locator('#studio-results');
   await expect(result).toContainText('INSUFFICIENT EVIDENCE');
-  for(const issue of ['No buyer-confirmed milk price entered','lack observed yield or purchase cost','Feed/fodder cost is missing','Land lease cost is missing','Water cost is missing','Labor value is missing','Veterinary/breeding budget is missing']) await expect(result).toContainText(issue);
+  for(const issue of ['No buyer-confirmed flat milk price entered','lack observed yield or purchase cost','Feed/fodder cost is missing','Land lease cost is missing','Water cost is missing','Labor value is missing','Veterinary/breeding budget is missing']) await expect(result).toContainText(issue);
   await expect(result).not.toContainText('EVIDENCE RECORDED');
 });
 test('finance studio calculates a scenario but keeps the result explicitly unverified',async({page})=>{
@@ -427,7 +454,7 @@ test('malicious record text is rendered as text and malformed imports preserve e
   await expect(page.locator('#animal-list')).toContainText('BUF-XSS-01');
 });
 
-test('global search, Telugu preference, dark theme and employee checklist persist',async({page})=>{
+test('theme toggle exposes the active mode and keeps its mode label accurate',async({page})=>{await page.goto('/');const toggle=page.locator('#theme-toggle');await expect(toggle).toHaveAttribute('aria-pressed','false');await expect(toggle).toHaveAttribute('aria-label','Switch to dark mode');await toggle.click();await expect(toggle).toHaveAttribute('aria-pressed','true');await expect(toggle).toHaveAttribute('aria-label','Switch to light mode');await toggle.click();await expect(toggle).toHaveAttribute('aria-pressed','false')});test('global search, Telugu preference, dark theme and employee checklist persist',async({page})=>{
   await page.goto('/');
   await page.locator('#site-search').fill('Hygienic milking');
   await expect(page.locator('#search-results')).toBeVisible();
