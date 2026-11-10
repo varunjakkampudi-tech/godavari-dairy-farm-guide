@@ -15,6 +15,7 @@ To rebuild guide pages and run checks (Node.js 20+ recommended):
 ```sh
 npm run build
 npm test
+npm run audit:content
 ```
 
 ## App features

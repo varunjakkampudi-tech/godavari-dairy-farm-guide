@@ -3,6 +3,8 @@ const path = require('node:path');
 
 const root = path.join(__dirname, '..');
 const pagesDir = path.join(root, 'pages');
+const packagedPagesDir = path.join(root, 'dist', 'pages');
+const packagedAssetsDir = path.join(root, 'dist', 'assets');
 const htmlFiles = fs.readdirSync(pagesDir).filter((name) => name.endsWith('.html'));
 const failures = [];
 const warnings = [];
@@ -13,7 +15,8 @@ for (const name of htmlFiles) {
   if (!/<html\b[^>]*\blang=["'][^"']+["']/i.test(html)) fail('missing document language');
   if (!/<title>\s*[^<]+\s*<\/title>/i.test(html)) fail('missing page title');
   if (!/<h1\b[^>]*>\s*[^<]+/i.test(html)) fail('missing primary heading');
-  if (!/<meta\s+name=["']description["']\s+content=["'][^"']+["']/i.test(html)) warnings.push(`${name}: missing or nonstandard description metadata`);
+  const description = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i)?.[1];
+  if (!description) fail('missing or nonstandard description metadata');
   const ids = [...html.matchAll(/\bid=["']([^"']+)["']/gi)].map((match) => match[1]);
   const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
   if (duplicates.length) fail(`duplicate IDs: ${[...new Set(duplicates)].join(', ')}`);
@@ -27,9 +30,14 @@ for (const name of htmlFiles) {
     if (/^(?:https?:|mailto:|tel:|#|data:|javascript:)/i.test(href)) continue;
     const target = decodeURIComponent(href.split(/[?#]/, 1)[0]);
     if (!target) continue;
-    const resolved = path.resolve(pagesDir, target);
-    if (!resolved.startsWith(root + path.sep)) fail(`relative link escapes repository root: ${href}`);
-    else if (!fs.existsSync(resolved)) fail(`missing local link target: ${href}`);
+    const sourceTarget = path.resolve(pagesDir, target);
+    if (sourceTarget.startsWith(root + path.sep) && fs.existsSync(sourceTarget)) continue;
+    const pageTarget = path.resolve(packagedPagesDir, target);
+    const assetTarget = path.resolve(packagedAssetsDir, target.replace(/^(?:\.\.\/)+assets\//, ''));
+    if (pageTarget.startsWith(path.join(root, 'dist') + path.sep) && fs.existsSync(pageTarget)) continue;
+    if (target.includes('/assets/') && assetTarget.startsWith(packagedAssetsDir + path.sep) && fs.existsSync(assetTarget)) continue;
+    if (!sourceTarget.startsWith(root + path.sep)) fail(`relative link escapes repository root: ${href}`);
+    else fail(`missing local link target in source/package: ${href}`);
   }
 }
 
@@ -42,5 +50,5 @@ for (const file of tracked.filter((name) => /\.(?:js|html|md|json|css)$/i.test(n
 }
 for (const warning of warnings) console.warn(`WARN ${warning}`);
 for (const failure of failures) console.error(`FAIL ${failure}`);
-console.log(`Content audit: ${htmlFiles.length} pages, ${failures.length} errors, ${warnings.length} warnings. This checks basic metadata, local links, duplicate IDs, image alt attributes and obvious private-key markers; it does not assess WCAG conformance, source validity, clinical correctness, or Git history.`);
+console.log(`Content audit: ${htmlFiles.length} pages, ${failures.length} errors, ${warnings.length} warnings. This checks basic metadata, source/package local links, duplicate IDs, image alt attributes and obvious private-key markers; it does not assess WCAG conformance, source validity, clinical correctness, or Git history.`);
 if (failures.length) process.exitCode = 1;
