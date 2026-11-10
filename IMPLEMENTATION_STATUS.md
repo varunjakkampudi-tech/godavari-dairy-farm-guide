@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot: remote `main` at `dcd5f302b5f7f8ecd1b3b4f70bf86aefc24a29f2` plus release-evidence documentation updates. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot: remote `main` at `137d7796a232fba92ca54661267775b7d61a837f`; health app code shipped at `dcd5f302b5f7f8ecd1b3b4f70bf86aefc24a29f2`. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -23,4 +23,4 @@ Snapshot: remote `main` at `dcd5f302b5f7f8ecd1b3b4f70bf86aefc24a29f2` plus relea
 
 ## Release evidence
 
-Latest verified release `dcd5f30`: [42772156153](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772156153), both build-test and deploy-pages passed; live Health page and triage scripts returned HTTP 200. The larger health encyclopedia and licensed local clinical review remain incomplete.
+Health code release `dcd5f30`: [42772156153](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772156153), both build-test and deploy-pages passed; live Health page and triage scripts returned HTTP 200. Current documentation head `137d779`: [42772587512](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772587512), both jobs passed. The larger health encyclopedia and licensed local clinical review remain incomplete.
