@@ -40,6 +40,8 @@ Last reviewed: 10 November 2026 (Asia/Kolkata). Online availability and facts ma
 | FMD | [NDDB: Foot and Mouth Disease](https://www.nddb.coop/farmer/animal-health/disease/viral/fmd) | Accessed 10 Nov 2026. Official disease summary and signs; suspected cases require movement control and official/veterinary response. |
 | Buffalo heat stress | [ICAR-CIRB Buffalopedia: Shelter Management](https://buffalopedianew.cirb.res.in/shelter-management/) | Accessed 10 Nov 2026. Describes heat-risk factors and shelter context for buffaloes; not an individual clinical protocol. |
 | Brucellosis and disease-control context | [DAHD: LHDCP operational guidelines 2025](https://www.dahd.gov.in/sites/default/files/2025-05/OperationalGuidelinesforLHDCP21052025.pdf) | Accessed 10 Nov 2026. Government disease-control and zoonosis context; outbreak and human exposure advice must follow current authorities. |
+| West Godavari weather context | [IMD: Statement on Climate for Andhra Pradesh, 2024](https://imdpune.gov.in/Reports/Statewise%20annual%20climate/2024/Climate_Statement_2024_Andhra_Pradesh_Draft.pdf) | Accessed 10 Nov 2026. Annual report records 2024 rainfall departures including West Godavari, and very heavy rainfall events at Tadepalligudem and Narsapuram. A single-year report does not establish a parcel flood risk, long-term forecast or seasonal normal. |
+| Current alerts and monsoon terminology | [India Meteorological Department: Monsoon Information](https://mausam.imd.gov.in/responsive/monsooninformation_monsoon_activity.php) | Accessed 10 Nov 2026. Official definitions and operational weather information; check current local warnings before action. |
 
 ## Research rules
 
