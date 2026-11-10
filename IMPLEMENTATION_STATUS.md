@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot: remote `main` at `d9a0e6b5967ce356ae9c6478618eeb21d17f8cad`; the purchase veterinary-prep checklist and four-animal stagger plan are later local changes, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot: remote `main` at `8c2f2ace82c467af7c1cce24da4ca75c5dc6fa45`; current local farm-design diagrams are not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -15,6 +15,7 @@ Snapshot: remote `main` at `d9a0e6b5967ce356ae9c6478618eeb21d17f8cad`; the purch
 - Working tree adds an on-page four-animal purchase comparison worksheet with dated AM/PM yield observations and evidence-gap display; it is private to the page session, non-ranking, and not a professional assessment. Awaiting exact-SHA CI and Pages deployment.
 - Published breed registry library filters/sorts the current NBAGR buffalo breed list and separates the CIRB Godavari regional profile; it intentionally does not invent missing breed-specific production, price or availability values.
 - Working tree extends purchase guidance with an independent vet-preparation checklist and a four-animal staged plan; local build/test pass, awaiting release verification.
+- Working tree extends the conceptual layout with shed, ventilation/roof heat and rain/wastewater SVGs, text flow diagrams, and cost-quote collection guidance instead of speculative local costs; local tests pass, pending release verification.
 
 ## Major gaps
 
