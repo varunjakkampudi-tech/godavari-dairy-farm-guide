@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot after health-library expansion: public `main` at `28e7f584c7f310493f1038fb89e65754eb2d638a`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot after newborn-calf health guide: public `main` at `46278b7a90ae93e17ff095b69a3f24288dfa4d3a`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -36,4 +36,4 @@ Snapshot after health-library expansion: public `main` at `28e7f584c7f310493f103
 
 ## Release evidence
 
-Latest verified public release: `28e7f584c7f310493f1038fb89e65754eb2d638a`; exact-SHA workflow `42779896582` passed build/test and Pages deploy, and live health/library routes returned HTTP 200 with new condition entries. The shared-language selector release `f2ff775debe7d715522b6a44a55d34fcbd141ebf` also passed CI and live route verification. Browser visual verification failed to initialize. The larger health encyclopedia and licensed local clinical review remain incomplete.
+Latest verified public release: `46278b7a90ae93e17ff095b69a3f24288dfa4d3a`; exact-SHA workflow `42780423136` passed build/test and Pages deploy, and live health/library routes returned HTTP 200 with the newborn-calf card. The shared-language selector release `f2ff775debe7d715522b6a44a55d34fcbd141ebf` also passed CI and live route verification. Browser visual verification failed to initialize. The larger health encyclopedia and licensed local clinical review remain incomplete.
