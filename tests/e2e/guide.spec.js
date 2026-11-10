@@ -191,6 +191,45 @@ test('buyer-entered fat/SNF settlement calculates net realization without supply
   await expect(page.locator('#settlement-result')).toContainText('₹16/L');
   await expect(page.locator('#settlement-result')).toContainText('does not verify');
 });
+
+test('buyer comparison calculates all rate bases and exports formula-safe dated settlements',async({page})=>{
+  await page.goto('/pages/buyer-comparison.html');
+  await page.locator('[name="date"]').fill('2026-11-10');
+  await page.locator('[name="litres"]').fill('100');
+  await page.locator('[name="aName"]').fill('=1+1');
+  await page.locator('[name="aRejected"]').fill('2');
+  await page.locator('[name="aBasis"]').selectOption('litre');
+  await page.locator('[name="aPrice"]').fill('70');
+  await page.locator('[name="aAdjustment"]').fill('10');
+  await page.locator('[name="aDeduction"]').fill('20');
+  await page.locator('[name="bName"]').fill('Offer B');
+  await page.locator('[name="bRejected"]').fill('0');
+  await page.locator('[name="bBasis"]').selectOption('kg-milk');
+  await page.locator('[name="bPrice"]').fill('68');
+  await page.locator('[name="bDensity"]').fill('1.03');
+  await page.locator('[name="bDeduction"]').fill('54');
+  await page.getByRole('button',{name:'Compare settlement'}).click();
+  await expect(page.locator('#buyer-results')).toContainText('₹6,850.00');
+  await expect(page.locator('#buyer-results')).toContainText('₹6,950.00');
+  await expect(page.locator('#buyer-results')).toContainText('2026-11-10');
+  await expect(page.locator('#buyer-results')).toContainText('Offer B is higher');
+  const [download]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'Download comparison CSV'}).click()]);
+  const csv=fs.readFileSync(await download.path(),'utf8');
+  expect(download.suggestedFilename()).toBe('milk-settlement-comparison.csv');
+  expect(csv).toContain('"Date","Offer","Delivered L","Rejected L","Saleable L","Basis"');
+  expect(csv).toContain("\"'=1+1\"");
+  expect(csv).toContain('2026-11-10');
+
+  await page.locator('[name="bBasis"]').selectOption('kg-fat');
+  await page.locator('[name="bFat"]').fill('7.2');
+  await page.locator('[name="bPrice"]').fill('900');
+  await page.getByRole('button',{name:'Compare settlement'}).click();
+  await expect(page.locator('#buyer-results')).toContainText('₹6,620.40');
+
+  await page.locator('[name="bDensity"]').fill('');
+  await page.getByRole('button',{name:'Compare settlement'}).click();
+  await expect(page.locator('#buyer-results [role="alert"]')).toContainText('plausible positive milk density');
+});
 test("finance monthly plan applies buyer fat/SNF rates and each month pooled test results",async({page})=>{
   await page.goto('/pages/finance-studio.html');
   await page.locator('[name="pricingMode"]').selectOption('fat-snf');
