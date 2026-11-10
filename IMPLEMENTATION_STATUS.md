@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot: remote `main` at `e5b7cc9ffb1f4d8964b09a55eff999368252de0a` plus current local health triage and documentation work not yet committed. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot: remote `main` at `dcd5f302b5f7f8ecd1b3b4f70bf86aefc24a29f2` plus release-evidence documentation updates. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -23,4 +23,4 @@ Snapshot: remote `main` at `e5b7cc9ffb1f4d8964b09a55eff999368252de0a` plus curre
 
 ## Release evidence
 
-Latest verified remote run at `e5b7cc9`: [42770239358](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42770239358), both build-test and deploy-pages successful. Health triage requires exact-SHA CI and live route smoke before release.
+Latest verified release `dcd5f30`: [42772156153](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772156153), both build-test and deploy-pages passed; live Health page and triage scripts returned HTTP 200. The larger health encyclopedia and licensed local clinical review remain incomplete.
