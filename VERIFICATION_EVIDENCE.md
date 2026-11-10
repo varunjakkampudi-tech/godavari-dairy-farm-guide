@@ -1,5 +1,11 @@
 # Verification evidence
 
+## West Godavari veterinary directory recheck
+
+Live search/open of the [West Godavari District Officers directory](https://westgodavari.ap.gov.in/district-officers/) on 10 November 2026 confirmed it currently lists the District Animal Husbandry Officer mobile 6281832610 and dahowestgodavari@gmail.com. Updated the app's checked date and wording, and added a browser check plus an axe scan for the contact route. The page clearly identifies this as an office listing, not a published 24-hour emergency number. No call was made; availability, on-call response and coverage remain unverified.
+
+Local checks after this update: build passed; unit tests 51/51; Playwright 26/26 including seven axe scans; content audit found zero errors/warnings across 24 pages; `npm audit --audit-level=low` found zero vulnerabilities; `git diff --check` passed. Exact-SHA CI and publication of this contact-date refresh are pending.
+
 ## FSSAI milk-producer cooperative exception wording
 
 Reviewed the official [FSSAI advisory dated 11 March 2026](https://www.fssai.gov.in/upload/advisories/2026/03/69b2835b23822Advisory%20dated%2011.03.2026%20related%20to%20Milk%20Producers%20and%20Milk%20vendors.pdf) on 10 November 2026. Corrected the legal guide's earlier ambiguous wording: the advisory's stated cooperative exception requires both registered membership and selling/supplying all milk to that society; vendors are covered. Added Node and Playwright regression checks, expanded axe coverage to the legal route, and aligned the research inventory and verification log. Local verification passed build, 51/51 unit tests, 24/24 browser tests (six axe scans), content audit and npm audit. Exact-SHA Actions run [42807937229](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42807937229) passed build-test, deployment and post-deploy smoke for `fb3093f`; a direct live GET confirmed the corrected legal text and official advisory link at HTTP 200. This does not establish the licence category for a specific operating arrangement or replace legal/FoSCoS confirmation.

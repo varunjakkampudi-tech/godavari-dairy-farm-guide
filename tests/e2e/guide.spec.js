@@ -1,7 +1,7 @@
 const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -120,6 +120,14 @@ test('emergency triage prioritizes urgent signs and reset clears the result',asy
   await form.getByRole('button',{name:'Clear selections'}).click();
   await expect(result).toHaveClass(/hide/);
   await expect(result).toBeEmpty();
+});
+
+test('district veterinary contact shows live-check date and identifies office number limits',async({page})=>{
+  await page.goto('/pages/emergency.html');
+  await expect(page.getByText(/official directory checked 10 Nov 2026/i)).toBeVisible();
+  await expect(page.getByRole('link',{name:'+91 62818 32610'})).toHaveAttribute('href','tel:+916281832610');
+  await expect(page.getByText(/not advertised as 24-hour emergency hotlines/i)).toBeVisible();
+  await expect(page.getByRole('link',{name:'West Godavari District Officers directory'})).toBeVisible();
 });
 
 test('purchase comparison reports observed evidence gaps without ranking animals',async({page})=>{
