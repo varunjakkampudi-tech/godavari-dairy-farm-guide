@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>24-month herd rotation simulator · Godavari Dairy Farm Guide</title><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="manifest" href="../manifest.webmanifest"><link rel="stylesheet" href="../assets/site.css"><script defer src="../assets/site.js"></script><script defer src="../assets/nav.js" data-root="../"></script><script defer src="../assets/register-sw.js" data-root="../"></script></head>
+<body><div id="site-header"></div><main><span class="eyebrow">Decision aid · 24-month rotation · illustrative only</span><h1>24-month buffalo rotation &amp; cash-flow simulator</h1><p class="lead">Change the assumptions and inspect every month's modeled milking count, saleable milk, cash collections, costs and reserve. This is a simplified scenario tool—not an animal-specific pregnancy forecast, not proof of profitability, and not a replacement for observed data.</p>
+<aside class="notice"><strong>Interpretation:</strong> 8 adults, 300-day lactation and 453-day calving interval are only a steady-state example. A seller's 10+ L peak is NOT the full-lactation daily average. No amount of staggering eliminates disease, infertility, rejected milk, buyer payment delays or loss risk. The model does not include loan EMI, owner salary, depreciation or taxes; add these to monthly other costs if applicable.</aside>
+<section class="panel"><h2>Assumptions</h2><div class="formgrid" id="fields">
+<label>Adult buffalo count<input id="herd" type="number" min="2" max="24" step="1" value="8"></label>
+<label>First animal age since last calving (days)<input id="offset" type="number" min="0" max="1500" step="1" value="0"></label>
+<label>Lactation length (days)<input id="lact" type="number" min="120" max="400" step="1" value="300"></label>
+<label>Calving interval (days)<input id="interval" type="number" min="320" max="900" step="1" value="453"></label>
+<label>Daily average milk per lactating buffalo (L)<input id="yield" type="number" min="0" max="30" step=".1" value="8"></label>
+<label>Saleable milk (%)<input id="sale" type="number" min="0" max="100" step="1" value="95"></label>
+<label>Actual realized buyer price (₹/L)<input id="price" type="number" min="0" max="200" step=".1" value="75"></label>
+<label>Adult feed + fodder (₹/adult/day)<input id="feed" type="number" min="0" max="1500" step="1" value="240"></label>
+<label>Staff, lease, utilities, vet accrual &amp; other (₹/month)<input id="fixed" type="number" min="0" max="1000000" step="500" value="40000"></label>
+<label>Calf costs + reserve for unplanned expenses (₹/month)<input id="extra" type="number" min="0" max="1000000" step="500" value="0"></label>
+<label>Starting liquid working capital (₹)<input id="cash" type="number" min="0" max="10000000" step="10000" value="310000"></label>
+<label>Milk buyer settlement delay (days)<input id="delay" type="number" min="0" max="90" step="1" value="0"></label>
+</div><p><button class="button" type="button" id="calculate">Recalculate 24 months</button> <button class="button alt" id="download" type="button">Export month-by-month CSV</button></p></section>
+<section class="panel"><h2>Calculated outcomes</h2><p id="summary" role="status" aria-live="polite">Press recalculate to see results.</p><p id="warnings"></p></section>
+<section class="panel"><h2>Month-by-month model</h2><div class="tablewrap"><table><thead><tr><th>Month</th><th>Avg milking adults</th><th>Saleable L</th><th>Revenue earned ₹</th><th>Cash received ₹</th><th>Cash expenses ₹</th><th>Cash margin ₹</th><th>Closing reserve ₹</th></tr></thead><tbody id="months"></tbody></table></div></section>
+<section class="panel"><h2>How rotation is modeled</h2><p>Adults are distributed evenly through a repeated calving interval at the starting point. For each simulated day, the model treats an animal as in milk when its modeled days since calving are less than the entered lactation length. A flat milk yield is used while in milk; real yield declines and varies by stage. No pregnancy confirmations, sale of calves, replacement purchases, animal deaths, loan cash flows or startup capital costs are forecast automatically. The herd is assumed fully purchased and in place on Day 1; this is a <strong>steady-state capacity model</strong>, not the 4+2+2 staged buying cash flow. For the first six months of the actual launch, compare a separate staged-purchase budget and enter only the adults truly present.</p><p><strong>Buyer settlement modeling:</strong> daily earned milk receipts are delayed by the number of days entered; cash reserve is reduced by daily feed and one-thirtieth of fixed/extra monthly costs. All simulated months are 30 days; this is a planning convention, not a calendar prediction.</p><p><strong>Monthly animal-health plan:</strong> use real dates in the <a href="breeding-calves.html#breeding-calendar">breeding calendar</a> and veterinarian-confirmed expected calving windows. Recompute each month as actual service, pregnancy, dry-off and milk logs replace assumptions. For phased purchase order see <a href="herd-rotation-15l.html#rotation">8-animal rotation plan</a>. For financing and depreciation see <a href="finance-studio.html">finance studio</a>.</p><p class="source">Biology: <a href="https://cirb.res.in/murrah/">ICAR-CIRB Murrah: 300-day lactation / 453-day calving interval</a>. All costs and buyer price are hypothetical until verified locally.</p></section>
+</main><div id="site-footer"></div><script>
+(function () {
+"use strict";
+const ids=["herd","offset","lact","interval","yield","sale","price","feed","fixed","extra","cash","delay"];
+const fmt=new Intl.NumberFormat("en-IN",{maximumFractionDigits:0});
+let rows=[];
+function number(id){return Number(document.getElementById(id).value)}
+function clamp(v,a,b){return Math.min(b,Math.max(a,v))}
+function render(){
+const a=Object.fromEntries(ids.map(id=>[id,number(id)]));
+const errors=[];
+for(const id of ids){if(!Number.isFinite(a[id]))errors.push(id+" is invalid")}
+if(!Number.isInteger(a.herd)||a.herd<2||a.herd>24)errors.push("Herd must be 2–24 adults");
+if(a.interval<=a.lact)errors.push("Calving interval must exceed lactation length");
+if(a.lact<120||a.lact>400||a.interval<320||a.interval>900)errors.push("Biology inputs out of supported scenario range");
+if(a.sale<0||a.sale>100||a.delay<0||a.delay>90)errors.push("Sale fraction or settlement delay is invalid");
+for(const id of ["yield","price","feed","fixed","extra","cash","offset"]){if(a[id]<0)errors.push(id+" cannot be negative")}
+if(errors.length){document.getElementById("summary").textContent=errors.join("; ");document.getElementById("months").textContent="";return}
+const n=a.herd, horizon=720, invoices=Array(horizon+a.delay+1).fill(0), days=[];
+let reserve=a.cash, minReserve=reserve, negativeMonths=0, dryDays=0, earned=0, expenses=0;
+for(let d=0;d<horizon;d++){
+ let milking=0;
+ for(let i=0;i<n;i++){
+ const initialAge=(a.offset+i*a.interval/n)%a.interval;
+ const phase=(initialAge+d)%a.interval;
+ if(phase<a.lact)milking++;
+ }
+ const litres=milking*a.yield*a.sale/100;
+ const income=litres*a.price;
+ invoices[d+a.delay]+=income;
+ const spent=n*a.feed+(a.fixed+a.extra)/30;
+ reserve+=invoices[d]-spent;
+ if(milking===0)dryDays++;
+ minReserve=Math.min(minReserve,reserve);
+ days.push({d,milking,litres,income,received:invoices[d],spent,reserve});
+ earned+=income;expenses+=spent;
+}
+rows=[];
+for(let m=0;m<24;m++){
+const segment=days.slice(m*30,(m+1)*30);
+const sum=k=>segment.reduce((total,x)=>total+x[k],0);
+const out={month:m+1,milking:sum("milking")/30,litres:sum("litres"),earned:sum("income"),received:sum("received"),expense:sum("spent"),margin:sum("received")-sum("spent"),reserve:segment[29].reserve};
+rows.push(out);if(out.margin<0)negativeMonths++;
+}
+const table=document.getElementById("months");table.textContent="";
+for(const r of rows){const tr=document.createElement("tr");for(const value of [r.month,r.milking.toFixed(1),fmt.format(r.litres),fmt.format(r.earned),fmt.format(r.received),fmt.format(r.expense),fmt.format(r.margin),fmt.format(r.reserve)]){const td=document.createElement("td");td.textContent=String(value);tr.append(td)}table.append(tr)}
+document.getElementById("summary").textContent="24-month milk revenue earned: ₹"+fmt.format(earned)+"; cash operating expenses: ₹"+fmt.format(expenses)+"; months with negative cash margin: "+negativeMonths+"/24; lowest modeled liquid reserve: ₹"+fmt.format(minReserve)+"; zero-milking days: "+dryDays+"/720.";
+const notes=[];
+if(minReserve<0)notes.push("WARNING: reserve falls below zero in this scenario.");
+if(negativeMonths>0)notes.push("At least one month spends more cash than it receives.");
+if(a.yield>=10)notes.push("10+ L/day is a sustained lactation-average assumption, NOT a verified purchase yield.");
+notes.push("Model excludes capital recovery, borrowing, replacement, mortality and realistic milk-curve variation.");
+document.getElementById("warnings").textContent=notes.join(" ");
+}
+document.getElementById("calculate").addEventListener("click",render);
+document.getElementById("download").addEventListener("click",()=>{
+if(!rows.length)return;
+const head=["month","avg_milking","saleable_litres","revenue_earned_inr","cash_received_inr","cash_expense_inr","cash_margin_inr","closing_reserve_inr"];
+const csv=[head.join(","),...rows.map(r=>[r.month,r.milking,r.litres,r.earned,r.received,r.expense,r.margin,r.reserve].map(x=>typeof x==="number"?x.toFixed(2):x).join(","))].join("\n");
+const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob);const link=document.createElement("a");link.href=url;link.download="buffalo-rotation-24-months.csv";link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+render();
+})();
+</script></body></html>
