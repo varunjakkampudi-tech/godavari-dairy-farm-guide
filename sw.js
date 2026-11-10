@@ -1,4 +1,4 @@
-const CACHE = 'gdfg-static-v13';
+const CACHE = 'gdfg-static-v14';
 const SHELL = [
   './', './index.html', './offline.html', './manifest.webmanifest',
   './assets/site.css', './assets/favicon.svg', './assets/search-index.json',
@@ -10,6 +10,7 @@ const SHELL = [
   './assets/breed-data.js',
   './assets/one-acre-zones.svg', './pages/getting-started.html', './pages/breeds.html',
   './assets/shed-plan.svg', './assets/shed-ventilation.svg', './assets/farm-water-flow.svg',
+  './assets/day-planner.js',
   './pages/buying.html', './pages/layout.html', './pages/feeding.html', './pages/operations.html',
   './pages/milking.html', './pages/health.html', './pages/seasons.html', './pages/breeding-calves.html',
   './pages/market.html', './pages/buyer-comparison.html', './pages/finance.html',

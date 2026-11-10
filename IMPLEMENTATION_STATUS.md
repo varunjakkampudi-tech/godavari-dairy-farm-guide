@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot: remote `main` at `8c2f2ace82c467af7c1cce24da4ca75c5dc6fa45`; current local farm-design diagrams are not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot: remote `main` at `8252a5109e4c94c52d1c155a3c1039215efbd7df`; employee day-planner work is later local content, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -16,6 +16,7 @@ Snapshot: remote `main` at `8c2f2ace82c467af7c1cce24da4ca75c5dc6fa45`; current l
 - Published breed registry library filters/sorts the current NBAGR buffalo breed list and separates the CIRB Godavari regional profile; it intentionally does not invent missing breed-specific production, price or availability values.
 - Working tree extends purchase guidance with an independent vet-preparation checklist and a four-animal staged plan; local build/test pass, awaiting release verification.
 - Working tree extends the conceptual layout with shed, ventilation/roof heat and rain/wastewater SVGs, text flow diagrams, and cost-quote collection guidance instead of speculative local costs; local tests pass, pending release verification.
+- Working tree adds an editable, illustrative employee schedule and handover summary with session-only checkoffs; no employee field test has occurred.
 
 ## Major gaps
 
@@ -23,7 +24,7 @@ Snapshot: remote `main` at `8c2f2ace82c467af7c1cce24da4ca75c5dc6fa45`; current l
 - There is no structured breed encyclopedia/filter, interactive animal-purchase comparison or ration planner. The symptom navigator is a first-response routing aid, not a complete disease knowledge base or clinically reviewed decision tool. Local buyer/supplier directory, verified farmer case study and phone-confirmed emergency service directory remain absent.
 - The finance studio is not a fully validated financial product: no price-by-fat/SNF settlement mode, detailed amortization, validated animal lactation curves, multi-year projections, verified local costs or accountant review. Several cost categories remain approximate or manually grouped.
 - Records use a generic event ledger for many categories. Module-specific reporting/forms, additional quota/data-loss tests and professional review remain.
-- There is no bilingual localization system, comprehensive employee mode, automated browser suite, accessibility/security pipeline or complete requirement coverage. The PWA install flow was only synthetically prompted; actual installation and mobile behavior remain unverified.
+- There is no bilingual localization system, comprehensive employee mode (the current schedule is a starter task aid), automated browser suite, accessibility/security pipeline or complete requirement coverage. The PWA install flow was only synthetically prompted; actual installation and mobile behavior remain unverified.
 
 ## Release evidence
 

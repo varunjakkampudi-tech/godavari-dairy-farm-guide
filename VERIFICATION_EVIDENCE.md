@@ -13,6 +13,7 @@
 - Purchase comparison implementation is in progress at the current local checkout; `npm run build`, `npm test` (32/32), and `git diff --check` pass locally. It has not yet been pushed or verified on Pages.
 - Registered-breed library release `d9a0e6b5967ce356ae9c6478618eeb21d17f8cad` passed exact-SHA run [42774149192](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42774149192), including build/test and Pages deployment. Live `/pages/breeds.html`, `/assets/breed-data.js`, and `/sw.js` returned HTTP 200, and deployed HTML contains the registry table and source link. Local tests at that release were 33/33. A later local, not-yet-published purchase checklist/stagger plan passes 34/34 after rebuild.
 - Current local farm-design updates add three described, labelled SVGs and increase unit/static checks to 35 tests; build/test and `git diff --check` pass locally. Exact-SHA CI, Pages publication and live route checks remain pending.
+- Current local employee planner uses editable time inputs, task completion toggles and an accessible session handover summary. `npm run build`, `npm test` (36/36), and `git diff --check` pass; exact-SHA release and live browser interaction checks remain pending.
 - Earlier browser evidence verified homepage, calculator navigation/scenario, global search, an animal record, mobile display at 390×844, and the live conceptual layout SVG. This was a focused smoke check, not full E2E, offline, screen-reader, or accessibility certification.
 
 ## Finance studio release
