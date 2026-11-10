@@ -37,7 +37,7 @@ test('launch workbook has navigation, accessible checklist sections and actionab
   const workbook=fs.readFileSync(path.join(root,'pages','launch-workbook.html'),'utf8');
   const nav=fs.readFileSync(path.join(root,'assets','nav.js'),'utf8');
   const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
-  for(const phrase of ['First 90 days','Veterinary gate','milk payment formula','Farm launch','data-checklist','window.print()'])
+  for(const phrase of ['First 90 days','Veterinary gate','milk payment formula','Farm launch','data-checklist','window.print()','30-day, 90-day, six-month and first-year decision gates','Day 30 — ready before purchase','Day 90 — controlled pilot','Month 6 — season and resilience','Month 12 — complete annual cycle','there are no default profit, yield or expansion targets','gate12m-result','GO only if','Expansion GO requires'])
     assert.ok(workbook.includes(phrase), 'Workbook missing '+phrase);
   assert.match(nav,/pages\/launch-workbook\.html/);
   assert.match(home,/pages\/launch-workbook\.html/);

@@ -10,6 +10,17 @@ for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pa
   });
 }
 
+test('launch roadmap exposes all four evidence gates and remains accessible on mobile',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/pages/launch-workbook.html#decision-roadmap');
+  const roadmap=page.locator('#decision-roadmap');
+  for(const heading of ['Day 30 — ready before purchase','Day 90 — controlled pilot','Month 6 — season and resilience','Month 12 — complete annual cycle']) await expect(roadmap.getByRole('heading',{name:heading})).toBeVisible();
+  for(const id of ['gate30-result','gate90-result','gate6m-result','gate12m-result']) await expect(page.locator(`#${id}`)).toBeVisible();
+  const results=await new AxeBuilder({page}).include('#decision-roadmap').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+  expect(results.violations.map(({id,impact,help,nodes})=>({id,impact,help,nodes:nodes.length}))).toEqual([]);
+  expect(await page.locator('body').evaluate(el=>el.scrollWidth<=innerWidth)).toBeTruthy();
+});
+
 test('vaccination guide distinguishes national campaign guidance from local authorization',async({page})=>{
   await page.goto('/pages/vaccination.html');
   await expect(page.getByRole('heading',{name:'National programme context checked 10 November 2026'})).toBeVisible();
