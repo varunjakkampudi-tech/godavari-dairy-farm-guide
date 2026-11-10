@@ -1,4 +1,13 @@
 const {test,expect}=require('@playwright/test');
+const AxeBuilder=require('@axe-core/playwright').default;
+
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html']){
+  test(`automated accessibility scan ${route}`,async({page})=>{
+    await page.goto(route);
+    const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+    expect(results.violations.map(({id,impact,help,nodes})=>({id,impact,help,nodes:nodes.length}))).toEqual([]);
+  });
+}
 
 test('visual library loads original diagrams, captions, and related links',async({page})=>{
   await page.goto('/pages/visual-library.html');
