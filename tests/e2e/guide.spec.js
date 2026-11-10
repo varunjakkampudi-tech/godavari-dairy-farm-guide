@@ -431,6 +431,26 @@ test('daily operations plan aligns morning preparation to buyer pickup and flags
   await expect(page.locator('#pickup-adjustment-note')).toContainText('rest, staffing and legal working hours');
 });
 
+test('employee operations provide repeatable daily/weekly/monthly/seasonal checklists and relief coverage',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/pages/operations.html#recurring-employee-plan');
+  const plan=page.locator('#recurring-employee-plan');
+  const cadence=['Each shift / every day','Weekly review','Monthly owner review','Before and during changing weather'];
+  await expect(plan.locator('details.workitem')).toHaveCount(4);
+  for(const [index,label] of cadence.entries()) await expect(plan.locator('details.workitem summary').nth(index)).toContainText(label);
+  await expect(plan).toContainText('trained relief person and a second backup');
+  await expect(plan).toContainText('do not leave animals unattended');
+  await plan.locator('[data-checklist="ops-weekly"] summary').click();
+  const weekly=plan.locator('[data-checklist="ops-weekly"] input[type="checkbox"]').first();
+  await weekly.check();
+  await page.reload();
+  await page.locator('#recurring-employee-plan [data-checklist="ops-weekly"] summary').click();
+  await expect(plan.locator('[data-checklist="ops-weekly"] input[type="checkbox"]').first()).toBeChecked();
+  const results=await new AxeBuilder({page}).include('#recurring-employee-plan').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+  expect(results.violations.map(({id,impact,help,nodes})=>({id,impact,help,nodes:nodes.length}))).toEqual([]);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)).toBeTruthy();
+});
+
 test('key app pages remain usable at a narrow mobile viewport',async({page})=>{
   await page.setViewportSize({width:390,height:844});
   for(const route of ['/','/pages/breeds.html','/pages/buying.html','/pages/operations.html','/pages/emergency.html','/pages/finance-studio.html','/pages/feeding.html']){
