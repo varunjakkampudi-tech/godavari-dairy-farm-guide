@@ -2,9 +2,7 @@
 
 ## West Godavari veterinary directory recheck
 
-Live search/open of the [West Godavari District Officers directory](https://westgodavari.ap.gov.in/district-officers/) on 10 November 2026 confirmed it currently lists the District Animal Husbandry Officer mobile 6281832610 and dahowestgodavari@gmail.com. Updated the app's checked date and wording, and added a browser check plus an axe scan for the contact route. The page clearly identifies this as an office listing, not a published 24-hour emergency number. No call was made; availability, on-call response and coverage remain unverified.
-
-Local checks after this update: build passed; unit tests 51/51; Playwright 26/26 including seven axe scans; content audit found zero errors/warnings across 24 pages; `npm audit --audit-level=low` found zero vulnerabilities; `git diff --check` passed. Exact-SHA CI and publication of this contact-date refresh are pending.
+Live search/open of the [West Godavari District Officers directory](https://westgodavari.ap.gov.in/district-officers/) on 10 November 2026 confirmed it currently lists the District Animal Husbandry Officer mobile 6281832610 and dahowestgodavari@gmail.com. Updated the app's checked date and wording, and added a browser check plus an axe scan for the contact route. The page clearly identifies this as an office listing, not a published 24-hour emergency number. No call was made; availability, on-call response and coverage remain unverified. Local checks: build; 51/51 unit tests; 26/26 Playwright tests including seven axe scans; 24-page content audit with zero errors/warnings; npm audit with zero vulnerabilities; and `git diff --check` passed. Exact-SHA Actions run [42809242072](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42809242072) passed build-test, Pages deployment and post-deploy smoke for `fb7e9b5`. Direct live GET of `/pages/emergency.html` returned HTTP 200 with checked date, office number and not-a-hotline warning.
 
 ## FSSAI milk-producer cooperative exception wording
 
@@ -20,7 +18,7 @@ Commit `3e34216` refined the buffalo-and-river logo and favicon and coordinated 
 
 ## Current checkout and remote evidence
 
-Local checkout and `origin/main` are at `fb3093f`. Exact-SHA Actions run `42807937229` passed build, 51 Node tests, 24 Chromium tests, dependency/content audits, Pages deployment and live smoke.
+Local checkout and `origin/main` are at `fb7e9b5`. Exact-SHA Actions run `42809242072` passed build, 51 Node tests, 26 Chromium tests, dependency/content audits, Pages deployment and live smoke.
 
 - CSV export browser regression `d8d41a7c4f975beb74bacf7d2d3d5ff22841fcf6`: Playwright captures all four actual CSV downloads from the records UI, reads their contents, verifies the animal record and confirms a formula-like `=HYPERLINK(...)` note is quoted and apostrophe-prefixed. Local `npm test` 49/49; `npm run test:e2e` 19/19; content audit 24 pages/0 errors/0 warnings; npm audit 0 vulnerabilities. Exact-SHA run [42801831052](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42801831052) passed CI, Pages deploy and live route/asset smoke. Formula assertions cover this record export flow, not every spreadsheet or CSV consumer.
 
