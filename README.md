@@ -2,6 +2,8 @@
 
 Practical planning and operations app for a small buffalo dairy in West Godavari, Andhra Pradesh.
 
+> **Latest release:** FAQ and offline searchable knowledge index published from `e6b8399`; exact-SHA checks, Pages deployment and live route smoke passed. See [release evidence](VERIFICATION_EVIDENCE.md) and the [full completion tracker](MASTER_CHECKLIST.md).
+
 > **Status:** Public, research-led planning app. The code and static site are published, but local fieldwork and professional review are still open. It is educational decision support, not veterinary diagnosis, legal advice, investment advice, or a verified buyer/supplier directory. Never treat ₹70–₹80/L as a confirmed procurement rate.
 
 [Open the live guide](https://varunjakkampudi-tech.github.io/godavari-dairy-farm-guide/) · [Source repository](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide) · [Completion and evidence tracker](PROGRESS.md)
@@ -26,7 +28,7 @@ The deployment workflow runs a live route and asset smoke after Pages deployment
 ## App features
 
 - Responsive multi-page guide covering feasibility, breed comparison, buying, layout, feed, daily operations, milking, health/emergency contacts, seasonal care, breeding/calves, markets, staff, vaccination, pests, legal questions and local fieldwork.
-- Global search now ranks guide sections, individual buffalo breeds and 63 health-condition summaries; topic filters, excerpts, keyboard Enter/Escape, section/card/row deep links, cached offline index, and a small unreviewed Telugu keyword alias map support discovery. These keyword aliases are not a Telugu content translation. The [FAQ](pages/faq.html) answers common beginner questions with direct links. Light/dark preference persists in this browser.
+- Global search now ranks guide sections, individual buffalo breeds and 37 health-condition summaries; topic filters, excerpts, keyboard Enter/Escape, section/card/row deep links, cached offline index, and a small unreviewed Telugu keyword alias map support discovery. These keyword aliases are not a Telugu content translation. The [FAQ](pages/faq.html) answers common beginner questions with direct links. Light/dark preference persists in this browser.
 - The shared interface has an English/Telugu beta switch for navigation and basic controls, with the choice saved in this browser. A visible notice explains that most guide content remains English and the Telugu strings need native-speaker review; this is not yet a complete bilingual guide.
 - The refreshed buffalo-head and Godavari-delta mark uses forest green (`#174b3b`), rice cream, sage and harvest gold; the interface carries the same palette in light and dark modes. The same logo and browser theme color are used across generated guides, the home page, favicon and install manifest. The responsive offline shell caches guide pages and static assets. A local packaged-build browser smoke verified cached finance navigation and the offline fallback on an uncached nested route. Actual app installation and mobile browser behavior have not been verified.
 - The [annual calculator](pages/finance.html) and [finance studio](pages/finance-studio.html) estimate animal-level 365-day production calendars, monthly cash flow, EMI, depreciation, break-even, working capital and price/staff/herd/yield stress cases. Save scenarios locally, print a planning report, or export CSV/JSON. They are assumption-driven models, not forecasts; missing local evidence is reported as `INSUFFICIENT EVIDENCE`.
