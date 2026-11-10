@@ -6,6 +6,8 @@ Farm register data stays in the current browser profile under localStorage key `
 
 Construction quote notes are separate under `gdfg-layout-quotes-v1`; they are not part of the farm register or cloud-synced. The store has `low`, `medium`, and `higher` scenario arrays; each row contains a bounded work-item description, optional non-negative amount, provider/source text, and calendar-valid ISO quote date. Only rows with amount, source, and date contribute to displayed subtotals. These are user-entered, unverified quotations, not market estimates. CSV export is user-initiated; clearing requires confirmation. The guide does not back up or migrate these notes.
 
+Monthly green-fodder planning inputs are separate under `gdfg-seasonal-feed-v1`. The saved object contains a year and twelve rows, each with the month index, usable fresh/as-fed green fodder mass at the feed bunk (kg), and user/nutritionist-entered daily demand (kg). It is a planning worksheet, not a source of crop-yield forecasts or a complete ration; dry matter conversions and carryover inventory are not calculated. CSV export is user-initiated, and clearing requires confirmation.
+
 ## Version 2 schema
 
 The root object has `schemaVersion: 2` and four flat arrays:

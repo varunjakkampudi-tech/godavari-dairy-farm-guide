@@ -7,7 +7,7 @@ The app is a static multi-page site. GitHub Actions builds the site into `dist/`
 ## Source layout
 
 - `index.html`: home/dashboard entry point.
-- `pages/`: topic pages; subject pages produced by `scripts/build-pages.js` must be changed at the generator/source data, not only in generated HTML. Layout studio enhancements are injected by `scripts/build-layout-planner.js` during each build.
+- `pages/`: topic pages; subject pages produced by `scripts/build-pages.js` must be changed at the generator/source data, not only in generated HTML. Layout and feed-planning enhancements are injected by `scripts/build-layout-planner.js` and `scripts/build-feed-planner.js` during each build.
 - `assets/`: shared CSS, navigation/search/theme/checklist logic, brand and favicon SVGs, calculators, records, health-triage core/UI, service-worker registration and local diagrams.
 - `research/`: reference list and verification notes.
 - `scripts/`: page/search generation, health-page enhancement and static packaging.
@@ -16,7 +16,7 @@ The app is a static multi-page site. GitHub Actions builds the site into `dist/`
 
 ## Data and offline boundary
 
-User-entered farm records use versioned browser `localStorage` (`gdfg-records-v2`); construction quote notes use separate browser-local `localStorage` (`gdfg-layout-quotes-v1`). Both are profile/device-local, not encrypted or synced. Quote subtotals include only entries with a non-negative amount, provider/source and valid ISO date; entered quotations remain unverified. CSV export is user-operated. The service worker caches static app resources only, not either data store. There is no authentication boundary between users of one browser profile. The app warns users to avoid sensitive personal/banking data.
+User-entered farm records use versioned browser `localStorage` (`gdfg-records-v2`); construction quote notes use `gdfg-layout-quotes-v1`, and monthly feed planning inputs use `gdfg-seasonal-feed-v1`. These stores are separate, profile/device-local, not encrypted or synced. Quote subtotals include only entries with a non-negative amount, provider/source and valid ISO date; entered quotations remain unverified. The fodder planner keeps user-entered monthly fresh/as-fed availability and nutritionist-entered demand; it makes no crop forecast or ration. CSV exports are user-operated. The service worker caches static app resources only, not these data stores. There is no authentication boundary between users of one browser profile. The app warns users to avoid sensitive personal/banking data.
 
 ## Extension rules
 

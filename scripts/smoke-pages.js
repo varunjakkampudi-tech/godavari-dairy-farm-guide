@@ -8,12 +8,13 @@ const routes = [
   ['pages/health.html', ['symptom-triage']],
   ['pages/emergency.html', ['Tanuku']],
   ['pages/finance-studio.html', ['Build monthly plan']],
+  ['pages/feeding.html', ['seasonal-feed-planner', 'Check fodder balance month by month']],
   ['pages/records.html', ['animal-form', 'export-json']],
   ['pages/visual-library.html', ['visual-card', 'caption']]
 ];
 const assets = [
   'assets/site.css', 'assets/nav.js', 'assets/site.js', 'assets/search-index.json',
-  'manifest.webmanifest', 'sw.js', 'offline.html', 'assets/brand-mark.svg', 'assets/favicon.svg'
+  'manifest.webmanifest', 'sw.js', 'offline.html', 'assets/brand-mark.svg', 'assets/favicon.svg', 'assets/seasonal-feed-planner.js'
 ];
 
 async function get(path) {

@@ -2,7 +2,7 @@ const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 const fs=require('node:fs');
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html','/pages/health.html','/pages/layout.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html','/pages/health.html','/pages/layout.html','/pages/feeding.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -72,6 +72,31 @@ test('layout quote collector saves documented subtotals, exports safe CSV and cl
   await page.locator('#quote-clear').click();
   await expect(low.locator('.quote-row')).toHaveCount(0);
   await expect(page.locator('#quote-status')).toContainText('cleared');
+});
+
+test('monthly fodder planner exposes seasonal gaps, persists inputs and exports a transparent plan',async({page})=>{
+  await page.goto('/pages/feeding.html');
+  const tool=page.locator('#seasonal-feed-planner');
+  await expect(tool.getByRole('heading',{name:'Check fodder balance month by month'})).toBeVisible();
+  await tool.locator('input[name="year"]').fill('2028');
+  for(let month=0;month<12;month++){
+    await tool.locator(`input[name="available"][data-month="${month}"]`).fill(month===0?'400':'0');
+    await tool.locator(`input[name="dailyDemand"][data-month="${month}"]`).fill('10');
+  }
+  await expect(tool.locator('#seasonal-feed-result')).toContainText('Annual as-fed availability: 400 kg');
+  await expect(tool.locator('#seasonal-feed-result')).toContainText('Annual coverage: 10.9%');
+  await expect(tool.locator('#seasonal-feed-result table tbody tr').first()).toContainText('January');
+  await expect(tool.locator('#seasonal-feed-result table tbody tr').first()).toContainText('310');
+  await page.reload();
+  await expect(tool.locator('input[name="year"]')).toHaveValue('2028');
+  await expect(tool.locator('input[name="available"][data-month="0"]')).toHaveValue('400');
+  const [download]=await Promise.all([page.waitForEvent('download'),tool.locator('#seasonal-feed-export').click()]);
+  const csv=await require('node:fs/promises').readFile(await download.path(),'utf8');
+  expect(csv).toContain('February');
+  expect(csv).toContain('User-entered, unverified farm inputs');
+  page.once('dialog',dialog=>dialog.accept());
+  await tool.locator('#seasonal-feed-clear').click();
+  await expect(tool.locator('#seasonal-feed-status')).toContainText('cleared');
 });
 
 test('breed registry filters and sorts the sourced list including the regional type',async({page})=>{
@@ -386,7 +411,7 @@ test('daily operations plan aligns morning preparation to buyer pickup and flags
 
 test('key app pages remain usable at a narrow mobile viewport',async({page})=>{
   await page.setViewportSize({width:390,height:844});
-  for(const route of ['/','/pages/breeds.html','/pages/buying.html','/pages/operations.html','/pages/emergency.html','/pages/finance-studio.html']){
+  for(const route of ['/','/pages/breeds.html','/pages/buying.html','/pages/operations.html','/pages/emergency.html','/pages/finance-studio.html','/pages/feeding.html']){
     await page.goto(route);
     await expect(page.locator('h1')).toBeVisible();
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth);
