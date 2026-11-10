@@ -2,7 +2,9 @@
 
 ## Current checkout and remote evidence
 
-Local checkout and `origin/main` are at `3761b36b6b20dbb0af01239f65b9909977ff9e64`. Exact-SHA Actions run `42800499044` passed build, 49 Node tests, 18 Chromium tests, dependency/content audits, Pages deployment and live smoke.
+Local checkout and `origin/main` are at `d8d41a7c4f975beb74bacf7d2d3d5ff22841fcf6`. Exact-SHA Actions run `42801831052` passed build, 49 Node tests, 19 Chromium tests, dependency/content audits, Pages deployment and live smoke.
+
+- CSV export browser regression `d8d41a7c4f975beb74bacf7d2d3d5ff22841fcf6`: Playwright captures all four actual CSV downloads from the records UI, reads their contents, verifies the animal record and confirms a formula-like `=HYPERLINK(...)` note is quoted and apostrophe-prefixed. Local `npm test` 49/49; `npm run test:e2e` 19/19; content audit 24 pages/0 errors/0 warnings; npm audit 0 vulnerabilities. Exact-SHA run [42801831052](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42801831052) passed CI, Pages deploy and live route/asset smoke. Formula assertions cover this record export flow, not every spreadsheet or CSV consumer.
 
 - Breed registry generator fix `3761b36b6b20dbb0af01239f65b9909977ff9e64`: `npm run build` exposed and corrected an obsolete table fragment in `scripts/build-breed-library.js`; generated source and packaged breed pages each contain one table without orphan markup. A source regression test and Playwright flow cover the 24-entry registry, Godavari regional-type filter, Murrah search and tract sorting. Local checks: `npm test` 49/49, `npm run test:e2e` 18/18, `npm run audit:content` 24 pages/0 errors/0 warnings, `npm audit --audit-level=low` 0 vulnerabilities, `git diff --check` passed. Exact-SHA Actions run [42800499044](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42800499044) passed build/test/audit, Pages deployment and live smoke for this SHA. It does not replace manual accessibility review, breed research or expert review.
 
