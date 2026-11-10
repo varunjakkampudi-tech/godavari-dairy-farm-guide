@@ -23,6 +23,24 @@ test('visual library loads original diagrams, captions, and related links',async
   await expect(page.getByRole('link',{name:'Open full-size illustration'}).first()).toHaveAttribute('target','_blank');
 });
 
+test('breed registry filters and sorts the sourced list including the regional type',async({page})=>{
+  await page.goto('/pages/breeds.html');
+  const rows=page.locator('#breed-table tbody tr');
+  await expect(rows).toHaveCount(24);
+  await expect(page.locator('#breed-count')).toHaveText('24 of 24 entries');
+  await page.locator('#breed-kind').selectOption({label:'Regional population / type'});
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first()).toContainText('Godavari');
+  await page.locator('#breed-kind').selectOption({value:'all'});
+  await page.locator('#breed-search').fill('Murrah');
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first()).toContainText('Murrah');
+  await page.locator('#breed-search').fill('');
+  await page.locator('#breed-sort').selectOption('tract');
+  const tracts=await page.locator('#breed-table tbody tr td:nth-child(3)').allTextContents();
+  expect(tracts).toEqual([...tracts].sort((a,b)=>a.localeCompare(b)));
+});
+
 test('original local Godavari buffalo-and-river logo loads and stays linked to home',async({page})=>{
   await page.goto('/');
   const brand=page.locator('.brand');
