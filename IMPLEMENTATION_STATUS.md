@@ -1,6 +1,6 @@
 # Implementation status
 
-Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is in [PROGRESS.md](PROGRESS.md) and [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md). Latest verified public main is `0bc3f0bb4c034d18437f42777ed5d9d57eba3b45`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is in [PROGRESS.md](PROGRESS.md) and [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md). Latest verified public main is `3c9eebac382843615f45a86bea4ea9e61ef7ca00`; exact-SHA Actions run `42814822808` passed deployment and smoke. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -38,4 +38,4 @@ Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is
 
 ## Release evidence
 
-Latest code release `3761b36b6b20dbb0af01239f65b9909977ff9e64`; exact-SHA run `42800499044` passed build, dependency audit, 49 unit tests, 18 browser/accessibility tests, content audit, Pages deployment and live post-deploy route/asset smoke. The 18 browser tests include emergency routing, purchase comparison evidence, breed registry interactions, records CRUD/backup/security, preferences, mobile and offline checks. Broader browser, accessibility, source validity and professional reviews remain incomplete. See [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md) for current evidence.
+Latest code release `3c9eebac382843615f45a86bea4ea9e61ef7ca00`; exact-SHA run `42814822808` passed build, dependency audit, 53 unit tests, 28 browser/accessibility tests, content audit, Pages deployment and live post-deploy route/asset smoke. The 28 browser tests include eight axe route scans, source-register download, emergency routing, purchase comparison evidence, breed registry interactions, records CRUD/backup/security, preferences, mobile and offline checks. Broader browser, accessibility, source validity and professional reviews remain incomplete. See [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md) for current evidence.
