@@ -190,12 +190,23 @@ test('buyer-entered fat/SNF settlement calculates net realization without supply
   await expect(page.locator('#settlement-result')).toContainText('₹1,600');
   await expect(page.locator('#settlement-result')).toContainText('₹16/L');
   await expect(page.locator('#settlement-result')).toContainText('does not verify');
-});test('finance studio calculates a scenario but keeps the result explicitly unverified',async({page})=>{
+});
+test('finance studio flags absent buyer, animal, feed, lease, water, labor and veterinary evidence',async({page})=>{
+  await page.goto('/pages/finance-studio.html');
+  await page.getByRole('button',{name:'Build monthly plan'}).click();
+  const result=page.locator('#studio-results');
+  await expect(result).toContainText('INSUFFICIENT EVIDENCE');
+  for(const issue of ['No buyer-confirmed milk price entered','lack observed yield or purchase cost','Feed/fodder cost is missing','Land lease cost is missing','Water cost is missing','Labor value is missing','Veterinary/breeding budget is missing']) await expect(result).toContainText(issue);
+  await expect(result).not.toContainText('EVIDENCE RECORDED');
+});
+test('finance studio calculates a scenario but keeps the result explicitly unverified',async({page})=>{
   await page.goto('/pages/finance-studio.html');
   await page.locator('[name="price"]').fill('60');
   await page.locator('[name="lease"]').fill('10000');
   await page.locator('[name="fodderMonthly"]').fill('20000');
   await page.locator('[name="wages"]').fill('15000');
+  await page.locator('[name="water"]').fill('2000');
+  await page.locator('[name="vetAnnual"]').fill('12000');
   for(let i=1;i<=4;i++){
     await page.locator(`[name="yield${i}"]`).fill('5');
     await page.locator(`[name="purchase${i}"]`).fill('100000');
