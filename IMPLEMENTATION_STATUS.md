@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot: remote `main` at `41a7b3160380f3d95175fc3a024a7c69a4911dca`; feed planner work is later local changes, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot: remote `main` at `fb6680f2d5a047fed37ffe4d526ece7753b6a290`; health-library work is later local changes, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -19,6 +19,7 @@ Snapshot: remote `main` at `41a7b3160380f3d95175fc3a024a7c69a4911dca`; feed plan
 - Working tree adds an editable, illustrative employee schedule and handover summary with session-only checkoffs; no employee field test has occurred.
 - Working tree expands the milking page to a 20-step visual SOP; no trained-milker, veterinarian, food-safety or buyer review has occurred.
 - Working tree adds a user-input net fodder area coverage estimator and a ration discussion-note form; no individualized nutrient prescription is generated. West Godavari yields, crop calendar, prices and nutritionist review remain open.
+- Working tree adds 23 source-linked health summaries and filters; the summaries are not vet reviewed, omit lay treatment instructions and are not an exhaustive clinical encyclopedia.
 
 ## Major gaps
 
