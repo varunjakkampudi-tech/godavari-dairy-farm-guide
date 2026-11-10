@@ -9,7 +9,7 @@
 
 ## Find information
 
-Use the search box in the shared navigation to search the current guide corpus. Browse individual pages for feeding, milking, seasons, breeding/calves, market, legal, emergency, staff and local verification. Sources and limitations are linked from guide pages.
+Use the search box in the shared navigation to search the current guide corpus. Browse individual pages for feeding, milking, seasons, breeding/calves, market, legal, emergency, staff and local verification. Sources and limitations are linked from guide pages. The red Emergency link on each page opens a symptom safety aid; select every observed sign, follow its escalation guidance, and contact a veterinarian. The tool does not diagnose or prescribe and has not received local veterinary review.
 
 ## Install and use offline
 

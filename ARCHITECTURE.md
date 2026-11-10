@@ -7,10 +7,10 @@ The app is a static multi-page site. GitHub Actions builds the site into `dist/`
 ## Source layout
 
 - `index.html`: home/dashboard entry point.
-- `pages/`: topic pages; subject pages produced by `scripts/build-pages.js` must be changed at the generator/source data, not only in generated HTML.
-- `assets/`: shared CSS, navigation/search/theme/checklist logic, calculators, records, service-worker registration and local diagrams.
+- `pages/`: topic pages; subject pages produced by `scripts/build-pages.js` must be changed at the generator/source data, not only in generated HTML. `scripts/build-health-triage.js` adds the health tool to generated output on every build.
+- `assets/`: shared CSS, navigation/search/theme/checklist logic, calculators, records, health-triage core/UI, service-worker registration and local diagrams.
 - `research/`: reference list and verification notes.
-- `scripts/`: page/search generation and static packaging.
+- `scripts/`: page/search generation, health-page enhancement and static packaging.
 - `tests/`: Node built-in test runner.
 - `.github/workflows/deploy.yml`: build/test/artifact and Pages deployment.
 
@@ -23,7 +23,7 @@ User-entered records use versioned browser `localStorage` (`gdfg-records-v2`); t
 - Keep sources as canonical inputs for generated pages and search index.
 - Escape or use text nodes for user-provided content; test imported data and formula-safe CSV.
 - Keep buyer, finance and farm estimates explicit about assumptions and evidence quality.
-- Avoid health diagnosis/medication automation; safe escalation is the boundary.
+- Avoid health diagnosis/medication automation; the triage module only routes selected signs to conservative escalation and first-response text, pending licensed veterinary review.
 - Add new static routes to navigation, search-index build, service-worker shell where needed, package build and link tests.
 
 ## Known architectural debt

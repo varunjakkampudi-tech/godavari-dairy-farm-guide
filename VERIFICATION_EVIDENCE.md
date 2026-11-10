@@ -38,9 +38,19 @@ The pushed `cd87d1b` CI run covered 24 tests. The current local branch has 25 No
 - The public branch was previously rewritten to GitHub noreply commit metadata, and subsequent remote commits use that metadata. Do not make another history rewrite.
 - An accessible alt attribute is present on the farm SVG and checked by a unit test. No full WCAG audit, color-contrast run, keyboard/screen-reader audit, or automated accessibility report has been performed.
 
-## PWA verification (local working tree; release pending)
+## PWA verification (released in `e5b7cc9`)
 
-- `npm run build` succeeded and `npm test` passed 25/25 after the PWA manifest and shell changes.
+- `npm run build` succeeded and `npm test` passed 25/25 after the initial PWA manifest and shell changes.
 - On a local Playwright browser against the packaged `dist` build, service worker `gdfg-static-v9` activated and cached `offline.html`, `manifest.webmanifest`, and `pages/finance-studio.html`. With network disabled, the finance page loaded from cache; an uncached nested route displayed the offline fallback and resolved its CSS and finance link to the site root correctly. Network was restored after the check.
 - A synthetic `beforeinstallprompt` event exposed the install button in a prior local browser check. This only checks the event handler; actual platform installation, mobile behavior, update lifecycle, and complete console/accessibility review remain unverified.
-- PWA modifications and their exact-SHA CI/live deployment are pending. Current public release remains `cd87d1baf5d5e7e531ef3b23bf1402b174a5ba18`.
+- PWA changes are published at `e5b7cc9ffb1f4d8964b09a55eff999368252de0a`; exact-SHA run 42770239358 passed build/test and Pages deployment, and the manifest, offline, service-worker, and core app routes returned HTTP 200.
+- Follow-on local v11 smoke initially found a duplicate `pages/health.html` URL in the precache array, preventing worker registration. Removed the duplicate, added a regression test, and verified `gdfg-static-v11` activates; offline navigation then rendered the cached Health page, all 17 options, the site-wide Emergency link and stylesheet.
+
+## Interactive health triage (local working tree; release pending)
+
+- Added 17 selectable signs from the brief, with emergency-level routing for breathing distress, collapse/inability to rise, sudden bloat, difficult calving/heavy bleeding, suspected poisoning, and possible contagious mouth/foot lesions. Multi-select results use the highest urgency. The tool explicitly says it does not diagnose and provides no medication/dose instructions.
+- A site-wide Emergency header link opens the symptom aid. Results announce through an alert/status region and provide a link to the emergency directory.
+- `npm run build` succeeded; `npm test` passed 29/29 after adding urgency, required-sign, outbreak-movement, generated-page/offline-source and duplicate-precache tests. Node syntax checks passed for the triage core, UI script and generator.
+- Local Playwright on the packaged desktop site rendered all 17 choices. Selecting poor appetite plus breathing difficulty displayed the urgent heading, safe immediate steps, alert role and emergency-directory link. Offline navigation to Health preserved the 17 choices, Emergency header link, and stylesheet. This is UI smoke, not a clinical validation.
+- Research checked 10 Nov 2026: NDDB bloat signs; NDDB clinical mastitis signs; ICAR-CIRB buffalo health material; and DAHD 2025 disease-control guidelines. Sources and limitations are recorded in `research/sources.md` and `research/verification-log.md`. The urgency rules and first-response wording still require a licensed local veterinarian's review; the wider disease encyclopedia remains incomplete.
+- Current public release is `e5b7cc9ffb1f4d8964b09a55eff999368252de0a`; triage release and exact-SHA CI remain pending.
