@@ -24,7 +24,7 @@ Snapshot after breeding-to-newborn timeline: public `main` at `b7fb5775fc04b4fa1
 - Published seasonal guide has checklists and an accessible readiness diagram, citing IMD 2024 observations only as one-year context; current alerts and parcel survey remain necessary.
 - Published IPM guide adds prevention-first mosquito/fly/tick/rodent guidance. Exact-SHA CI and live page/search checks passed in run `42777877013`.
 - Published breed media includes an original, generic accessible buffalo silhouette. Breed-specific authentic media and livestock expert review remain open.
-- Published localization switch adds persisted English/Telugu preference for shared navigation and basic controls, marks localized chrome with `lang`, and displays a notice that substantive Telugu translation is not yet reviewed. Exact-SHA run `42779209471` passed both CI jobs; live `nav.js` and home routes returned HTTP 200 with the selector present. Browser visual verification is unavailable in this session.
+- Published localization switch adds persisted English/Telugu preference for shared navigation and basic controls, marks localized chrome with `lang`, and displays a notice that substantive Telugu translation is not yet reviewed. Exact-SHA run `42779209471` passed both CI jobs; live `nav.js` and home routes returned HTTP 200 with the selector present. Follow-up Playwright CLI smoke verified Telugu labels, the review notice and persistence after reload; full accessibility checks remain open.
 - Published reproduction timeline adds staged service-to-newborn records, calving warning escalation and browser-local checkboxes, sourced to ICAR-CIRB/NDDB; it does not calculate a due date or permit obstetric intervention. Exact-SHA run `42782675592` passed CI and live breeding page/search routes were verified.
 
 ## Major gaps
@@ -37,4 +37,4 @@ Snapshot after breeding-to-newborn timeline: public `main` at `b7fb5775fc04b4fa1
 
 ## Release evidence
 
-Latest verified public release: `b7fb5775fc04b4fa127f35c18f9f3ec629f08841`; exact-SHA workflow `42782675592` passed build/test and Pages deploy, and live breeding page/search routes returned HTTP 200 with timeline/checklist markup. Earlier health, language and IPM releases also have exact-SHA evidence; browser visual verification failed to initialize. The larger health encyclopedia and licensed local clinical review remain incomplete.
+Latest code release `b7fb5775fc04b4fa127f35c18f9f3ec629f08841`; exact-SHA workflow `42782675592` passed build/test and Pages deploy, and live breeding page/search routes returned HTTP 200 with timeline/checklist markup. Documentation head `b62dc02a5c2b4d22b6f7a50be91380b022032b09` passed exact-SHA run `42782961803`. Focused Playwright CLI smoke covered live Telugu shared navigation/persistence and the breeding timeline; full browser, accessibility and health review remain incomplete.
