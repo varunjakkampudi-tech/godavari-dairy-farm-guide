@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Concept shed front elevation, side elevation and section</title>
+  <desc id="desc">Three not-to-scale sketches show a raised shaded roof and open sides from the front, a long side with repeated supports and drainage away from the shed, and a cross section with airflow and a high ridge outlet. They contain no construction dimensions or structural specifications.</desc>
+  <rect width="1200" height="850" rx="24" fill="#fbfaf5"/>
+  <text x="42" y="52" font-family="system-ui,sans-serif" font-size="30" font-weight="750" fill="#173d32">Shed elevations + section · concept only</text>
+  <rect x="40" y="82" width="1120" height="710" rx="18" fill="#fffefa" stroke="#d7dfd5" stroke-width="3"/>
+  <g font-family="system-ui,sans-serif" fill="#173d32">
+    <text x="75" y="132" font-size="23" font-weight="700">FRONT ELEVATION</text>
+    <text x="625" y="132" font-size="23" font-weight="700">SIDE ELEVATION</text>
+    <text x="75" y="465" font-size="23" font-weight="700">SECTION THROUGH SHED</text>
+  </g>
+  <!-- Front elevation -->
+  <path d="M110 230 L345 155 L580 230" fill="#e7dfc7" stroke="#315445" stroke-width="9"/>
+  <path d="M90 233 H600" stroke="#315445" stroke-width="7"/>
+  <path d="M145 235 V380 M545 235 V380 M235 235 V380 M455 235 V380" stroke="#557c5f" stroke-width="8"/>
+  <path d="M115 380 H575" stroke="#315445" stroke-width="8"/>
+  <path d="M135 296 H230 M555 296 H460" stroke="#3480a0" stroke-width="6"/>
+  <path d="M219 285 l16 11 -16 11 M471 285 l-16 11 16 11" fill="none" stroke="#3480a0" stroke-width="5"/>
+  <text x="130" y="414" font-family="system-ui,sans-serif" font-size="16" fill="#405b4c">Open side + protected footing</text>
+  <text x="135" y="185" font-family="system-ui,sans-serif" font-size="15" fill="#586b61">Overhang / roof profile set by engineer</text>
+  <!-- Side elevation -->
+  <path d="M660 225 L1095 225 L1120 244 L635 244 Z" fill="#e7dfc7" stroke="#315445" stroke-width="7"/>
+  <path d="M680 244 V380 M790 244 V380 M900 244 V380 M1010 244 V380 M1090 244 V380" stroke="#557c5f" stroke-width="7"/>
+  <path d="M650 380 H1120" stroke="#315445" stroke-width="8"/>
+  <path d="M650 390 l25 0 M1120 390 l-25 0" stroke="#a15a3c" stroke-width="4"/>
+  <path d="M660 398 H615 M1110 398 H1150" stroke="#a15a3c" stroke-width="4"/>
+  <text x="700" y="286" font-family="system-ui,sans-serif" font-size="16" fill="#405b4c">Repeat supports: spacing engineer-designed</text>
+  <text x="700" y="320" font-family="system-ui,sans-serif" font-size="15" fill="#586b61">Keep clean rain separate; survey floor + drain slope</text>
+  <text x="720" y="414" font-family="system-ui,sans-serif" font-size="16" fill="#405b4c">Side access and openings depend on orientation and weather</text>
+  <!-- Section -->
+  <path d="M170 600 L600 500 L1030 600" fill="#e7dfc7" stroke="#315445" stroke-width="10"/>
+  <path d="M558 510 L600 500 L642 510 V540 H558 Z" fill="#fffefa" stroke="#315445" stroke-width="4"/>
+  <path d="M225 600 V727 M975 600 V727" stroke="#557c5f" stroke-width="10"/>
+  <path d="M225 727 H975" stroke="#315445" stroke-width="8"/>
+  <path d="M120 640 H330 M1080 640 H870" stroke="#3480a0" stroke-width="7"/>
+  <path d="M315 628 l18 12 -18 12 M885 628 l-18 12 18 12" fill="none" stroke="#3480a0" stroke-width="6"/>
+  <path d="M445 690 C430 635 490 590 560 540 M755 690 C770 635 710 590 640 540" fill="none" stroke="#b45c35" stroke-width="7"/>
+  <path d="M548 556 l14 -19 9 25 M652 556 l-14 -19 -9 25" fill="none" stroke="#b45c35" stroke-width="6"/>
+  <text x="70" y="650" font-family="system-ui,sans-serif" font-size="16" fill="#244451">Fresh air</text>
+  <text x="1010" y="650" font-family="system-ui,sans-serif" font-size="16" fill="#244451">Fresh air</text>
+  <text x="507" y="490" font-family="system-ui,sans-serif" font-size="16" fill="#8b482c">Hot air escape</text>
+  <text x="305" y="760" font-family="system-ui,sans-serif" font-size="15" fill="#586b61">No dimensions shown. Confirm clearance, loads, foundations, wind, cyclone, rain, flood level and materials with a qualified local engineer.</text>
+</svg>

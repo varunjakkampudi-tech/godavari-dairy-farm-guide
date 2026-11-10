@@ -2,7 +2,7 @@ const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 const fs=require('node:fs');
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html','/pages/health.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html','/pages/health.html','/pages/layout.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -34,7 +34,8 @@ test('visual library loads original diagrams, captions, and related links',async
   await page.goto('/pages/visual-library.html');
   await expect(page.getByRole('heading',{name:'Visual library'})).toBeVisible();
   const cards=page.locator('.visual-card');
-  await expect(cards).toHaveCount(6);
+  await expect(cards).toHaveCount(7);
+  await expect(page.getByRole('heading',{name:'Shed front, side and section views'})).toBeVisible();
   for(const image of await cards.locator('img').all()){
     await expect(image).toBeVisible();
     expect(await image.evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
@@ -42,6 +43,35 @@ test('visual library loads original diagrams, captions, and related links',async
   }
   await expect(page.getByText(/not photographs of real local farms/)).toBeVisible();
   await expect(page.getByRole('link',{name:'Open full-size illustration'}).first()).toHaveAttribute('target','_blank');
+});
+
+test('layout quote collector saves documented subtotals, exports safe CSV and clears locally',async({page})=>{
+  await page.goto('/pages/layout.html');
+  await expect(page.locator('.farm-plan img[src="../assets/shed-elevations.svg"]')).toHaveAttribute('alt',/front elevation, side elevation, and airflow section/i);
+  const low=page.locator('.quote-scenario[data-scenario="low"]');
+  await low.getByRole('button',{name:'Add cost item'}).click();
+  await low.locator('[data-field="item"]').fill('Roof repair');
+  await low.locator('[data-field="amount"]').fill('12000');
+  await low.locator('[data-field="evidence"]').fill('Local estimate · 2026-11-10');
+  await expect(low.locator('.quote-total')).toContainText('12,000');
+  const medium=page.locator('.quote-scenario[data-scenario="medium"]');
+  await medium.getByRole('button',{name:'Add cost item'}).click();
+  await medium.locator('[data-field="item"]').fill('=HYPERLINK("x")');
+  await medium.locator('[data-field="amount"]').fill('1');
+  await medium.locator('[data-field="evidence"]').fill('Test quotation · 2026-11-10');
+  await page.reload();
+  await expect(low.locator('[data-field="item"]')).toHaveValue('Roof repair');
+  const downloadPromise=page.waitForEvent('download');
+  await page.locator('#quote-export').click();
+  const download=await downloadPromise;
+  const fs=require('node:fs/promises');
+  const csv=await fs.readFile(await download.path(),'utf8');
+  expect(csv).toContain('"\'=HYPERLINK(""x"")"');
+  expect(csv).toContain('"12000"');
+  page.once('dialog',dialog=>dialog.accept());
+  await page.locator('#quote-clear').click();
+  await expect(low.locator('.quote-row')).toHaveCount(0);
+  await expect(page.locator('#quote-status')).toContainText('cleared');
 });
 
 test('breed registry filters and sorts the sourced list including the regional type',async({page})=>{
@@ -71,6 +101,8 @@ test('original local Godavari buffalo-and-river logo loads and stays linked to h
   await expect(mark).toHaveAttribute('src','assets/brand-mark.svg');
   expect(await mark.evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href','assets/favicon.svg');
+  await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content','#174b3b');
+  await expect(page.locator('header')).toHaveCSS('background-color','rgb(23, 75, 59)');
 });
 
 test('decision evidence requires note, date and source and persists across reload',async({page})=>{

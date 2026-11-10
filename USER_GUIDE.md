@@ -19,6 +19,10 @@ Open the site while online in a browser that supports web app installation. When
 
 Enter the same delivered quantity for both offers, then input only rates/quality/deductions shown by the buyer. A price per kg requires a density value supplied or measured for the actual milk; price per kg fat also requires the tested fat percentage. Do not treat examples or a calculated comparison as a verified buyer quote.
 
+## Collect farm construction quotations
+
+On [Farm layout](pages/layout.html), add cost lines under the low/reversible, medium/engineered, or higher/durable scope. Enter an amount only when you have a dated local quote or documented estimate; include the provider and ISO date (YYYY-MM-DD) in the evidence field. The subtotal excludes lines without a valid amount and date. Subtotals are still user-entered and unverified, and the tool does not estimate market prices or confirm permits, engineering, lease rights, tax or quote scope. Export the comparison CSV for discussion; entries stay in this browser and can be cleared on the page.
+
 ## Farm records
 
 Animal, milk, expense and activity-log entries are kept in the current browser profile. Use the activity ledger for purchases, feed, health observations, vaccinations, milk withdrawal dates supplied by a vet/label, breeding, calves, labor, tasks, inventory, equipment, cleaning, weather, incidents, income and utilities. It records user entries; it does not diagnose or calculate medicine withdrawal periods. Search the registers, and filter farm logs by module and date. Use Edit to update a row and Delete for confirmed removal. Export JSON backups regularly and keep copies outside the device. CSV is for spreadsheets, not a backup restore. Version-1 records are migrated while retaining a recovery copy. Imported backups replace local rows only after confirmation. Do not put private banking or highly sensitive personal data in the app.

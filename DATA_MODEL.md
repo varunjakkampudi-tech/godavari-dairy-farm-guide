@@ -4,6 +4,8 @@
 
 Farm register data stays in the current browser profile under localStorage key `gdfg-records-v2`. It is not sent to GitHub Pages, a remote API, or the service worker cache. The app has no login, encryption, cross-device sync, or automatic backup. Browser storage can be read by other people using that profile, cleared by the browser, or unavailable when quota is exhausted.
 
+Construction quote notes are separate under `gdfg-layout-quotes-v1`; they are not part of the farm register or cloud-synced. The store has `low`, `medium`, and `higher` scenario arrays; each row contains a bounded work-item description, optional non-negative amount, provider/source text, and calendar-valid ISO quote date. Only rows with amount, source, and date contribute to displayed subtotals. These are user-entered, unverified quotations, not market estimates. CSV export is user-initiated; clearing requires confirmation. The guide does not back up or migrate these notes.
+
 ## Version 2 schema
 
 The root object has `schemaVersion: 2` and four flat arrays:

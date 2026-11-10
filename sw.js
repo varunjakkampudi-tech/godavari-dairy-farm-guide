@@ -1,4 +1,4 @@
-const CACHE = 'gdfg-static-v29';
+const CACHE = 'gdfg-static-v30';
 const SHELL = [
   './', './index.html', './offline.html', './manifest.webmanifest',
   './assets/site.css', './assets/favicon.svg', './assets/brand-mark.svg', './assets/search-index.json',
@@ -12,7 +12,8 @@ const SHELL = [
   './assets/business-question-data.js', './assets/business-decision-core.js', './assets/business-decision.js',
   './assets/buffalo-illustration.svg',
   './assets/one-acre-zones.svg', './pages/getting-started.html', './pages/breeds.html', './pages/visual-library.html',
-  './assets/shed-plan.svg', './assets/shed-ventilation.svg', './assets/farm-water-flow.svg',
+  './assets/shed-plan.svg', './assets/shed-elevations.svg', './assets/shed-ventilation.svg', './assets/farm-water-flow.svg',
+  './assets/layout-cost-core.js', './assets/layout-cost-planner.js',
   './research/source-register.csv',
   './assets/day-planner.js',
   './assets/milking-flow.svg',
