@@ -2,6 +2,12 @@
 
 Updated 10 November 2026 (Asia/Kolkata).
 
+## Evidence classification implementation (10 Nov 2026)
+
+- Added a controlled [evidence taxonomy](evidence-taxonomy.json) and curated [source-class map](source-evidence-classes.json) for each of the 39 unique URLs currently in `sources.md`. The register build fails for missing URLs, stale map keys or undefined classes, so additions cannot silently appear unclassified.
+- The CSV adds `source_evidence_class` separately from `evidence_quality` and the live URL check. The public [research guide](../pages/research.html) explains established facts, research findings, historical statistics, administrative listings, farmer/seller reports, model assumptions, unverified local claims, professional judgment and physical-inspection requirements. It states that source type does not establish accuracy or exact-claim support.
+- Three of the 39 current URLs are absent from the last 36-URL HTTP audit; their link state remains `Not checked` until a fresh run. The taxonomy does not claim that every substantive page statement has been source-passage reviewed. Local interviews, veterinary opinions and physical inspections remain absent.
+
 ## Checked online
 
 | 10 Nov 2026 | Official animal genetic resources | ICAR-NBAGR Buffalo Breeds of India registry, https://nbagr.res.in/buffalo-breed | Live registry lists 23 registered buffalo breeds with home tracts and accession IDs. Godavari is described separately in the ICAR-CIRB profile and is not in this registry list. | Official registry for breed list; not individual animal identity/performance | Filter/sort library mirrors current entries; recheck on future update. |
@@ -51,4 +57,6 @@ This package is a public prototype, not the finished operating platform requeste
 
 ## Source register and reachability update
 
-On 10 Nov 2026, `npm run verify:sources` checked 36 unique source URLs: 30 returned an HTTP status below 400; five DAHD routes returned direct-HTTP 404 while official indexed page content was available, and the NCDFI civil-consumer-prices URL returned a fetch transport error. The timestamped evidence is in [source-link-audit.json](source-link-audit.json), and the generated [source-register.csv](source-register.csv) carries each result. A successful HTTP response does not establish that a cited claim is accurate. Do not treat fetch failures as confirmed 404s.
+On 10 Nov 2026, `npm run verify:sources` checked all 39 unique source URLs: 31 returned an HTTP status below 400, seven DAHD routes returned direct-HTTP 404, and the NCDFI civil-consumer-prices URL returned a fetch transport error. These are reachability results, not content validation. The timestamped evidence is in [source-link-audit.json](source-link-audit.json), and the generated [source-register.csv](source-register.csv) carries each result. A successful HTTP response does not establish that a cited claim is accurate. Do not treat fetch failures as confirmed 404s.
+
+| 10 Nov 2026 | Source evidence taxonomy and 39-URL reachability refresh | `npm run build`, `npm run verify:sources`, `npm test`, `npm run test:e2e`, `npm run audit:content`, `npm audit --audit-level=low` | Added controlled source-evidence classes with build-enforced URL coverage, separate claim evidence classes, public legend and CSV classification. Refreshed all 39 source URLs: 31 returned below 400, seven DAHD routes returned HTTP 404, and NCDFI returned a transport error. Build passed; 60 unit tests and 40 Chromium tests passed; content audit reported 24 pages, zero errors/warnings; npm audit found zero vulnerabilities. Source passage review, source metadata review, field validation, and Telugu editorial review remain incomplete. |

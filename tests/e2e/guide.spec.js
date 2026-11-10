@@ -34,12 +34,17 @@ test('vaccination guide distinguishes national campaign guidance from local auth
 
 test('research page downloads the deduplicated source traceability CSV',async({page})=>{
   await page.goto('/pages/research.html');
+  await expect(page.getByRole('heading',{name:'Evidence types: what a source can and cannot establish'})).toBeVisible();
+  await expect(page.getByRole('link',{name:'Open the machine-readable evidence definitions'})).toHaveAttribute('href','../research/evidence-taxonomy.json');
   const link=page.getByRole('link',{name:'Download the source traceability register (CSV)'});
   await expect(link).toBeVisible();
   const [download]=await Promise.all([page.waitForEvent('download'),link.click()]);
   const contents=fs.readFileSync(await download.path(),'utf8');
   expect(download.suggestedFilename()).toBe('source-register.csv');
   expect(contents).toContain('publication_date_or_edition');
+  expect(contents).toContain('source_evidence_class');
+  expect(contents).toContain('link_check_status');
+  expect(contents).toContain('market_context_not_producer_price');
   expect(contents).toContain('Not stated in source inventory; verify source');
   expect(contents).toContain('fssai.gov.in/upload/advisories/2026/03');
 });

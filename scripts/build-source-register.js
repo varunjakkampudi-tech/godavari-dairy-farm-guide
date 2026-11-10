@@ -5,10 +5,21 @@ const root = path.resolve(__dirname, '..');
 const inputPath = path.join(root, 'research', 'sources.md');
 const outputPath = path.join(root, 'research', 'source-register.csv');
 const auditPath = path.join(root, 'research', 'source-link-audit.json');
+const classPath = path.join(root, 'research', 'source-evidence-classes.json');
+const taxonomyPath = path.join(root, 'research', 'evidence-taxonomy.json');
 const header = [
   'source_id', 'subject', 'title', 'publisher', 'url', 'publication_date_or_edition',
-  'access_date', 'claim_summary', 'geographic_scope', 'evidence_quality', 'limitations', 'recheck_status'
+  'access_date', 'claim_summary', 'geographic_scope', 'evidence_quality', 'limitations', 'recheck_status',
+  'source_evidence_class', 'link_check_status'
 ];
+
+function loadEvidenceClasses() {
+  const classes = JSON.parse(fs.readFileSync(classPath, 'utf8'));
+  const taxonomy = JSON.parse(fs.readFileSync(taxonomyPath, 'utf8'));
+  const unknown = Object.entries(classes).filter(([, id]) => !taxonomy.source_classes[id]);
+  if (unknown.length) throw new Error(`Unknown source evidence classes: ${unknown.map(([url, id]) => `${id} for ${url}`).join('; ')}`);
+  return classes;
+}
 
 function publisherFor(host) {
   if (host.endsWith('fssai.gov.in')) return ['Food Safety and Standards Authority of India', 'Central statutory regulator; official advisory, but business-specific interpretation still requires authority confirmation.'];
@@ -45,7 +56,7 @@ function geographyFor(text) {
   return 'Not stated in source inventory; verify source';
 }
 
-function parseInventory(markdown) {
+function parseInventory(markdown, evidenceClasses = loadEvidenceClasses()) {
   const grouped = new Map();
   for (const line of markdown.split(/\r?\n/)) {
     if (!line.startsWith('|') || line.startsWith('|---') || line.includes('| Topic | Source |')) continue;
@@ -64,6 +75,10 @@ function parseInventory(markdown) {
     grouped.set(canonicalUrl, record);
   }
 
+  const missing = [...grouped.keys()].filter(url => !evidenceClasses[url]);
+  const stale = Object.keys(evidenceClasses).filter(url => !grouped.has(url));
+  if (missing.length || stale.length) throw new Error(`Source evidence classes must exactly match the source inventory. Missing: ${missing.join(', ') || 'none'}; stale: ${stale.join(', ') || 'none'}`);
+
   return [...grouped.values()].sort((a, b) => a.url.localeCompare(b.url)).map((record, index) => {
     const host = new URL(record.url).hostname.replace(/^www\./, '');
     const [publisher, quality] = publisherFor(host);
@@ -80,7 +95,9 @@ function parseInventory(markdown) {
       geographyFor(`${[...record.topic].join(' ')} ${combined}`),
       quality,
       combined,
-      'No item-level next-review date recorded; recheck volatile/legal/contact/weather information before use and all other claims when updating.'
+      'No item-level next-review date recorded; recheck volatile/legal/contact/weather information before use and all other claims when updating.',
+      evidenceClasses[record.url],
+      'Not checked'
     ];
   });
 }
@@ -112,7 +129,7 @@ function buildEnrichedCsv(markdown, audit) {
       else if (check.status) result = `HTTP ${check.status}; review URL (${check.checkedAt})`;
       else result = `Unverified transport error: ${check.error || 'unknown'} (${check.checkedAt})`;
     }
-    return [...row.slice(0, 11), result];
+    return [...row.slice(0, -1), result];
   });
   return [header, ...rows].map(row => row.map(quoteCsv).join(',')).join('\r\n') + '\r\n';
 }
@@ -123,4 +140,4 @@ if (require.main === module) {
   process.stdout.write(`Built ${path.relative(root, outputPath)}\n`);
 }
 
-module.exports = { header, parseInventory, buildCsv, buildEnrichedCsv, buildLinkAuditSummary };
+module.exports = { header, loadEvidenceClasses, parseInventory, buildCsv, buildEnrichedCsv, buildLinkAuditSummary };

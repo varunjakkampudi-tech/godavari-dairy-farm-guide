@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-11-10T12:12:49.706Z",
+  "checkedAt": "2026-11-10T16:11:42.505Z",
   "method": "HEAD, with GET range fallback for unsupported HEAD",
-  "note": "HTTP reachability snapshot only. A successful response does not validate source content, citation accuracy, or professional correctness. Official indexed pages returned source content for DAHD references with inconsistent direct HTTP statuses; these statuses are disclosed and do not establish that the source page is invalid. NCDFI returned a fetch transport error, not a confirmed HTTP dead link.",
+  "note": "HTTP reachability snapshot only. A successful response does not validate source content, citation accuracy, or professional correctness.",
   "sources": [
     {
       "sourceId": "SRC-001",
@@ -10,7 +10,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/buffalo-reproduction/",
-      "checkedAt": "2026-11-10T12:12:47.634Z"
+      "checkedAt": "2026-11-10T16:11:34.284Z"
     },
     {
       "sourceId": "SRC-002",
@@ -19,7 +19,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/buffalopox/",
-      "checkedAt": "2026-11-10T12:12:47.717Z"
+      "checkedAt": "2026-11-10T16:11:34.361Z"
     },
     {
       "sourceId": "SRC-003",
@@ -28,7 +28,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/godavari/",
-      "checkedAt": "2026-11-10T12:12:47.719Z"
+      "checkedAt": "2026-11-10T16:11:34.362Z"
     },
     {
       "sourceId": "SRC-004",
@@ -37,7 +37,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/health-management-2/",
-      "checkedAt": "2026-11-10T12:12:47.721Z"
+      "checkedAt": "2026-11-10T16:11:34.363Z"
     },
     {
       "sourceId": "SRC-005",
@@ -46,7 +46,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/health-management/",
-      "checkedAt": "2026-11-10T12:12:47.722Z"
+      "checkedAt": "2026-11-10T16:11:34.364Z"
     },
     {
       "sourceId": "SRC-006",
@@ -55,7 +55,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/shelter-management/",
-      "checkedAt": "2026-11-10T12:12:47.723Z"
+      "checkedAt": "2026-11-10T16:11:34.365Z"
     },
     {
       "sourceId": "SRC-007",
@@ -64,270 +64,297 @@
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/en/schemes/programmes/animal-husbandry-statistics",
-      "checkedAt": "2026-11-10T12:12:48.253Z"
+      "checkedAt": "2026-11-10T16:11:34.898Z"
     },
     {
       "sourceId": "SRC-008",
+      "title": "DAHD: SOP for Livestock Vaccination Against FMD (circulated Jan 2026)",
+      "url": "https://dahd.gov.in/sites/default/files/2026-02/OMWithAnnex.pdf",
+      "method": "GET",
+      "status": 404,
+      "finalUrl": "https://www.dahd.gov.in/sites/default/files/2026-02/OMWithAnnex.pdf",
+      "checkedAt": "2026-11-10T16:11:34.929Z"
+    },
+    {
+      "sourceId": "SRC-009",
+      "title": "DAHD: SOP for Livestock Vaccination Against Brucellosis (circulated Jan 2026)",
+      "url": "https://dahd.gov.in/sites/default/files/2026-02/SOPBrucellosis.pdf",
+      "method": "GET",
+      "status": 404,
+      "finalUrl": "https://www.dahd.gov.in/sites/default/files/2026-02/SOPBrucellosis.pdf",
+      "checkedAt": "2026-11-10T16:11:34.932Z"
+    },
+    {
+      "sourceId": "SRC-010",
       "title": "ICAR: Kharif Agro-Advisories 2025",
       "url": "https://icar.gov.in/sites/default/files/Circulars/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://icar.gov.in/sites/default/files/Circulars/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf",
-      "checkedAt": "2026-11-10T12:12:48.264Z"
+      "checkedAt": "2026-11-10T16:11:34.957Z"
     },
     {
-      "sourceId": "SRC-009",
+      "sourceId": "SRC-011",
       "title": "IMD: Statement on Climate for Andhra Pradesh, 2024",
       "url": "https://imdpune.gov.in/Reports/Statewise%20annual%20climate/2024/Climate_Statement_2024_Andhra_Pradesh_Draft.pdf",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://imdpune.gov.in/Reports/Statewise%20annual%20climate/2024/Climate_Statement_2024_Andhra_Pradesh_Draft.pdf",
-      "checkedAt": "2026-11-10T12:12:48.294Z"
+      "checkedAt": "2026-11-10T16:11:34.972Z"
     },
     {
-      "sourceId": "SRC-010",
+      "sourceId": "SRC-012",
       "title": "India Meteorological Department: Monsoon Information",
       "url": "https://mausam.imd.gov.in/responsive/monsooninformation_monsoon_activity.php",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://mausam.imd.gov.in/responsive/monsooninformation_monsoon_activity.php",
-      "checkedAt": "2026-11-10T12:12:48.304Z"
+      "checkedAt": "2026-11-10T16:11:35.353Z"
     },
     {
-      "sourceId": "SRC-011",
+      "sourceId": "SRC-013",
       "title": "ICAR-NBAGR: Buffalo breeds of India",
       "url": "https://nbagr.res.in/buffalo-breed",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://nbagr.res.in/buffalo-breed",
-      "checkedAt": "2026-11-10T12:12:48.371Z"
+      "checkedAt": "2026-11-10T16:11:38.194Z"
     },
     {
-      "sourceId": "SRC-012",
+      "sourceId": "SRC-014",
       "title": "NDDB: Feeding of Dairy Animals",
       "url": "https://nddb.coop/farmer/animal-nutrition/feeding-of-dairy-animals",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://nddb.coop/farmer/animal-nutrition/feeding-of-dairy-animals",
-      "checkedAt": "2026-11-10T12:12:48.396Z"
+      "checkedAt": "2026-11-10T16:11:38.419Z"
     },
     {
-      "sourceId": "SRC-013",
+      "sourceId": "SRC-015",
       "title": "NDDB: Compound Cattle Feed",
       "url": "https://nddb.coop/services/animalnutrition/cattlefeed",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://nddb.coop/services/animalnutrition/cattlefeed",
-      "checkedAt": "2026-11-10T12:12:48.403Z"
+      "checkedAt": "2026-11-10T16:11:39.729Z"
     },
     {
-      "sourceId": "SRC-014",
+      "sourceId": "SRC-016",
       "title": "NDDB: Ration Balancing Programme",
       "url": "https://nddb.coop/services/animalnutrition/programmes/ration-balancing-programme",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://nddb.coop/services/animalnutrition/programmes/ration-balancing-programme",
-      "checkedAt": "2026-11-10T12:12:48.515Z"
+      "checkedAt": "2026-11-10T16:11:40.918Z"
     },
     {
-      "sourceId": "SRC-015",
+      "sourceId": "SRC-017",
       "title": "West Godavari District Animal Husbandry Department",
       "url": "https://westgodavari.ap.gov.in/departments/ah/",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://westgodavari.ap.gov.in/departments/ah/",
-      "checkedAt": "2026-11-10T12:12:48.555Z"
+      "checkedAt": "2026-11-10T16:11:41.085Z"
     },
     {
-      "sourceId": "SRC-016",
+      "sourceId": "SRC-018",
       "title": "West Godavari District Officers directory",
       "url": "https://westgodavari.ap.gov.in/district-officers/",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://westgodavari.ap.gov.in/district-officers/",
-      "checkedAt": "2026-11-10T12:12:48.572Z"
+      "checkedAt": "2026-11-10T16:11:41.177Z"
     },
     {
-      "sourceId": "SRC-017",
-      "title": "DAHD: Livestock Health and Disease Control Operational Guidelines (2025 PDF)",
+      "sourceId": "SRC-019",
+      "title": "DAHD: Livestock Health and Disease Control Program overview",
       "url": "https://www.dahd.gov.in/en/schemes-programmes/lhdcp",
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/en/schemes-programmes/lhdcp",
-      "checkedAt": "2026-11-10T12:12:48.677Z"
+      "checkedAt": "2026-11-10T16:11:41.221Z"
     },
     {
-      "sourceId": "SRC-018",
+      "sourceId": "SRC-020",
       "title": "DAHD: National Animal Disease Control Programme",
       "url": "https://www.dahd.gov.in/en/schemes/programmes/nadcp",
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/en/schemes/programmes/nadcp",
-      "checkedAt": "2026-11-10T12:12:48.741Z"
+      "checkedAt": "2026-11-10T16:11:41.324Z"
     },
     {
-      "sourceId": "SRC-019",
+      "sourceId": "SRC-021",
       "title": "DAHD: 20th Livestock Census official record",
       "url": "https://www.dahd.gov.in/index.php/node/3282",
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/index.php/node/3282",
-      "checkedAt": "2026-11-10T12:12:48.750Z"
+      "checkedAt": "2026-11-10T16:11:41.467Z"
     },
     {
-      "sourceId": "SRC-020",
+      "sourceId": "SRC-022",
       "title": "DAHD: National Livestock Mission",
       "url": "https://www.dahd.gov.in/offerings/schemes-and-services/details/national-livestock-mission-nlm-EzMwQTMtQWa",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.dahd.gov.in/offerings/schemes-and-services/details/national-livestock-mission-nlm-EzMwQTMtQWa",
-      "checkedAt": "2026-11-10T12:12:48.758Z"
+      "checkedAt": "2026-11-10T16:11:41.489Z"
     },
     {
-      "sourceId": "SRC-021",
-      "title": "DAHD: LHDCP operational guidelines 2025",
+      "sourceId": "SRC-023",
+      "title": "DAHD: Livestock Health & Disease Control Programme Operational Guidelines (May 2025)",
       "url": "https://www.dahd.gov.in/sites/default/files/2025-05/OperationalGuidelinesforLHDCP21052025.pdf",
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/sites/default/files/2025-05/OperationalGuidelinesforLHDCP21052025.pdf",
-      "checkedAt": "2026-11-10T12:12:48.797Z"
+      "checkedAt": "2026-11-10T16:11:41.546Z"
     },
     {
-      "sourceId": "SRC-022",
+      "sourceId": "SRC-024",
       "title": "FSSAI advisory dated 11 March 2026 for milk producers and vendors",
       "url": "https://www.fssai.gov.in/upload/advisories/2026/03/69b2835b23822Advisory%20dated%2011.03.2026%20related%20to%20Milk%20Producers%20and%20Milk%20vendors.pdf",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.fssai.gov.in/upload/advisories/2026/03/69b2835b23822Advisory%20dated%2011.03.2026%20related%20to%20Milk%20Producers%20and%20Milk%20vendors.pdf",
-      "checkedAt": "2026-11-10T12:12:48.810Z"
+      "checkedAt": "2026-11-10T16:11:41.631Z"
     },
     {
-      "sourceId": "SRC-023",
+      "sourceId": "SRC-025",
       "title": "NABARD: West Godavari PLP 2022–23",
       "url": "https://www.nabard.org/auth/writereaddata/tender/0501223757west-godavari.pdf",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nabard.org/auth/writereaddata/tender/0501223757west-godavari.pdf",
-      "checkedAt": "2026-11-10T12:12:48.972Z"
+      "checkedAt": "2026-11-10T16:11:41.716Z"
     },
     {
-      "sourceId": "SRC-024",
+      "sourceId": "SRC-026",
       "title": "NCDFI Civil Consumer Prices",
       "url": "https://www.ncdfi.coop/index.php/civil-consumer-prices/",
       "method": "GET",
       "status": null,
       "finalUrl": null,
-      "checkedAt": "2026-11-10T12:12:48.983Z",
+      "checkedAt": "2026-11-10T16:11:41.765Z",
       "error": "fetch failed",
       "headError": "fetch failed"
     },
     {
-      "sourceId": "SRC-025",
+      "sourceId": "SRC-027",
       "title": "NDDB: Milk processing and storage reference",
       "url": "https://www.nddb.coop/ccnddb/milkipedia",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/ccnddb/milkipedia",
-      "checkedAt": "2026-11-10T12:12:49.029Z"
+      "checkedAt": "2026-11-10T16:11:41.816Z"
     },
     {
-      "sourceId": "SRC-026",
+      "sourceId": "SRC-028",
       "title": "NDDB: Clinical Mastitis",
       "url": "https://www.nddb.coop/farmer/animal-health/disease/mastitis/clinical",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/disease/mastitis/clinical",
-      "checkedAt": "2026-11-10T12:12:49.088Z"
+      "checkedAt": "2026-11-10T16:11:41.846Z"
     },
     {
-      "sourceId": "SRC-027",
+      "sourceId": "SRC-029",
       "title": "NDDB: Bloat",
       "url": "https://www.nddb.coop/farmer/animal-health/disease/others/bloat",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/disease/others/bloat",
-      "checkedAt": "2026-11-10T12:12:49.116Z"
+      "checkedAt": "2026-11-10T16:11:41.859Z"
     },
     {
-      "sourceId": "SRC-028",
+      "sourceId": "SRC-030",
       "title": "NDDB: Foot and Mouth Disease",
       "url": "https://www.nddb.coop/farmer/animal-health/disease/viral/fmd",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/disease/viral/fmd",
-      "checkedAt": "2026-11-10T12:12:49.197Z"
+      "checkedAt": "2026-11-10T16:11:41.897Z"
     },
     {
-      "sourceId": "SRC-029",
+      "sourceId": "SRC-031",
       "title": "NDDB: Fly control",
       "url": "https://www.nddb.coop/farmer/animal-health/general/fly-control",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/general/fly-control",
-      "checkedAt": "2026-11-10T12:12:49.207Z"
+      "checkedAt": "2026-11-10T16:11:41.944Z"
     },
     {
-      "sourceId": "SRC-030",
+      "sourceId": "SRC-032",
       "title": "NDDB: Care of new-born calf",
       "url": "https://www.nddb.coop/farmer/animal-health/general/new-born-calf",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/general/new-born-calf",
-      "checkedAt": "2026-11-10T12:12:49.214Z"
+      "checkedAt": "2026-11-10T16:11:41.983Z"
     },
     {
-      "sourceId": "SRC-031",
+      "sourceId": "SRC-033",
       "title": "NDDB: Tick control",
       "url": "https://www.nddb.coop/farmer/animal-health/general/tick-control",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/general/tick-control",
-      "checkedAt": "2026-11-10T12:12:49.248Z"
+      "checkedAt": "2026-11-10T16:11:42.097Z"
     },
     {
-      "sourceId": "SRC-032",
+      "sourceId": "SRC-034",
       "title": "NDDB: Worm control",
       "url": "https://www.nddb.coop/farmer/animal-health/general/worm-control",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/general/worm-control",
-      "checkedAt": "2026-11-10T12:12:49.301Z"
+      "checkedAt": "2026-11-10T16:11:42.110Z"
     },
     {
-      "sourceId": "SRC-033",
+      "sourceId": "SRC-035",
       "title": "NDDB: Hybrid Napier",
       "url": "https://www.nddb.coop/hi/node/1340",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/hi/node/1340",
-      "checkedAt": "2026-11-10T12:12:49.355Z"
+      "checkedAt": "2026-11-10T16:11:42.118Z"
     },
     {
-      "sourceId": "SRC-034",
+      "sourceId": "SRC-036",
       "title": "NDDB: Feeding of Dairy Animals",
       "url": "https://www.nddb.coop/node/1279",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/node/1279",
-      "checkedAt": "2026-11-10T12:12:49.420Z"
+      "checkedAt": "2026-11-10T16:11:42.153Z"
     },
     {
-      "sourceId": "SRC-035",
+      "sourceId": "SRC-037",
       "title": "NDDB: Managing Summer Stress in Dairy Animals",
       "url": "https://www.nddb.coop/node/1376",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/node/1376",
-      "checkedAt": "2026-11-10T12:12:49.425Z"
+      "checkedAt": "2026-11-10T16:11:42.197Z"
     },
     {
-      "sourceId": "SRC-036",
+      "sourceId": "SRC-038",
+      "title": "NDDB: Rainy-season dairy management advisory",
+      "url": "https://www.nddb.coop/node/1901",
+      "method": "HEAD",
+      "status": 200,
+      "finalUrl": "https://www.nddb.coop/node/1901",
+      "checkedAt": "2026-11-10T16:11:42.218Z"
+    },
+    {
+      "sourceId": "SRC-039",
       "title": "NDDB: Handbook of Good Dairy Husbandry Practices",
       "url": "https://www.nddb.coop/sites/default/files/handbook_of_good_dairy_husbandry_practices_low.pdf",
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/sites/default/files/handbook_of_good_dairy_husbandry_practices_low.pdf",
-      "checkedAt": "2026-11-10T12:12:49.437Z"
+      "checkedAt": "2026-11-10T16:11:42.302Z"
     }
   ]
 }

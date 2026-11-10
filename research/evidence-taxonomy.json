@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "purpose": "Separate what kind of source or claim is being presented from how reliable it is or whether it proves a farm-specific outcome.",
+  "source_classes": {
+    "official_program_guidance": {
+      "label": "Official rule or programme guidance",
+      "boundary": "Describes a published government rule, programme or operational direction. Confirm current edition, jurisdiction, adoption and case-specific applicability."
+    },
+    "official_regulatory_advisory": {
+      "label": "Official regulatory advisory",
+      "boundary": "A regulator's published advisory that explains its position; it is not individualized legal advice or confirmation of the correct filing category for a specific business."
+    },
+    "official_administrative_listing": {
+      "label": "Official administrative listing",
+      "boundary": "An agency directory or contact listing. It does not confirm current hours, availability, emergency response or service coverage."
+    },
+    "official_technical_guidance": {
+      "label": "Official or dairy-sector technical guidance",
+      "boundary": "Educational husbandry, health, nutrition or production guidance. It is not an individualized prescription or proof of local results."
+    },
+    "official_breed_registry": {
+      "label": "Official breed registry",
+      "boundary": "Identifies registered breed names and associated registry information; it does not verify an individual animal's identity, performance or availability."
+    },
+    "official_agricultural_advisory": {
+      "label": "Official agricultural advisory",
+      "boundary": "General crop or seasonal advisory. Local variety, planting window, irrigation and yield require local extension and plot evidence."
+    },
+    "research_institute_profile": {
+      "label": "Research institute profile",
+      "boundary": "An institutional breed or technical profile; reported population traits and historical averages are not guarantees for an individual animal."
+    },
+    "historical_statistic_or_observation": {
+      "label": "Historical statistic or observation",
+      "boundary": "A dated census, district statistic, weather observation or historical series. It describes its stated period and geography, not today's local condition."
+    },
+    "official_weather_information": {
+      "label": "Official weather information",
+      "boundary": "Definitions or current operational weather information; check live local alerts and inspect the actual parcel."
+    },
+    "market_context_not_producer_price": {
+      "label": "Market context, not a farm-gate price",
+      "boundary": "Consumer or general market context cannot be used as a milk procurement rate or farm revenue input."
+    }
+  },
+  "claim_classes": {
+    "established_fact": {
+      "label": "Established fact",
+      "boundary": "A narrowly scoped statement verified from a current authoritative record or source passage. The citation must support the exact statement; an authoritative publisher alone is not enough."
+    },
+    "research_finding": {
+      "label": "Research finding",
+      "boundary": "A reported study result with its population, method, date and limitations preserved; do not generalize beyond the study."
+    },
+    "historical_statistic_or_observation": {
+      "label": "Historical statistic or observation",
+      "boundary": "A dated measurement or dataset result. Preserve period and geography; do not present it as current conditions."
+    },
+    "farmer_or_seller_report": {
+      "label": "Farmer or seller report",
+      "boundary": "Attribute the speaker and date; distinguish recollection from documents and direct observation. No local interviews or seller claims are collected in this guide."
+    },
+    "model_assumption_or_calculated_output": {
+      "label": "Model assumption or calculated output",
+      "boundary": "A user-entered scenario or result derived from entered assumptions; it is not an observed price, yield, profit or forecast."
+    },
+    "unverified_local_claim": {
+      "label": "Unverified local claim",
+      "boundary": "A local proposition without current direct confirmation; show the missing evidence and do not present it as established fact."
+    },
+    "professional_veterinary_judgment": {
+      "label": "Professional veterinary judgment",
+      "boundary": "A case-specific opinion from a qualified veterinary professional with date and scope recorded. No local veterinary approval of this guide is claimed."
+    },
+    "physical_inspection": {
+      "label": "Physical inspection required",
+      "boundary": "An animal, land, facility, water, drainage or equipment condition that must be observed or measured in person. No farm parcel or animal has been inspected for this guide."
+    }
+  },
+  "classification_limit": "Source class describes the source form, not evidence quality, passage-level support, truth, recency or applicability. Each substantive claim still needs its own scope, exact source passage, limitations and review."
+}

@@ -2,7 +2,7 @@
 
 Last reviewed: 10 November 2026 (Asia/Kolkata). Online availability and facts may change; recheck before acting. New official references checked on 10 November are marked in the use/limits column. The source list distinguishes official guidance from contextual or historical data.
 
-The build produces a deduplicated, machine-readable [source traceability register](source-register.csv) for the unique URLs below. It carries the existing claim summaries and limitations, identifies the publisher class, and labels publication dates, item-level access dates, geography and review dates that are not recorded instead of guessing them. Publisher class is not an independent evidence-quality rating, and the register is not a substitute for checking the original source.
+The build produces a deduplicated, machine-readable [source traceability register](source-register.csv) for the unique URLs below. It carries claim summaries and limitations, identifies a curated `source_evidence_class` for every unique URL, and labels publication dates, item-level access dates, geography and review dates that are not recorded instead of guessing them. Source class describes publication form; it is separate from `evidence_quality` and does not mean a source passage verifies an app claim. The build fails if any inventoried source lacks a class, a stale class-map entry remains, or a class is not defined in [evidence-taxonomy.json](evidence-taxonomy.json). The taxonomy separates source types from claim types such as established fact, research finding, historical statistic, self-report, model assumption, unverified local claim, professional judgment and physical-inspection evidence. It is not a substitute for exact passage review.
 
 ## Official and technical sources
 
