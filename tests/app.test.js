@@ -1,4 +1,4 @@
-const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');const {annual,validBackup}=require('../assets/calculator-core.js');
+const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');const {annual,validBackup}=require('../assets/calculator-core.js');const {compareQuote}=require('../assets/market-core.js');
 test('annual revenue includes saleable lactating milk only',()=>{const r=annual({herd:4,lactDays:260,yield:6,salePct:95,price:70});assert.equal(r.liters,5928);assert.equal(r.revenue,414960)});
 test('operating costs annualize monthly values and include annual costs',()=>{const r=annual({herd:1,lactDays:300,yield:5,salePct:100,price:50,feed:100,labor:200,lease:300,vet:400,ops:500,otherCost:600});assert.equal(r.cost,14200)});
 test('break-even price includes cost and subtracts other income',()=>{const r=annual({herd:1,lactDays:100,yield:10,salePct:100,other:1000,feed:100});assert.equal(r.breakEvenPrice,0.2)});
@@ -20,3 +20,6 @@ test('launch workbook has navigation, accessible checklist sections and actionab
   assert.match(nav,/pages\/launch-workbook\.html/);
   assert.match(home,/pages\/launch-workbook\.html/);
 });
+test('buyer comparison calculates litre-based settlement and documented deductions',()=>{const r=compareQuote({litres:100,rejectedLitres:2,basis:'litre',unitPrice:60,deduction:15});assert.equal(r.net,5865);assert.equal(r.effectivePerLitre,5865/98)});
+test('buyer comparison converts kg milk and kg fat only with entered measurements',()=>{assert.equal(compareQuote({litres:80,basis:'kg-milk',unitPrice:50,density:1.03}).net,4120);assert.ok(Math.abs(compareQuote({litres:100,basis:'kg-fat',unitPrice:400,density:1.03,fatPct:7.2}).net-2966.4)<1e-9);assert.throws(()=>compareQuote({litres:80,basis:'kg-milk',unitPrice:50}),/kg per litre/)});
+test('buyer comparison rejects impossible rejection and negative deduction inputs',()=>{assert.throws(()=>compareQuote({litres:20,rejectedLitres:21,basis:'litre',unitPrice:50}),/rejected litres/);assert.throws(()=>compareQuote({litres:20,basis:'litre',unitPrice:50,deduction:-1}),/deductions/)});

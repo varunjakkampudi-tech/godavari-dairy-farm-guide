@@ -24,6 +24,8 @@ npm test
 - Calculator annualizes saleable milk by lactating days, separately totals monthly and annual costs, and calculates a break-even milk price. Enter the actual buyer settlement rate and dated cost quotes. Results are not a forecast.
 - Animal, milk and expense registers are stored in browser local storage. JSON/CSV export and validated JSON import are included.
 - A service worker caches the static app for repeat/offline use after the first successful load.
+- A printable [90-day launch and employee workbook](pages/launch-workbook.html) organizes buyer, site, veterinary, finance and startup checks.
+- The [milk settlement comparison](pages/buyer-comparison.html) applies user-entered per-litre, per-kg-milk or per-kg-fat rates, rejected volume, quality adjustments and deductions. It is a calculation aid, not a directory or source of actual buyer prices.
 
 ## Local data safety
 
@@ -46,7 +48,12 @@ research/     sources and verification log
 scripts/      reproducible page builder
 tests/        calculation, import validation and static-link tests
 .github/      GitHub Pages workflow
+MASTER_CHECKLIST.md, IMPLEMENTATION_STATUS.md, VERIFICATION_EVIDENCE.md,
+BLOCKERS.md, RESEARCH_AUDIT.md, ARCHITECTURE.md, DATA_MODEL.md,
+TEST_MATRIX.md, USER_GUIDE.md, EMPLOYEE_MANUAL.md, DEPLOYMENT.md
 ```
+
+The requirement-level state and evidence are tracked in [`MASTER_CHECKLIST.md`](MASTER_CHECKLIST.md). It distinguishes implemented software from local fieldwork and professional review that remain outstanding.
 
 ## Publication and contribution
 
