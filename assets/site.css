@@ -16,3 +16,5 @@
 .seasonal-input-table input{width:min(100%,12rem)}.seasonal-input-table th{min-width:10rem}.feed-deficit{border-left:4px solid var(--clay)}#seasonal-feed-result progress{width:min(100%,8rem);accent-color:var(--green);vertical-align:middle}
 
 #monthly-composition{min-width:0;max-width:100%;overflow:hidden}#monthly-composition>.tablewrap{max-width:100%;width:100%}#monthly-composition table{width:100%}
+
+#studio-form,#studio-form fieldset,#studio-form .formgrid{width:100%;max-width:100%;min-width:0}#studio-form label{min-width:0}#studio-form input,#studio-form select{width:100%;min-width:0}
