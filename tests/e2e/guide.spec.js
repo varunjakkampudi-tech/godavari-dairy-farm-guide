@@ -1,13 +1,26 @@
 const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
+const fs=require('node:fs');
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
     expect(results.violations.map(({id,impact,help,nodes})=>({id,impact,help,nodes:nodes.length}))).toEqual([]);
   });
 }
+
+test('research page downloads the deduplicated source traceability CSV',async({page})=>{
+  await page.goto('/pages/research.html');
+  const link=page.getByRole('link',{name:'Download the source traceability register (CSV)'});
+  await expect(link).toBeVisible();
+  const [download]=await Promise.all([page.waitForEvent('download'),link.click()]);
+  const contents=fs.readFileSync(await download.path(),'utf8');
+  expect(download.suggestedFilename()).toBe('source-register.csv');
+  expect(contents).toContain('publication_date_or_edition');
+  expect(contents).toContain('Not stated in source inventory; verify source');
+  expect(contents).toContain('fssai.gov.in/upload/advisories/2026/03');
+});
 
 test('legal guide explains the exact cooperative milk exception conditions',async({page})=>{
   await page.goto('/pages/legal.html');
