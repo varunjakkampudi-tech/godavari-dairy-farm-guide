@@ -203,6 +203,22 @@ test('records JSON backup exports and restores validated data after confirmation
   await expect(page.locator('#animal-list')).toContainText('BUF-RESTORED-01');
 });
 
+test('CSV exports contain records and neutralize spreadsheet formulas',async({page})=>{
+  await page.goto('/pages/records.html');
+  await page.locator('#animal-form [name="id"]').fill('BUF-CSV-01');
+  await page.locator('#animal-form [name="notes"]').fill('=HYPERLINK("https://example.invalid")');
+  await page.getByRole('button',{name:'Save animal'}).click();
+  const downloadsPromise=new Promise(resolve=>{const downloads=[];page.on('download',function collect(download){downloads.push(download);if(downloads.length===4){page.off('download',collect);resolve(downloads)}})});
+  await page.getByRole('button',{name:'Export CSV tables'}).click();
+  const downloads=await downloadsPromise;
+  const fs=require('node:fs/promises');
+  const files=await Promise.all(downloads.map(async download=>({name:download.suggestedFilename(),text:await fs.readFile(await download.path(),'utf8')})));
+  expect(files.map(file=>file.name).sort()).toEqual(['godavari-animals.csv','godavari-events.csv','godavari-expenses.csv','godavari-milk.csv']);
+  const animals=files.find(file=>file.name==='godavari-animals.csv').text;
+  expect(animals).toContain('BUF-CSV-01');
+  expect(animals).toContain('"\'=HYPERLINK(""https://example.invalid"")"');
+});
+
 test('malicious record text is rendered as text and malformed imports preserve existing records',async({page})=>{
   await page.goto('/pages/records.html');
   await page.locator('#animal-form [name="id"]').fill('BUF-XSS-01');
