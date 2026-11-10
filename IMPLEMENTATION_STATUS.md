@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot: remote `main` at `4db3aad6e4f7f27dc57f7b97b03071ba9aa4a278`; the milking guide expansion is later local content, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot: remote `main` at `41a7b3160380f3d95175fc3a024a7c69a4911dca`; feed planner work is later local changes, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -18,6 +18,7 @@ Snapshot: remote `main` at `4db3aad6e4f7f27dc57f7b97b03071ba9aa4a278`; the milki
 - Working tree extends the conceptual layout with shed, ventilation/roof heat and rain/wastewater SVGs, text flow diagrams, and cost-quote collection guidance instead of speculative local costs; local tests pass, pending release verification.
 - Working tree adds an editable, illustrative employee schedule and handover summary with session-only checkoffs; no employee field test has occurred.
 - Working tree expands the milking page to a 20-step visual SOP; no trained-milker, veterinarian, food-safety or buyer review has occurred.
+- Working tree adds a user-input net fodder area coverage estimator and a ration discussion-note form; no individualized nutrient prescription is generated. West Godavari yields, crop calendar, prices and nutritionist review remain open.
 
 ## Major gaps
 

@@ -15,6 +15,7 @@
 - Current local farm-design updates add three described, labelled SVGs and increase unit/static checks to 35 tests; build/test and `git diff --check` pass locally. Exact-SHA CI, Pages publication and live route checks remain pending.
 - Current local employee planner uses editable time inputs, task completion toggles and an accessible session handover summary. `npm run build`, `npm test` (36/36), and `git diff --check` pass; exact-SHA release and live browser interaction checks remain pending.
 - Current local generated milking guide adds an accessible flow SVG and 20 ordered hygiene/handling steps. `npm run build`, `npm test` (37/37), and `git diff --check` pass; professional practice review and deployment remain pending.
+- Current local feeding tools estimate entered green-mass annual supply/shortage and present a ration discussion form without calculating quantities. Added NDDB/ICAR feed source claims with limits. `npm run build`, `npm test` (39/39), and `git diff --check` pass; local agronomy/nutrition review and release remain pending.
 - Earlier browser evidence verified homepage, calculator navigation/scenario, global search, an animal record, mobile display at 390×844, and the live conceptual layout SVG. This was a focused smoke check, not full E2E, offline, screen-reader, or accessibility certification.
 
 ## Finance studio release
