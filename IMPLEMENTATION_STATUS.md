@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot after generic breed illustration release: public `main` at `32f6a9275b314920664c2c0dad6b35ba1e6923e1`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot after shared-language selector release: public `main` at `f2ff775debe7d715522b6a44a55d34fcbd141ebf`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -19,12 +19,12 @@ Snapshot after generic breed illustration release: public `main` at `32f6a9275b3
 - Published employee aid has an editable illustrative schedule and handover summary with session-only checkoffs; no employee field test has occurred.
 - Published milking page has a 20-step visual SOP; trained-milker, veterinarian, food-safety and buyer review remains open.
 - Published feed page has a user-input fodder area coverage estimator and ration discussion-note form; it generates no individualized prescription. West Godavari yields, crop calendar, prices and nutritionist review remain open.
-- Published health page has 23 source-linked summaries and filters; summaries are not vet reviewed and are not an exhaustive clinical encyclopedia.
+- Published health page has 25 source-linked summaries and filters; summaries are not vet reviewed and are not an exhaustive clinical encyclopedia.
 - Published vaccination/medicine reference is non-prescriptive and links to editable health records; no vaccine calendar or medicine schedule is generated.
 - Published seasonal guide has checklists and an accessible readiness diagram, citing IMD 2024 observations only as one-year context; current alerts and parcel survey remain necessary.
 - Published IPM guide adds prevention-first mosquito/fly/tick/rodent guidance. Exact-SHA CI and live page/search checks passed in run `42777877013`.
 - Published breed media includes an original, generic accessible buffalo silhouette. Breed-specific authentic media and livestock expert review remain open.
-- Local-only localization change adds a persisted English/Telugu switch for shared navigation and basic controls, marks localized chrome with `lang`, and displays a notice that substantive Telugu translation is not yet reviewed. Unit/source checks pass; browser visual verification is unavailable in this session.
+- Published localization switch adds persisted English/Telugu preference for shared navigation and basic controls, marks localized chrome with `lang`, and displays a notice that substantive Telugu translation is not yet reviewed. Exact-SHA run `42779209471` passed both CI jobs; live `nav.js` and home routes returned HTTP 200 with the selector present. Browser visual verification is unavailable in this session.
 
 ## Major gaps
 
@@ -36,4 +36,4 @@ Snapshot after generic breed illustration release: public `main` at `32f6a9275b3
 
 ## Release evidence
 
-Latest verified public release: `32f6a9275b314920664c2c0dad6b35ba1e6923e1`; exact-SHA workflow `42778471939` passed build/test and Pages deploy, and the live breed page/SVG returned HTTP 200. IPM release `a1cfd7867316d6dbf8b5406044c314386a009bae` also passed exact-SHA workflow `42777877013`, with live pest page verified. The current localization candidate passes the local build and 44 tests; browser visual verification failed to initialize and exact-SHA deployment is pending. The larger health encyclopedia and licensed local clinical review remain incomplete.
+Latest verified public release: `f2ff775debe7d715522b6a44a55d34fcbd141ebf`; exact-SHA workflow `42779209471` passed build/test and Pages deploy, and live home/nav/service-worker routes returned HTTP 200 with the language selector present. Browser visual verification failed to initialize. The larger health encyclopedia and licensed local clinical review remain incomplete.

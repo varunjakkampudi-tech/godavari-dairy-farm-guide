@@ -44,6 +44,8 @@ Last reviewed: 10 November 2026 (Asia/Kolkata). Online availability and facts ma
 | Current alerts and monsoon terminology | [India Meteorological Department: Monsoon Information](https://mausam.imd.gov.in/responsive/monsooninformation_monsoon_activity.php) | Accessed 10 Nov 2026. Official definitions and operational weather information; check current local warnings before action. |
 | Dairy shed fly prevention | [NDDB: Fly control](https://www.nddb.coop/farmer/animal-health/general/fly-control) | Accessed 10 Nov 2026. Supports hygiene, manure/urine management and fly prevention context. Chemical application directions are intentionally not reproduced; products, species approvals and milk withdrawal require current label and veterinary review. |
 | Dairy animal tick guidance | [NDDB: Tick control](https://www.nddb.coop/farmer/animal-health/general/tick-control) | Accessed 10 Nov 2026. Supports monitoring and veterinary consultation around tick control. Chemical concentrations/application details are intentionally omitted from the worker guide. |
+| Buffalopox | [ICAR-CIRB Buffalopedia: Buffalopox](https://buffalopedianew.cirb.res.in/buffalopox/) | Accessed 10 Nov 2026. Describes a contagious buffalo pox disease, lesions and zoonotic context. The app provides recognition and exposure escalation only; no treatment guidance is reproduced. |
+| Internal parasites | [NDDB: Worm control](https://www.nddb.coop/farmer/animal-health/general/worm-control) | Accessed 10 Nov 2026. General symptom and parasite-management context; no fixed deworming calendar or drug instructions are reproduced. Individual control and withdrawal depend on veterinarian/label guidance. |
 
 ## Research rules
 
