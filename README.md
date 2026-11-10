@@ -29,6 +29,7 @@ npm test
 - A printable [90-day launch and employee workbook](pages/launch-workbook.html) organizes buyer, site, veterinary, finance and startup checks.
 - The [farm layout studio](pages/layout.html) contains accessible conceptual site, shed, airflow/heat and drainage diagrams plus animal, clean/dirty and manure flows. These are not construction drawings; local survey, engineering review and written lease permissions are required before building.
 - The [daily operations guide](pages/operations.html) includes an editable illustrative schedule, task checkoffs and an owner handover summary. Times are not a prescribed shift, and checkoffs are session-only.
+- The [milking guide](pages/milking.html) provides a 20-step hygienic workflow, a visual sequence, abnormal-milk separation reminders and withdrawal-period cautions. Validate it against buyer requirements, product labels and professional instruction.
 - The [milk settlement comparison](pages/buyer-comparison.html) applies user-entered per-litre, per-kg-milk or per-kg-fat rates, rejected volume, quality adjustments and deductions. It is a calculation aid, not a directory or source of actual buyer prices.
 - The [buffalo purchase worksheet](pages/buying.html#purchase-comparison) compares up to four animals' entered claims and dated morning/evening observations, then lists missing evidence. Entries are page-only and are not saved. It does not rank animals or provide veterinary clearance.
 

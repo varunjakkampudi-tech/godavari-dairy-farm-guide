@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot: remote `main` at `8252a5109e4c94c52d1c155a3c1039215efbd7df`; employee day-planner work is later local content, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot: remote `main` at `4db3aad6e4f7f27dc57f7b97b03071ba9aa4a278`; the milking guide expansion is later local content, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -17,6 +17,7 @@ Snapshot: remote `main` at `8252a5109e4c94c52d1c155a3c1039215efbd7df`; employee 
 - Working tree extends purchase guidance with an independent vet-preparation checklist and a four-animal staged plan; local build/test pass, awaiting release verification.
 - Working tree extends the conceptual layout with shed, ventilation/roof heat and rain/wastewater SVGs, text flow diagrams, and cost-quote collection guidance instead of speculative local costs; local tests pass, pending release verification.
 - Working tree adds an editable, illustrative employee schedule and handover summary with session-only checkoffs; no employee field test has occurred.
+- Working tree expands the milking page to a 20-step visual SOP; no trained-milker, veterinarian, food-safety or buyer review has occurred.
 
 ## Major gaps
 
