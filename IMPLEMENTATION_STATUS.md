@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot: remote `main` at `fb6680f2d5a047fed37ffe4d526ece7753b6a290`; health-library work is later local changes, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot: remote `main` at `9afd604fb38e14e87693e8ea08cda6f0ce8d440d`; vaccination-reference work is later local changes, not yet published. This file distinguishes working code from planned or externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -20,6 +20,7 @@ Snapshot: remote `main` at `fb6680f2d5a047fed37ffe4d526ece7753b6a290`; health-li
 - Working tree expands the milking page to a 20-step visual SOP; no trained-milker, veterinarian, food-safety or buyer review has occurred.
 - Working tree adds a user-input net fodder area coverage estimator and a ration discussion-note form; no individualized nutrient prescription is generated. West Godavari yields, crop calendar, prices and nutritionist review remain open.
 - Working tree adds 23 source-linked health summaries and filters; the summaries are not vet reviewed, omit lay treatment instructions and are not an exhaustive clinical encyclopedia.
+- Working tree adds non-prescriptive vaccination/medicine category questions and a direct link to editable health records; no vaccine calendar or medicine schedule is generated.
 
 ## Major gaps
 

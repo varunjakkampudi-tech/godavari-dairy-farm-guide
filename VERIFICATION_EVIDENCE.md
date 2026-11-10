@@ -17,6 +17,7 @@
 - Current local generated milking guide adds an accessible flow SVG and 20 ordered hygiene/handling steps. `npm run build`, `npm test` (37/37), and `git diff --check` pass; professional practice review and deployment remain pending.
 - Current local feeding tools estimate entered green-mass annual supply/shortage and present a ration discussion form without calculating quantities. Added NDDB/ICAR feed source claims with limits. `npm run build`, `npm test` (39/39), and `git diff --check` pass; local agronomy/nutrition review and release remain pending.
 - Current local health library contains 23 structured, searchable condition summaries and links to CIRB/NDDB/DAHD sources, with dose-pattern test coverage. It omits lay treatment protocols and remains unreviewed clinically. Build, tests (40/40), and `git diff --check` pass locally; release and veterinary review remain pending.
+- Current local vaccination page provides non-prescriptive disease/medicine questions and links to existing editable health-event records, whose milk-hold date is manually entered from veterinary/label direction. No due-date or withdrawal calculator is present. Build/tests pass 41/41; veterinary validation and deployment remain pending.
 - Earlier browser evidence verified homepage, calculator navigation/scenario, global search, an animal record, mobile display at 390×844, and the live conceptual layout SVG. This was a focused smoke check, not full E2E, offline, screen-reader, or accessibility certification.
 
 ## Finance studio release
