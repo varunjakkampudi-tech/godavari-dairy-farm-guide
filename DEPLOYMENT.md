@@ -6,14 +6,15 @@
 - Branch: `main`.
 - Host: GitHub Pages via GitHub Actions workflow `.github/workflows/deploy.yml`.
 - Build: `npm run build`; output `dist/`.
-- Test: `npm test`.
+- Install locked development tools: `npm ci`.
+- Checks: `npm test`, `npm run audit:content`, and `npm run test:e2e` (Chromium).
 - Pages workflow uses the repository variable `PUBLISH_PAGES=true` and GitHub's Pages environment.
 
 ## Release procedure
 
 1. Inspect `git status --short --untracked-files=all`, current `HEAD` and `git ls-remote origin refs/heads/main`.
 2. Fetch and reconcile remote main without force-push; preserve other contributors' commits.
-3. Run `npm run build`, `npm test`, and `git diff --check` locally.
+3. Run `npm ci`, `npm run build`, `npm test`, `npm run audit:content`, `npm run test:e2e`, and `git diff --check` locally. Install Chromium with `npx playwright install chromium` if needed.
 4. Review generated files and the complete diff, especially generated pages/search index and the static `dist/` artifact contents.
 5. Commit to `main` only after local checks pass; push only if remote HEAD is unchanged/reconciled.
 6. Verify GitHub Actions for the exact pushed SHA, both build and deployment jobs.

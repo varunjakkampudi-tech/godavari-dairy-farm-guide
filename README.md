@@ -10,12 +10,15 @@ Practical planning and operations app for a small buffalo dairy in West Godavari
 
 Open `index.html` in a modern browser, or serve the folder using a local static web server. The app has no backend, database server, paid API, or runtime dependency. GitHub Pages paths are relative and the deployment workflow uses static files. The install prompt requires a supported browser and HTTPS; offline pages are cached after the first successful online visit.
 
-To rebuild guide pages and run checks (Node.js 20+ recommended):
+To rebuild guide pages and run checks (Node.js 20+ recommended; browser tests need Chromium):
 
 ```sh
+npm ci
+npx playwright install chromium
 npm run build
 npm test
 npm run audit:content
+npm run test:e2e
 ```
 
 ## App features

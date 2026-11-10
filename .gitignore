@@ -1,6 +1,8 @@
 node_modules/
 dist/
 .playwright-cli/
+playwright-report/
+test-results/
 output/playwright/*.zip
 output/playwright/*.trace
 .DS_Store
