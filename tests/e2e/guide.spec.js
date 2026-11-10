@@ -1,13 +1,21 @@
 const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
     expect(results.violations.map(({id,impact,help,nodes})=>({id,impact,help,nodes:nodes.length}))).toEqual([]);
   });
 }
+
+test('legal guide explains the exact cooperative milk exception conditions',async({page})=>{
+  await page.goto('/pages/legal.html');
+  await expect(page.getByText(/unless both conditions apply/i)).toBeVisible();
+  await expect(page.getByText(/registered members of a dairy cooperative society and sell\/supply all their milk to that society/i)).toBeVisible();
+  await expect(page.getByText(/If either cooperative condition is not met/i)).toBeVisible();
+  await expect(page.getByRole('link',{name:'FSSAI milk producer advisory, 11 March 2026'})).toHaveAttribute('href',/fssai\.gov\.in\/upload\/advisories\/2026\/03/);
+});
 
 test('visual library loads original diagrams, captions, and related links',async({page})=>{
   await page.goto('/pages/visual-library.html');

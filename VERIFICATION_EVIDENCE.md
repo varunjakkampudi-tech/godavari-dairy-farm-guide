@@ -1,5 +1,9 @@
 # Verification evidence
 
+## FSSAI milk-producer cooperative exception wording
+
+Reviewed the official [FSSAI advisory dated 11 March 2026](https://www.fssai.gov.in/upload/advisories/2026/03/69b2835b23822Advisory%20dated%2011.03.2026%20related%20to%20Milk%20Producers%20and%20Milk%20vendors.pdf) on 10 November 2026. Corrected the legal guide's earlier ambiguous wording: the advisory's stated cooperative exception requires both registered membership and selling/supplying all milk to that society; vendors are covered. Added Node and Playwright regression checks, expanded axe coverage to the legal route, and aligned the research inventory and verification log. Current local verification passes build, 51/51 unit tests, 24/24 browser tests (six axe scans), content audit and npm audit. This does not establish the licence category for a specific operating arrangement or replace legal/FoSCoS confirmation; exact-SHA CI and publication are pending.
+
 ## Per-animal breeding calendar release
 
 Commit `01c116f` added the browser-local individual-animal breeding/calving calendar to the existing validated event ledger. Local verification passed: build; 50/50 unit tests; 22/22 Chromium tests including event-window persistence, Farm Records/JSON backup visibility, invalid follow-up date rejection, five axe route scans and offline navigation; content audit (24 pages, zero errors/warnings); npm audit (zero vulnerabilities); and `git diff --check`. GitHub Actions run [42804712640](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42804712640) passed exact-SHA build-test, Pages deploy and post-deploy live route/asset smoke. Live breeding route returned HTTP 200. The calendar records owner observations and professional-supplied dates; it calculates no pregnancy or due date. Local logo/theme refresh is subsequent work and is not included in that deployed SHA.
