@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot before the current IPM release: public `main` at `2e607977a4fe91b8642ad802ec51ae4642fec6e7`; the IPM work in the current checkout is local and not yet published. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot after IPM release: public `main` at `a1cfd7867316d6dbf8b5406044c314386a009bae`; the generic accessible breed illustration is the current local change and is not yet published. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -22,7 +22,8 @@ Snapshot before the current IPM release: public `main` at `2e607977a4fe91b8642ad
 - Published health page has 23 source-linked summaries and filters; summaries are not vet reviewed and are not an exhaustive clinical encyclopedia.
 - Published vaccination/medicine reference is non-prescriptive and links to editable health records; no vaccine calendar or medicine schedule is generated.
 - Published seasonal guide has checklists and an accessible readiness diagram, citing IMD 2024 observations only as one-year context; current alerts and parcel survey remain necessary.
-- Local IPM builder adds prevention-first mosquito/fly/tick/rodent guidance; 43 tests pass locally, publication pending.
+- Published IPM guide adds prevention-first mosquito/fly/tick/rodent guidance. Exact-SHA CI and live page/search checks passed in run `42777877013`.
+- Local breed media update adds an original, generic accessible buffalo silhouette; build/tests pass, exact-SHA publication pending. Breed-specific authentic media and livestock expert review remain open.
 
 ## Major gaps
 
@@ -34,4 +35,4 @@ Snapshot before the current IPM release: public `main` at `2e607977a4fe91b8642ad
 
 ## Release evidence
 
-Latest verified public release before IPM: `2e607977a4fe91b8642ad802ec51ae4642fec6e7`; seasonal page and SVG returned HTTP 200 after exact-SHA CI passed. IPM source changes currently pass build and 43 tests; exact-SHA workflow and live route verification are pending. The larger health encyclopedia and licensed local clinical review remain incomplete.
+Latest verified public release: `a1cfd7867316d6dbf8b5406044c314386a009bae`; exact-SHA workflow `42777877013` passed build/test and Pages deploy, and the live pest page/search index returned HTTP 200 with the IPM text/source present. Current generic breed illustration changes pass the local build and 43 tests; exact-SHA release verification is pending. The larger health encyclopedia and licensed local clinical review remain incomplete.

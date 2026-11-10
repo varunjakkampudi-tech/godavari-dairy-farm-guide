@@ -2,7 +2,9 @@
 
 ## Current checkout and remote evidence
 
-- Current IPM release candidate is based on verified public `main` `2e607977a4fe91b8642ad802ec51ae4642fec6e7`. Added the canonical `scripts/build-ipm-guide.js` step, prevention-first pest guide section, NDDB fly/tick source notes and regression test. `npm run build`, `npm test` (43/43), builder syntax check and `git diff --check` pass locally. This candidate is not yet pushed; exact-SHA CI and live-page verification are pending.
+- Breed illustration candidate adds `assets/buffalo-illustration.svg`, inserts it through `scripts/build-breed-library.js`, and precaches it for offline use. It is original generic artwork rather than a breed claim. `npm run build`, `npm test` (43/43), builder syntax check and `git diff --check` pass locally; exact-SHA CI and live verification remain pending.
+
+- IPM release `a1cfd7867316d6dbf8b5406044c314386a009bae` was pushed fast-forward to `main` after confirming the fetched remote was `2e607977a4fe91b8642ad802ec51ae4642fec6e7`. Exact-SHA run [42777877013](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42777877013) succeeded for both `build-test` and `deploy-pages`. Local `npm run build`, `npm test` (43/43), IPM builder syntax check and `git diff --check` passed. Live `pages/pests.html` and `assets/search-index.json` returned HTTP 200; the pest page contains the IPM section and NDDB source link.
 - The IPM guide prioritizes environmental/physical controls, monitoring, feed/milk contamination and night safety. It deliberately omits NDDB chemical application directions; no product or local vector risk is verified here.
 
 - Audited remote `main` SHA: `ad23bf7a64c4256b9bb4793bfcddf594f486a721`.

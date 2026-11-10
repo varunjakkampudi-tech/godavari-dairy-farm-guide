@@ -37,6 +37,7 @@ npm test
 - The [pest guide](pages/pests.html#pest-control-plan) uses an integrated prevention-first checklist for mosquitoes, flies, ticks and rodents, with feed/milk contamination and night-safety reminders. It intentionally omits pesticide directions; a veterinarian and current label must guide any product use.
 - The [milk settlement comparison](pages/buyer-comparison.html) applies user-entered per-litre, per-kg-milk or per-kg-fat rates, rejected volume, quality adjustments and deductions. It is a calculation aid, not a directory or source of actual buyer prices.
 - The [buffalo purchase worksheet](pages/buying.html#purchase-comparison) compares up to four animals' entered claims and dated morning/evening observations, then lists missing evidence. Entries are page-only and are not saved. It does not rank animals or provide veterinary clearance.
+- The [breed library](pages/breeds.html) filters the ICAR-NBAGR registered-breed list and shows a generic original buffalo illustration. The illustration is not breed-specific, and individual breed media/profiles remain incomplete.
 
 ## Local data safety
 
