@@ -4,6 +4,9 @@ Updated 10 November 2026 (Asia/Kolkata).
 
 ## Checked online
 
+| 10 Nov 2026 | Official animal genetic resources | ICAR-NBAGR Buffalo Breeds of India registry, https://nbagr.res.in/buffalo-breed | Live registry lists 23 registered buffalo breeds with home tracts and accession IDs. Godavari is described separately in the ICAR-CIRB profile and is not in this registry list. | Official registry for breed list; not individual animal identity/performance | Filter/sort library mirrors current entries; recheck on future update. |
+| 10 Nov 2026 | Regional buffalo profile | ICAR-CIRB Buffalopedia, https://buffalopedianew.cirb.res.in/godavari/ | Describes Godavari breeding tract and historical population measurements, including a stated ~2,050 kg per 305-day lactation. Values reference older population research, not an individual guarantee or current local farm observation. | Official research institute profile referencing older studies | No individual inference; field/veterinary verification remains necessary. |
+
 | Claim area | Evidence checked | Status | What it does not establish |
 |---|---|---|---|
 | District dairy context | NABARD West Godavari PLP 2022–23 reports a sizeable historical buffalo population, dairy livelihood activity and several collection channels. | Historical contextual evidence | Current active centres, access for a new supplier, payment rates or a current farm case study. |
@@ -31,3 +34,5 @@ Updated 10 November 2026 (Asia/Kolkata).
 ## Publication gate
 
 This package is a prototype, not the finished 32-section operating platform requested. Research depth, local field verification, veterinary review, financial model, records tools and QA remain incomplete. Keep the repository private/local until the owner has inspected the preview and explicitly approved public release.
+| 10 Nov 2026 | Official animal genetic resources | ICAR-NBAGR Buffalo Breeds of India registry, https://nbagr.res.in/buffalo-breed | The live registry listed 23 registered buffalo breeds, with home tract and accession IDs. The Godavari local population/profile is described separately by ICAR-CIRB and is not included in this registry table. | Official registry for breed list; not individual animal identity/performance | Structured filter/sort library mirrors official entries; verify list again on future edits. |
+| 10 Nov 2026 | Regional buffalo profile | ICAR-CIRB Buffalopedia, https://buffalopedianew.cirb.res.in/godavari/ | Profile describes Godavari breeding tract and historical breed-population measurements; the site labels milk yield as ~2,050 kg over 305 days and other historical traits. These are population/reference figures, not guarantees or present-day farm observations. | Official research institute profile referencing older studies | No individual animal inference; professional/field verification required. |
