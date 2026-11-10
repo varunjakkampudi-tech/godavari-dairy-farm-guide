@@ -1,6 +1,6 @@
 # Implementation status
 
-Historical implementation snapshot; current automated and release evidence is in [PROGRESS.md](PROGRESS.md) and [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md). Latest verified public main before current work was `0b663ddd09ae5c350f1f6948dc82da9c5ce5dde5`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is in [PROGRESS.md](PROGRESS.md) and [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md). Latest verified public main is `0bc3f0bb4c034d18437f42777ed5d9d57eba3b45`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -9,7 +9,7 @@ Historical implementation snapshot; current automated and release evidence is in
 - Theme preference, browser-local checklists, cache-first service worker, annual calculator, published finance studio, and local records system with animal/milk/expense/event modules.
 - Printable farm launch and employee workbook with buyer/site/vet/finance gates and a first-90-day checklist.
 - Conceptual accessible one-acre farm zoning SVG; it is explicitly not to scale or construction-ready.
-- Official-source research list and explicit local verification tasks.
+- Official-source research list, deduplicated traceability register with explicit metadata gaps, timestamped HTTP reachability audit, and local verification tasks.
 - Published at `cd87d1b`: buyer comparison and the finance studio. Finance has a 365-day animal calendar, monthly cash flow, price and stress comparisons, local save/load, and print/CSV/JSON controls. Local browser smoke covered save/load, both downloads, chart rendering and mobile stacking; print/offline/accessibility and all stress calculations remain incomplete.
 - Published records v2: stable keys, v1 migration, create/edit/delete, search and module/date filters, and 15 activity-ledger categories. Local browser smoke covered v1 migration, preserving the original key, duplicate-ID rejection, animal/milk/expense/log edits, event search, v2 JSON export/import and all four CSV download events. PWA shell is deployed; 27 local tests pass. Packaged desktop offline navigation/fallback and local symptom triage browser smoke are recorded.
 - Published purchase comparison: on-page four-animal worksheet with dated AM/PM yield observations and evidence-gap display; page-session only, non-ranking and not a professional assessment.

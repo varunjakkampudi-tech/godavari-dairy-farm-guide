@@ -67,7 +67,7 @@ Health pages focus on recognizing warning signs, safe immediate actions, and cal
 ```text
 assets/       shared styles, navigation, calculators, records, offline support
 pages/        separate subject guides and tools
-research/     sources and verification log
+research/     sources, source register, link audit and verification log
 scripts/      reproducible page builder
 tests/        calculation, import validation and static-link tests
 .github/      GitHub Pages workflow

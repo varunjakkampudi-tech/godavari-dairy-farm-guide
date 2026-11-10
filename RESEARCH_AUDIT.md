@@ -11,7 +11,7 @@
 
 `research/sources.md` is a human-readable list of primary references. `research/verification-log.md` records claims checked and the boundaries of what they establish. References currently cover official buffalo breed information, Godavari type, animal shelter/health, NDDB nutrition and milk handling, DAHD animal-disease/fodder programs, West Godavari directories, FSSAI advisory and historical NABARD district context.
 
-The list does not yet meet the requested per-source fields for publication date, exact claim, evidence quality, geography and review status. It also lacks a systematic link-check/date-check report and detailed source-to-page claim mapping. This is not a complete research audit.
+The generated `research/source-register.csv` now deduplicates source URLs and provides the requested columns, paraphrased claims/limits, publisher class, explicit unknown metadata, and per-URL HTTP check result/time. Some publication dates, individual access dates, geography and next-review dates remain unknown and are labeled. Publisher class is not an independent evidence-quality assessment. The HTTP audit identified transport errors and does not validate page contents, source accuracy, or claim-to-page coverage. Detailed source-to-page mapping and complete claim verification remain incomplete.
 
 ## Unverified or missing evidence
 
@@ -23,7 +23,7 @@ The list does not yet meet the requested per-source fields for publication date,
 
 ## Audit actions
 
-1. Expand source entries to the requested metadata schema and map each substantive claim to a source.
-2. Run a broken-link check and record access dates for the links used by the live pages.
+1. Verify source metadata against each original page and map each substantive claim to the exact supporting passage.
+2. Re-run the automated HTTP check when the source list changes; resolve or retain clear transport-error labels and record human source review dates for links used by live pages.
 3. Add a structured content/evidence type for official fact, study, historical statistic, self-report, model assumption, local unverified claim, professional review, and physical inspection.
 4. Keep local fieldwork requests in [BLOCKERS.md](BLOCKERS.md) until evidence is actually obtained.
