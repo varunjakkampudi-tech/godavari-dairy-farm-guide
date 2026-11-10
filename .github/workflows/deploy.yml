@@ -54,6 +54,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download site artifact
         uses: actions/download-artifact@v7
@@ -69,3 +71,19 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5
+
+  post-deploy-smoke:
+    if: vars.PUBLISH_PAGES == 'true'
+    needs: deploy-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout smoke script
+        uses: actions/checkout@v7
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Check live Pages routes and critical assets
+        env:
+          SITE_URL: ${{ needs.deploy-pages.outputs.page_url }}
+        run: npm run smoke:pages

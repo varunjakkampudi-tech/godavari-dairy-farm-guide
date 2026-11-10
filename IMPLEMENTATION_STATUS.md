@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot after breeding-to-newborn timeline: public `main` at `b7fb5775fc04b4fa127f35c18f9f3ec629f08841`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Historical implementation snapshot; current automated and release evidence is in [PROGRESS.md](PROGRESS.md) and [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md). Latest verified public main before current work was `0b663ddd09ae5c350f1f6948dc82da9c5ce5dde5`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -34,8 +34,8 @@ Snapshot after breeding-to-newborn timeline: public `main` at `b7fb5775fc04b4fa1
 - Breed registry filter and purchase comparison exist, but full breed profiles/photos and a nutrient-calculating ration planner are absent. The symptom navigator is a first-response routing aid, not a complete disease knowledge base or clinically reviewed decision tool. Local buyer/supplier directory, verified farmer case study and phone-confirmed emergency service directory remain absent.
 - The finance studio is not a fully validated financial product: no price-by-fat/SNF settlement mode, detailed amortization, validated animal lactation curves, multi-year projections, verified local costs or accountant review. Several cost categories remain approximate or manually grouped.
 - Records use a generic event ledger for many categories. Module-specific reporting/forms, additional quota/data-loss tests and professional review remain.
-- Telugu localization is partial: shared navigation and basic controls have a persisted language switch, but substantive guide content remains English and the strings need native-speaker review. A comprehensive employee mode, automated browser suite, accessibility/security pipeline and full requirement coverage are absent. The PWA install flow was only synthetically prompted; actual installation and mobile behavior remain unverified.
+- Telugu localization is partial: shared navigation and basic controls have a persisted language switch, but substantive guide content remains English and the strings need native-speaker review. The browser suite now covers 14 functional/accessibility/offline/mobile checks locally; employee workflows remain a guide/checklist rather than a complete role-based mode. Broader accessibility/security checks and full requirement coverage remain absent. A real mobile overflow was found and fixed during this browser pass. The PWA install flow was only synthetically prompted; actual installation and mobile behavior remain unverified.
 
 ## Release evidence
 
-Latest code release `b7fb5775fc04b4fa127f35c18f9f3ec629f08841`; exact-SHA workflow `42782675592` passed build/test and Pages deploy, and live breeding page/search routes returned HTTP 200 with timeline/checklist markup. Documentation head `b62dc02a5c2b4d22b6f7a50be91380b022032b09` passed exact-SHA run `42782961803`. Focused Playwright CLI smoke covered live Telugu shared navigation/persistence and the breeding timeline; full browser, accessibility and health review remain incomplete.
+Latest pre-change public code release `0b663ddd09ae5c350f1f6948dc82da9c5ce5dde5`; exact-SHA run `42794006133` passed browser/accessibility checks and Pages deployment. Current expanded local suite is pending exact-SHA CI. Documentation head `b62dc02a5c2b4d22b6f7a50be91380b022032b09` passed exact-SHA run `42782961803`. Focused Playwright CLI smoke covered live Telugu shared navigation/persistence and the breeding timeline; full browser, accessibility and health review remain incomplete.

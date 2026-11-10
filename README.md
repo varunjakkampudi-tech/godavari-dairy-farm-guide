@@ -21,19 +21,21 @@ npm run audit:content
 npm run test:e2e
 ```
 
+The deployment workflow runs a live route and asset smoke after Pages deployment. To run it manually, set `SITE_URL` to the deployed Pages root before `npm run smoke:pages`.
+
 ## App features
 
 - Responsive multi-page guide covering feasibility, breed comparison, buying, layout, feed, daily operations, milking, health/emergency contacts, seasonal care, breeding/calves, markets, staff, vaccination, pests, legal questions and local fieldwork.
 - Search filters page content; light/dark preference persists in this browser.
 - The shared interface has an English/Telugu beta switch for navigation and basic controls, with the choice saved in this browser. A visible notice explains that most guide content remains English and the Telugu strings need native-speaker review; this is not yet a complete bilingual guide.
-- The responsive offline shell caches guide pages and static assets. A local packaged-build browser smoke verified cached finance navigation and the offline fallback on an uncached nested route. Actual app installation and mobile browser behavior have not been verified.
+- The original buffalo-and-river mark and coordinated Godavari green, harvest gold, rice-cream palette are used throughout the responsive interface. The responsive offline shell caches guide pages and static assets. A local packaged-build browser smoke verified cached finance navigation and the offline fallback on an uncached nested route. Actual app installation and mobile browser behavior have not been verified.
 - The [annual calculator](pages/finance.html) and [finance studio](pages/finance-studio.html) estimate animal-level 365-day production calendars, monthly cash flow, EMI, depreciation, break-even, working capital and price/staff/herd/yield stress cases. Save scenarios locally, print a planning report, or export CSV/JSON. They are assumption-driven models, not forecasts; missing local evidence is reported as `INSUFFICIENT EVIDENCE`.
 - Animal, milk, expense and 15-category farm activity registers support edit/delete, search, module/date filters, versioned local records, JSON/CSV export and validated JSON import. Version-1 records are migrated while retaining the original recovery copy.
 - A symptom safety aid lets a user select multiple signs and routes the highest urgency to conservative first steps. It does not diagnose or prescribe; its clinical routing still requires local veterinary review. An Emergency link is available in the header on every page.
 - The PWA manifest and service worker provide an install prompt on supported browsers, a versioned offline guide shell, network-first page navigation, and an offline fallback page. Open the app online once to install and populate the offline cache; confirm a page is available offline before relying on it.
 - A printable [90-day launch and employee workbook](pages/launch-workbook.html) organizes buyer, site, veterinary, finance and startup checks.
 - The [farm layout studio](pages/layout.html) contains accessible conceptual site, shed, airflow/heat and drainage diagrams plus animal, clean/dirty and manure flows. These are not construction drawings; local survey, engineering review and written lease permissions are required before building.
-- The [visual library](pages/visual-library.html) gathers seven locally stored, original SVG diagrams, with captions, source/license notes, related guides and full-size viewing. The images are conceptual illustrations, not farm photographs, breed proof, or construction approvals.
+- The [visual library](pages/visual-library.html) gathers six locally stored, original SVG diagrams, with captions, source/license notes, related guides and full-size viewing. The images are conceptual illustrations, not farm photographs, breed proof, or construction approvals.
 - The [daily operations guide](pages/operations.html) includes an editable illustrative schedule, task checkoffs and an owner handover summary. Times are not a prescribed shift, and checkoffs are session-only.
 - The [milking guide](pages/milking.html) provides a 20-step hygienic workflow, a visual sequence, abnormal-milk separation reminders and withdrawal-period cautions. Validate it against buyer requirements, product labels and professional instruction.
 - The [feeding guide](pages/feeding.html) estimates fodder area coverage and shortage from your own net area, measured yield, demand, storage loss and delivered price. Its ration worksheet prepares notes for an NDDB balancing service or nutritionist; it does not prescribe feed quantities.
