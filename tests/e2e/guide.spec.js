@@ -2,7 +2,7 @@ const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 const fs=require('node:fs');
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html','/pages/health.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -133,6 +133,20 @@ test('emergency triage prioritizes urgent signs and reset clears the result',asy
   await form.getByRole('button',{name:'Clear selections'}).click();
   await expect(result).toHaveClass(/hide/);
   await expect(result).toBeEmpty();
+});
+
+test('searchable health encyclopedia exposes expanded condition guides and filters safely',async({page})=>{
+  await page.goto('/pages/health.html');
+  const cards=page.locator('#condition-library .condition-card');
+  await expect(cards).toHaveCount(37);
+  await expect(page.locator('#condition-count')).toContainText('Showing 37 of 37');
+  await page.locator('#condition-search').fill('uterine prolapse');
+  await expect(cards).toHaveCount(1);
+  await expect(cards.first()).toContainText(/call veterinarian immediately/i);
+  await page.locator('#condition-search').fill('');
+  await page.locator('#condition-urgency').selectOption('urgent');
+  await expect(cards).not.toHaveCount(0);
+  await expect(page.locator('#condition-count')).toContainText(/of 37 condition guides/);
 });
 
 test('district veterinary contact shows live-check date and identifies office number limits',async({page})=>{

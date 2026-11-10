@@ -19,7 +19,7 @@ Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is
 - Published employee aid has an editable illustrative schedule and handover summary with session-only checkoffs; no employee field test has occurred.
 - Published milking page has a 20-step visual SOP; trained-milker, veterinarian, food-safety and buyer review remains open.
 - Published feed page has a user-input fodder area coverage estimator and ration discussion-note form; it generates no individualized prescription. West Godavari yields, crop calendar, prices and nutritionist review remain open.
-- Published health page has 26 source-linked summaries and filters; summaries are not vet reviewed and are not an exhaustive clinical encyclopedia.
+- Current worktree expands the health page to 37 source-linked summaries and tests its search/filter behavior; public release is pending. Summaries remain unreviewed and are not an exhaustive clinical encyclopedia.
 - Published vaccination/medicine reference is non-prescriptive and links to editable health records; no vaccine calendar or medicine schedule is generated.
 - Published seasonal guide has checklists and an accessible readiness diagram, citing IMD 2024 observations only as one-year context; current alerts and parcel survey remain necessary.
 - Published IPM guide adds prevention-first mosquito/fly/tick/rodent guidance. Exact-SHA CI and live page/search checks passed in run `42777877013`.
