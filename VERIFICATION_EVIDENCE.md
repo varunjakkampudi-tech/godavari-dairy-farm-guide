@@ -2,6 +2,9 @@
 
 ## Current checkout and remote evidence
 
+- Current IPM release candidate is based on verified public `main` `2e607977a4fe91b8642ad802ec51ae4642fec6e7`. Added the canonical `scripts/build-ipm-guide.js` step, prevention-first pest guide section, NDDB fly/tick source notes and regression test. `npm run build`, `npm test` (43/43), builder syntax check and `git diff --check` pass locally. This candidate is not yet pushed; exact-SHA CI and live-page verification are pending.
+- The IPM guide prioritizes environmental/physical controls, monitoring, feed/milk contamination and night safety. It deliberately omits NDDB chemical application directions; no product or local vector risk is verified here.
+
 - Audited remote `main` SHA: `ad23bf7a64c4256b9bb4793bfcddf594f486a721`.
 - At this audit start, local `HEAD` matched `origin/main`; the working tree was clean. The remote workbook additions were fast-forwarded without rewriting history.
 - GitHub Actions run [42760014726](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42760014726) succeeded for the exact audited SHA; both `build-test` and `deploy-pages` passed.
@@ -10,7 +13,7 @@
 - Public repository: [GitHub](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide).
 - Public Pages site: [Live app](https://varunjakkampudi-tech.github.io/godavari-dairy-farm-guide/).
 - Health app release `dcd5f302b5f7f8ecd1b3b4f70bf86aefc24a29f2` passed exact-SHA workflow run [42772156153](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772156153), including build-test and Pages deployment. A documentation-only follow-up at `137d7796a232fba92ca54661267775b7d61a837f` passed [42772587512](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42772587512), including build-test and Pages deployment.
-- Purchase comparison implementation is in progress at the current local checkout; `npm run build`, `npm test` (32/32), and `git diff --check` pass locally. It has not yet been pushed or verified on Pages.
+- Purchase comparison release was subsequently published; the older entries below are historical milestone evidence and must not be read as current release state.
 - Registered-breed library release `d9a0e6b5967ce356ae9c6478618eeb21d17f8cad` passed exact-SHA run [42774149192](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42774149192), including build/test and Pages deployment. Live `/pages/breeds.html`, `/assets/breed-data.js`, and `/sw.js` returned HTTP 200, and deployed HTML contains the registry table and source link. Local tests at that release were 33/33. A later local, not-yet-published purchase checklist/stagger plan passes 34/34 after rebuild.
 - Current local farm-design updates add three described, labelled SVGs and increase unit/static checks to 35 tests; build/test and `git diff --check` pass locally. Exact-SHA CI, Pages publication and live route checks remain pending.
 - Current local employee planner uses editable time inputs, task completion toggles and an accessible session handover summary. `npm run build`, `npm test` (36/36), and `git diff --check` pass; exact-SHA release and live browser interaction checks remain pending.

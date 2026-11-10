@@ -34,6 +34,7 @@ npm test
 - The [health guide](pages/health.html) combines a no-diagnosis symptom navigator with searchable, source-linked condition summaries. It avoids lay dosing and treatment procedures; all summaries require veterinary review and do not replace professional care.
 - The [vaccination reference](pages/vaccination.html) helps prepare disease-specific questions for a veterinarian and links to editable local health records. It provides no universal schedule, prescription, or calculated withdrawal time.
 - The [seasonal guide](pages/seasons.html) includes summer, monsoon and cooler-period checklists with IMD context. A single year of rainfall observations is not a plot-level flood assessment; use current alerts and inspect the actual site.
+- The [pest guide](pages/pests.html#pest-control-plan) uses an integrated prevention-first checklist for mosquitoes, flies, ticks and rodents, with feed/milk contamination and night-safety reminders. It intentionally omits pesticide directions; a veterinarian and current label must guide any product use.
 - The [milk settlement comparison](pages/buyer-comparison.html) applies user-entered per-litre, per-kg-milk or per-kg-fat rates, rejected volume, quality adjustments and deductions. It is a calculation aid, not a directory or source of actual buyer prices.
 - The [buffalo purchase worksheet](pages/buying.html#purchase-comparison) compares up to four animals' entered claims and dated morning/evening observations, then lists missing evidence. Entries are page-only and are not saved. It does not rank animals or provide veterinary clearance.
 
@@ -74,3 +75,5 @@ To contribute, open an issue describing the page, source, or reproducible proble
 ## Evidence and limitations
 
 The guide separates official references, planning calculations, and local questions. Public sources do not establish current milk buyer access, procurement settlement terms, local animal prices, plot suitability, or a profitable business case for an individual farm. Those require direct, dated local evidence. Veterinary material is for recognition, prevention, recordkeeping, and escalation; a qualified veterinarian must decide diagnosis, treatment, and vaccination for each animal.
+
+**Completion status:** the repository and app are public, but the full business platform brief is not 100% complete. See the requirement-by-requirement [master checklist](MASTER_CHECKLIST.md), [external blockers](BLOCKERS.md), and [verification evidence](VERIFICATION_EVIDENCE.md). In particular, real buyer terms, farm interviews, local quotations, plot/animal inspections, Telugu editorial review, and qualified professional review remain open.
