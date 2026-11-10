@@ -21,19 +21,26 @@
 
 The changes above were pushed as `b00087d44e889cfa027c1687639464375a76c7f2`; exact-SHA CI and the live route are verified in the remote evidence above.
 
-## Farm register upgrade (working tree; not yet released)
+## Farm register upgrade (released in `cd87d1b`)
 
 - Added `assets/records-core.js` with version-1/2 validation, migration, stable keys, date/numeric checks, and module/date/search filtering. Expanded `assets/records.js` and `pages/records.html` with version-2 storage, retained legacy recovery key, animal/milk/expense CRUD, 15 activity categories, edit/search/filter controls, and version-1/2 JSON plus four CSV-table exports. Service-worker cache was bumped to v6.
-- `npm run build` and `npm test` passed locally with 24/24 tests; `node --check assets/records-core.js`, `node --check assets/records.js`, and `git diff --check` passed before the latest documentation edits.
+- `npm run build` and `npm test` passed locally with 24/24 tests before the PWA follow-on; `node --check assets/records-core.js`, `node --check assets/records.js`, and `git diff --check` passed before the latest documentation edits.
 - Local Playwright preview on port 4180 seeded a version-1 register, reloaded, confirmed schema-v2 migration with the version-1 recovery key intact, edited an animal and created milk, expense and health-log rows, rejected a duplicate animal ID, searched the log, exported JSON and all four CSV tables, and re-imported the v2 JSON after confirmation. Browser console reported zero errors. This used test-only localhost storage.
-- Still needed: test expense/milk CRUD, delete confirmation, actual JSON import/export roundtrip, CSV contents, storage-quota failure, mobile/offline use, accessibility, exact-SHA CI and live Records route.
+- Still needed: delete confirmation, storage-quota failure, mobile accessibility and professional review. Records v2 deployment and route were verified at `cd87d1b` / run 42767921432.
 
 ## Existing test coverage
 
-The pushed `b00087d` CI run covered the 19 tests then present. The current local branch has 24 Node tests, including finance, record migration/validation/filtering, buyer arithmetic, local links/search, diagram and workbook packaging. The latest five record tests have not yet run in CI. The tests do not cover all flows named in [TEST_MATRIX.md](TEST_MATRIX.md).
+The pushed `cd87d1b` CI run covered 24 tests. The current local branch has 25 Node tests, including finance, record migration/validation/filtering, buyer arithmetic, local links/search, diagram and workbook packaging. The PWA test has not run in CI yet. The tests do not cover all flows named in [TEST_MATRIX.md](TEST_MATRIX.md).
 
 ## Security and accessibility limits
 
 - No secrets were found in the earlier current-tree token-pattern scan; that is not a full historical secret scanner or dependency audit.
 - The public branch was previously rewritten to GitHub noreply commit metadata, and subsequent remote commits use that metadata. Do not make another history rewrite.
 - An accessible alt attribute is present on the farm SVG and checked by a unit test. No full WCAG audit, color-contrast run, keyboard/screen-reader audit, or automated accessibility report has been performed.
+
+## PWA verification (local working tree; release pending)
+
+- `npm run build` succeeded and `npm test` passed 25/25 after the PWA manifest and shell changes.
+- On a local Playwright browser against the packaged `dist` build, service worker `gdfg-static-v9` activated and cached `offline.html`, `manifest.webmanifest`, and `pages/finance-studio.html`. With network disabled, the finance page loaded from cache; an uncached nested route displayed the offline fallback and resolved its CSS and finance link to the site root correctly. Network was restored after the check.
+- A synthetic `beforeinstallprompt` event exposed the install button in a prior local browser check. This only checks the event handler; actual platform installation, mobile behavior, update lifecycle, and complete console/accessibility review remain unverified.
+- PWA modifications and their exact-SHA CI/live deployment are pending. Current public release remains `cd87d1baf5d5e7e531ef3b23bf1402b174a5ba18`.

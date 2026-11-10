@@ -8,7 +8,7 @@ Practical planning and operations app for a small buffalo dairy in West Godavari
 
 ## Open and use
 
-Open `index.html` in a modern browser, or serve the folder using a local static web server. The app has no backend, database server, paid API, or runtime dependency. GitHub Pages paths are relative and the deployment workflow uses static files.
+Open `index.html` in a modern browser, or serve the folder using a local static web server. The app has no backend, database server, paid API, or runtime dependency. GitHub Pages paths are relative and the deployment workflow uses static files. The install prompt requires a supported browser and HTTPS; offline pages are cached after the first successful online visit.
 
 To rebuild guide pages and run checks (Node.js 20+ recommended):
 
@@ -21,9 +21,10 @@ npm test
 
 - Responsive multi-page guide covering feasibility, breed comparison, buying, layout, feed, daily operations, milking, health/emergency contacts, seasonal care, breeding/calves, markets, staff, vaccination, pests, legal questions and local fieldwork.
 - Search filters page content; light/dark preference persists in this browser.
+- The responsive offline shell caches guide pages and static assets. A local packaged-build browser smoke verified cached finance navigation and the offline fallback on an uncached nested route. Actual app installation and mobile browser behavior have not been verified.
 - The [annual calculator](pages/finance.html) and [finance studio](pages/finance-studio.html) estimate animal-level 365-day production calendars, monthly cash flow, EMI, depreciation, break-even, working capital and price/staff/herd/yield stress cases. Save scenarios locally, print a planning report, or export CSV/JSON. They are assumption-driven models, not forecasts; missing local evidence is reported as `INSUFFICIENT EVIDENCE`.
 - Animal, milk, expense and 15-category farm activity registers support edit/delete, search, module/date filters, versioned local records, JSON/CSV export and validated JSON import. Version-1 records are migrated while retaining the original recovery copy.
-- A service worker caches the static app for repeat/offline use after the first successful load.
+- The PWA manifest and service worker provide an install prompt on supported browsers, a versioned offline guide shell, network-first page navigation, and an offline fallback page. Open the app online once to install and populate the offline cache; confirm a page is available offline before relying on it.
 - A printable [90-day launch and employee workbook](pages/launch-workbook.html) organizes buyer, site, veterinary, finance and startup checks.
 - The [milk settlement comparison](pages/buyer-comparison.html) applies user-entered per-litre, per-kg-milk or per-kg-fat rates, rejected volume, quality adjustments and deductions. It is a calculation aid, not a directory or source of actual buyer prices.
 

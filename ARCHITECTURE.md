@@ -28,4 +28,4 @@ User-entered records use versioned browser `localStorage` (`gdfg-records-v2`); t
 
 ## Known architectural debt
 
-The site uses shared scripts injected into each page and some generated pages are compact single-line HTML. There is no centralized structured localization or health/breed content schema, no IndexedDB data layer, no install manifest, no automated E2E harness, and no automated accessibility/security analysis. Finance and buyer comparison use separate static modules; farm data uses a generic event ledger alongside animal, milk and expense tables.
+The site uses shared scripts injected into each page and some generated pages are compact single-line HTML. There is no centralized structured localization or health/breed content schema, no IndexedDB data layer, no automated E2E harness, and no automated accessibility/security analysis. The SVG install icon and PWA install/offline behavior still need real-browser coverage. Finance and buyer comparison use separate static modules; farm data uses a generic event ledger alongside animal, milk and expense tables.

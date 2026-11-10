@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "Godavari Dairy Farm Guide",
+  "short_name": "Godavari Dairy",
+  "description": "Evidence-labeled planning and operating guide for a small buffalo dairy in West Godavari.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fbfaf5",
+  "theme_color": "#173d32",
+  "icons": [
+    {
+      "src": "./assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
