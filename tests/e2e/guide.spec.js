@@ -514,8 +514,8 @@ test('key app pages remain usable at a narrow mobile viewport',async({page})=>{
   for(const route of ['/','/pages/breeds.html','/pages/buying.html','/pages/operations.html','/pages/emergency.html','/pages/finance-studio.html','/pages/feeding.html']){
     await page.goto(route);
     await expect(page.locator('h1')).toBeVisible();
-    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth);
-    expect(overflow,`horizontal overflow on ${route}`).toBeFalsy();
+    const overflow=await page.evaluate(()=>({width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,items:[...document.querySelectorAll('body *')].map(e=>({tag:e.tagName,id:e.id,cls:String(e.className||''),left:Math.round(e.getBoundingClientRect().left),right:Math.round(e.getBoundingClientRect().right),width:Math.round(e.getBoundingClientRect().width)})).filter(x=>x.right>document.documentElement.clientWidth||x.left<0).slice(0,12)}));
+    expect(overflow.scroll,`horizontal overflow on ${route}: ${JSON.stringify(overflow)}`).toBeLessThanOrEqual(overflow.width);
   }
 });
 
