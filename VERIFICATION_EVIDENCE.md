@@ -1,5 +1,9 @@
 # Verification evidence
 
+## Per-animal breeding calendar release
+
+Commit `01c116f` added the browser-local individual-animal breeding/calving calendar to the existing validated event ledger. Local verification passed: build; 50/50 unit tests; 22/22 Chromium tests including event-window persistence, Farm Records/JSON backup visibility, invalid follow-up date rejection, five axe route scans and offline navigation; content audit (24 pages, zero errors/warnings); npm audit (zero vulnerabilities); and `git diff --check`. GitHub Actions run [42804712640](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42804712640) passed exact-SHA build-test, Pages deploy and post-deploy live route/asset smoke. Live breeding route returned HTTP 200. The calendar records owner observations and professional-supplied dates; it calculates no pregnancy or due date. Local logo/theme refresh is subsequent work and is not included in that deployed SHA.
+
 ## Current checkout and remote evidence
 
 Local checkout and `origin/main` are at `d8d41a7c4f975beb74bacf7d2d3d5ff22841fcf6`. Exact-SHA Actions run `42801831052` passed build, 49 Node tests, 19 Chromium tests, dependency/content audits, Pages deployment and live smoke.
