@@ -38,4 +38,4 @@ Historical implementation snapshot; current automated and release evidence is in
 
 ## Release evidence
 
-Latest pre-change public code release `0b663ddd09ae5c350f1f6948dc82da9c5ce5dde5`; exact-SHA run `42794006133` passed browser/accessibility checks and Pages deployment. Current expanded local suite is pending exact-SHA CI. Documentation head `b62dc02a5c2b4d22b6f7a50be91380b022032b09` passed exact-SHA run `42782961803`. Focused Playwright CLI smoke covered live Telugu shared navigation/persistence and the breeding timeline; full browser, accessibility and health review remain incomplete.
+Latest code release `9a89654ba469fdb644f6cf2be3ebd8ede1bd69cf`; exact-SHA run `42796992430` passed build, dependency audit, 48 unit tests, 15 browser/accessibility tests, content audit, Pages deployment and live post-deploy smoke. The current worktree matches `origin/main`. Documentation head `b62dc02a5c2b4d22b6f7a50be91380b022032b09` passed exact-SHA run `42782961803`. Focused Playwright CLI smoke covered live Telugu shared navigation/persistence and the breeding timeline; full browser, accessibility and health review remain incomplete.
