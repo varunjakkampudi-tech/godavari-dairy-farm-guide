@@ -1,4 +1,4 @@
-const CACHE = 'gdfg-static-v27';
+const CACHE = 'gdfg-static-v28';
 const SHELL = [
   './', './index.html', './offline.html', './manifest.webmanifest',
   './assets/site.css', './assets/favicon.svg', './assets/brand-mark.svg', './assets/search-index.json',

@@ -2,7 +2,7 @@ const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 const fs=require('node:fs');
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -322,6 +322,20 @@ test('global search, Telugu preference, dark theme and employee checklist persis
   await firstTask.check();
   await page.reload();
   await expect(page.locator('[data-checklist="operations"] input[type="checkbox"]').first()).toBeChecked();
+});
+
+test('daily operations plan aligns morning preparation to buyer pickup and flags overnight work',async({page})=>{
+  await page.goto('/pages/operations.html');
+  await expect(page.locator('#buyer-pickup-time')).toHaveValue('06:50');
+  await page.locator('#buyer-pickup-time').fill('06:20');
+  await page.locator('#align-pickup-time').click();
+  await expect(page.locator('[data-time="0"]')).toHaveValue('04:30');
+  await expect(page.locator('[data-time="4"]')).toHaveValue('06:05');
+  await expect(page.locator('#pickup-adjustment-note')).toContainText('handoff by 06:20');
+  await page.locator('#buyer-pickup-time').fill('01:00');
+  await page.locator('#align-pickup-time').click();
+  await expect(page.locator('#pickup-adjustment-note')).toContainText('previous day');
+  await expect(page.locator('#pickup-adjustment-note')).toContainText('rest, staffing and legal working hours');
 });
 
 test('key app pages remain usable at a narrow mobile viewport',async({page})=>{
