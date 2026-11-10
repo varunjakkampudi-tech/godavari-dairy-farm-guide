@@ -2,13 +2,24 @@ const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 const fs=require('node:fs');
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html','/pages/health.html','/pages/layout.html','/pages/feeding.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html','/pages/health.html','/pages/layout.html','/pages/feeding.html','/pages/vaccination.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
     expect(results.violations.map(({id,impact,help,nodes})=>({id,impact,help,nodes:nodes.length}))).toEqual([]);
   });
 }
+
+test('vaccination guide distinguishes national campaign guidance from local authorization',async({page})=>{
+  await page.goto('/pages/vaccination.html');
+  await expect(page.getByRole('heading',{name:'National programme context checked 10 November 2026'})).toBeVisible();
+  await expect(page.locator('article')).toContainText('female bovine calves aged 4–8 months');
+  await expect(page.locator('article')).toContainText('current Andhra Pradesh campaign');
+  await expect(page.locator('article')).toContainText('has not verified Andhra Pradesh adoption');
+  await expect(page.locator('article')).toContainText('No product list, dose, self-medication instruction');
+  await expect(page.getByRole('link',{name:'Open farm records to enter a vet-confirmed health event'})).toHaveAttribute('href','records.html#event-form');
+  for(const source of ['OperationalGuidelinesforLHDCP21052025.pdf','OMWithAnnex.pdf','SOPBrucellosis.pdf']) await expect(page.locator(`a[href*="${source}"]`).first()).toBeVisible();
+});
 
 test('research page downloads the deduplicated source traceability CSV',async({page})=>{
   await page.goto('/pages/research.html');
