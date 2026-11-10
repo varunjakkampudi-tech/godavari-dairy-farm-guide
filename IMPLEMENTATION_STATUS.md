@@ -26,6 +26,7 @@ Snapshot after breeding-to-newborn timeline: public `main` at `b7fb5775fc04b4fa1
 - Published breed media includes an original, generic accessible buffalo silhouette. Breed-specific authentic media and livestock expert review remain open.
 - Published localization switch adds persisted English/Telugu preference for shared navigation and basic controls, marks localized chrome with `lang`, and displays a notice that substantive Telugu translation is not yet reviewed. Exact-SHA run `42779209471` passed both CI jobs; live `nav.js` and home routes returned HTTP 200 with the selector present. Follow-up Playwright CLI smoke verified Telugu labels, the review notice and persistence after reload; full accessibility checks remain open.
 - Published reproduction timeline adds staged service-to-newborn records, calving warning escalation and browser-local checkboxes, sourced to ICAR-CIRB/NDDB; it does not calculate a due date or permit obstetric intervention. Exact-SHA run `42782675592` passed CI and live breeding page/search routes were verified.
+- Local decision-center candidate maps the brief’s 20 business questions to required evidence and app tools. Missing note/date/source returns `INSUFFICIENT EVIDENCE`; recorded material stays labeled unverified. Browser-local save/reload/clear behavior was smoke-tested after fixing stale in-memory state; export and print controls are implemented. Build and 47 tests pass, exact-SHA publication pending.
 
 ## Major gaps
 
