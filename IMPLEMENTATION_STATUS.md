@@ -1,6 +1,6 @@
 # Implementation status
 
-Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is in [PROGRESS.md](PROGRESS.md) and [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md). Latest verified public main is `3c9eebac382843615f45a86bea4ea9e61ef7ca00`; exact-SHA Actions run `42814822808` passed deployment and smoke. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is in [PROGRESS.md](PROGRESS.md) and [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md). Latest verified public app code is `f838042c7941bf5fa58249a74b2ef0bde0818932`; exact-SHA Actions run `42819679385` passed build/test, Pages deployment and post-deploy smoke. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -38,4 +38,4 @@ Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is
 
 ## Release evidence
 
-Latest code release `3c9eebac382843615f45a86bea4ea9e61ef7ca00`; exact-SHA run `42814822808` passed build, dependency audit, 53 unit tests, 28 browser/accessibility tests, content audit, Pages deployment and live post-deploy route/asset smoke. The 28 browser tests include eight axe route scans, source-register download, emergency routing, purchase comparison evidence, breed registry interactions, records CRUD/backup/security, preferences, mobile and offline checks. Broader browser, accessibility, source validity and professional reviews remain incomplete. See [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md) for current evidence.
+Latest app code release `f838042c7941bf5fa58249a74b2ef0bde0818932`; exact-SHA run `42819679385` passed build, dependency audit, 53 unit tests, 32 browser/accessibility tests, content audit, Pages deployment and live post-deploy route/asset smoke. The 32 browser tests include ten axe route scans, expanded health-library rendering/search/filter, source-register download, emergency routing, purchase comparison evidence, breed registry interactions, records CRUD/backup/security, preferences, mobile and offline checks. Broader browser, accessibility, source validity and professional reviews remain incomplete. See [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md) for current evidence.
