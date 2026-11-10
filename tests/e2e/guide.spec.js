@@ -80,6 +80,47 @@ test('farm animal records save in browser storage and survive reload',async({pag
   await expect(page.locator('#animal-list')).toContainText('BUF-E2E-01');
 });
 
+test('emergency triage prioritizes urgent signs and reset clears the result',async({page})=>{
+  await page.goto('/pages/health.html');
+  const form=page.locator('#symptom-triage');
+  await expect(form.locator('input[name="symptom"]')).toHaveCount(17);
+  await form.locator('input[name="symptom"][value="not-eating"]').check();
+  await form.locator('input[name="symptom"][value="breathing"]').check();
+  await form.getByRole('button',{name:'Show safe next steps'}).click();
+  const result=page.locator('#triage-result');
+  await expect(result).toHaveAttribute('role','alert');
+  await expect(result).toContainText(/now/i);
+  await expect(result.getByRole('link',{name:/emergency contacts/i})).toHaveAttribute('href','../pages/emergency.html');
+  await form.getByRole('button',{name:'Clear selections'}).click();
+  await expect(result).toHaveClass(/hide/);
+  await expect(result).toBeEmpty();
+});
+
+test('purchase comparison reports observed evidence gaps without ranking animals',async({page})=>{
+  await page.goto('/pages/buying.html');
+  const animal=page.locator('.purchase-animal').first();
+  await animal.locator('[data-k="tag"]').fill('BUY-E2E-1');
+  await animal.locator('[data-k="breed"]').fill('Seller claim');
+  for(const [day,date,am,pm] of [[1,'2026-11-01','4','3'],[2,'2026-11-02','5','3'],[3,'2026-11-03','4','4']]){
+    await animal.locator(`[data-o="${day}"][data-part="date"]`).fill(date);
+    await animal.locator(`[data-o="${day}"][data-part="am"]`).fill(am);
+    await animal.locator(`[data-o="${day}"][data-part="pm"]`).fill(pm);
+  }
+  await page.getByRole('button',{name:'Add animal'}).click();
+  const second=page.locator('.purchase-animal').nth(1);
+  await second.locator('[data-k="tag"]').fill('BUY-E2E-2');
+  await second.locator('[data-o="1"][data-part="date"]').fill('2026-11-01');
+  await second.locator('[data-o="1"][data-part="am"]').fill('6');
+  await page.getByRole('button',{name:'Compare evidence'}).click();
+  const results=page.locator('#purchase-results');
+  await expect(results.locator('table')).toBeVisible();
+  await expect(results).toContainText('7.7 L/day');
+  await expect(results).toContainText('Insufficient observations');
+  await expect(results).toContainText('Independent vet examination arranged');
+  await expect(results).toContainText(/does not verify them|not a recommendation/i);
+  await expect(results).not.toContainText(/winner|best animal/i);
+});
+
 test('farm records support create, edit, search, and confirmed delete across register types',async({page})=>{
   await page.goto('/pages/records.html');
   await page.locator('#animal-form [name="id"]').fill('BUF-FLOW-01');
