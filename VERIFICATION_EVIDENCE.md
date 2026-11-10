@@ -4,9 +4,13 @@
 
 Commit `01c116f` added the browser-local individual-animal breeding/calving calendar to the existing validated event ledger. Local verification passed: build; 50/50 unit tests; 22/22 Chromium tests including event-window persistence, Farm Records/JSON backup visibility, invalid follow-up date rejection, five axe route scans and offline navigation; content audit (24 pages, zero errors/warnings); npm audit (zero vulnerabilities); and `git diff --check`. GitHub Actions run [42804712640](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42804712640) passed exact-SHA build-test, Pages deploy and post-deploy live route/asset smoke. Live breeding route returned HTTP 200. The calendar records owner observations and professional-supplied dates; it calculates no pregnancy or due date. Local logo/theme refresh is subsequent work and is not included in that deployed SHA.
 
+## Godavari logo and theme refresh
+
+Commit `3e34216` refined the buffalo-and-river logo and favicon and coordinated the forest, sage, harvest-gold and rice-cream light/dark theme. Local verification passed: build; 50/50 unit tests; 22/22 Chromium tests including five axe route scans, mobile layouts and offline use; content audit (24 pages, zero errors/warnings); npm audit (zero vulnerabilities); and `git diff --check`. Exact-SHA GitHub Actions run [42805860954](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42805860954) passed build-test, Pages deployment and post-deploy route/asset smoke. The automated axe scans report no WCAG 2.1 A/AA findings on five tested routes; this is not a full accessibility or expert visual review.
+
 ## Current checkout and remote evidence
 
-Local checkout and `origin/main` are at `d8d41a7c4f975beb74bacf7d2d3d5ff22841fcf6`. Exact-SHA Actions run `42801831052` passed build, 49 Node tests, 19 Chromium tests, dependency/content audits, Pages deployment and live smoke.
+Local checkout and `origin/main` are at `3e34216`. Exact-SHA Actions run `42805860954` passed build, 50 Node tests, 22 Chromium tests, dependency/content audits, Pages deployment and live smoke.
 
 - CSV export browser regression `d8d41a7c4f975beb74bacf7d2d3d5ff22841fcf6`: Playwright captures all four actual CSV downloads from the records UI, reads their contents, verifies the animal record and confirms a formula-like `=HYPERLINK(...)` note is quoted and apostrophe-prefixed. Local `npm test` 49/49; `npm run test:e2e` 19/19; content audit 24 pages/0 errors/0 warnings; npm audit 0 vulnerabilities. Exact-SHA run [42801831052](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42801831052) passed CI, Pages deploy and live route/asset smoke. Formula assertions cover this record export flow, not every spreadsheet or CSV consumer.
 
