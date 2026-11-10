@@ -2,7 +2,9 @@
 
 Practical planning and operations app for a small buffalo dairy in West Godavari, Andhra Pradesh.
 
-> **Status:** local working app, research incomplete. It is educational decision support, not veterinary diagnosis, legal advice, investment advice, or verified buyer/supplier directory. Never treat ₹70–₹80/L as a confirmed procurement rate.
+> **Status:** Public, research-led planning app. The code and static site are published, but local fieldwork and professional review are still open. It is educational decision support, not veterinary diagnosis, legal advice, investment advice, or a verified buyer/supplier directory. Never treat ₹70–₹80/L as a confirmed procurement rate.
+
+[Open the live guide](https://varunjakkampudi-tech.github.io/godavari-dairy-farm-guide/) · [Source repository](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide) · [Completion and evidence tracker](PROGRESS.md)
 
 ## Open and use
 
@@ -46,6 +48,12 @@ tests/        calculation, import validation and static-link tests
 .github/      GitHub Pages workflow
 ```
 
-## Publication
+## Publication and contribution
 
-The GitHub Pages workflow is prepared, but the site is not published. The original project brief requires owner preview and explicit approval before public release. Build and test runs are independent from publication; the Pages job remains skipped unless the repository variable `PUBLISH_PAGES` is set to `true` after approval and GitHub Pages is configured. See [`PROGRESS.md`](PROGRESS.md) for work that still needs evidence or review.
+This project is public on GitHub Pages. Every push to `main` builds and tests the site; the deployment job is controlled by the repository variable `PUBLISH_PAGES`. Public hosting does not make private farm records public: register data stays in the browser profile where it was entered. See [`PROGRESS.md`](PROGRESS.md) for remaining field evidence and professional reviews.
+
+To contribute, open an issue describing the page, source, or reproducible problem. For animal-health, regulatory, price, or investment claims, include a dated primary source and note the location and limits it covers. Do not submit identifiable farm or worker information.
+
+## Evidence and limitations
+
+The guide separates official references, planning calculations, and local questions. Public sources do not establish current milk buyer access, procurement settlement terms, local animal prices, plot suitability, or a profitable business case for an individual farm. Those require direct, dated local evidence. Veterinary material is for recognition, prevention, recordkeeping, and escalation; a qualified veterinarian must decide diagnosis, treatment, and vaccination for each animal.
