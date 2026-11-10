@@ -25,6 +25,7 @@ Snapshot after newborn-calf health guide: public `main` at `46278b7a90ae93e17ff0
 - Published IPM guide adds prevention-first mosquito/fly/tick/rodent guidance. Exact-SHA CI and live page/search checks passed in run `42777877013`.
 - Published breed media includes an original, generic accessible buffalo silhouette. Breed-specific authentic media and livestock expert review remain open.
 - Published localization switch adds persisted English/Telugu preference for shared navigation and basic controls, marks localized chrome with `lang`, and displays a notice that substantive Telugu translation is not yet reviewed. Exact-SHA run `42779209471` passed both CI jobs; live `nav.js` and home routes returned HTTP 200 with the selector present. Browser visual verification is unavailable in this session.
+- Local reproduction timeline adds staged service-to-newborn records, calving warning escalation and browser-local checkboxes, sourced to ICAR-CIRB/NDDB; it does not calculate a due date or permit obstetric intervention. Build and 45 tests pass; exact-SHA release verification is pending.
 
 ## Major gaps
 

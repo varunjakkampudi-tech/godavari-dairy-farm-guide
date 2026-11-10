@@ -47,6 +47,7 @@ Last reviewed: 10 November 2026 (Asia/Kolkata). Online availability and facts ma
 | Buffalopox | [ICAR-CIRB Buffalopedia: Buffalopox](https://buffalopedianew.cirb.res.in/buffalopox/) | Accessed 10 Nov 2026. Describes a contagious buffalo pox disease, lesions and zoonotic context. The app provides recognition and exposure escalation only; no treatment guidance is reproduced. |
 | Internal parasites | [NDDB: Worm control](https://www.nddb.coop/farmer/animal-health/general/worm-control) | Accessed 10 Nov 2026. General symptom and parasite-management context; no fixed deworming calendar or drug instructions are reproduced. Individual control and withdrawal depend on veterinarian/label guidance. |
 | Newborn calf health | [NDDB: Care of new-born calf](https://www.nddb.coop/farmer/animal-health/general/new-born-calf) | Accessed 10 Nov 2026. Supports general newborn observation, clean care and veterinary escalation context; the app omits procedural or medication directions and does not replace a calf examination. |
+| Buffalo reproduction and calving risks | [ICAR-CIRB Buffalopedia: Buffalo reproduction](https://buffalopedianew.cirb.res.in/buffalo-reproduction/) | Accessed 10 Nov 2026. Describes buffalo reproductive disorders and parturition-associated risks. The app uses it for record/timeline context and escalation only; no obstetric technique or medicine instructions are reproduced. |
 
 ## Research rules
 
