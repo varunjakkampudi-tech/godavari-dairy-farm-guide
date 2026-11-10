@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-10T16:11:42.505Z",
+  "checkedAt": "2026-11-10T17:59:28.948Z",
   "method": "HEAD, with GET range fallback for unsupported HEAD",
   "note": "HTTP reachability snapshot only. A successful response does not validate source content, citation accuracy, or professional correctness.",
   "sources": [
@@ -10,7 +10,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/buffalo-reproduction/",
-      "checkedAt": "2026-11-10T16:11:34.284Z"
+      "checkedAt": "2026-11-10T17:59:13.589Z"
     },
     {
       "sourceId": "SRC-002",
@@ -19,7 +19,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/buffalopox/",
-      "checkedAt": "2026-11-10T16:11:34.361Z"
+      "checkedAt": "2026-11-10T17:59:13.723Z"
     },
     {
       "sourceId": "SRC-003",
@@ -28,7 +28,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/godavari/",
-      "checkedAt": "2026-11-10T16:11:34.362Z"
+      "checkedAt": "2026-11-10T17:59:13.726Z"
     },
     {
       "sourceId": "SRC-004",
@@ -37,7 +37,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/health-management-2/",
-      "checkedAt": "2026-11-10T16:11:34.363Z"
+      "checkedAt": "2026-11-10T17:59:13.728Z"
     },
     {
       "sourceId": "SRC-005",
@@ -46,7 +46,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/health-management/",
-      "checkedAt": "2026-11-10T16:11:34.364Z"
+      "checkedAt": "2026-11-10T17:59:13.731Z"
     },
     {
       "sourceId": "SRC-006",
@@ -55,7 +55,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://buffalopedianew.cirb.res.in/shelter-management/",
-      "checkedAt": "2026-11-10T16:11:34.365Z"
+      "checkedAt": "2026-11-10T17:59:13.734Z"
     },
     {
       "sourceId": "SRC-007",
@@ -64,7 +64,7 @@
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/en/schemes/programmes/animal-husbandry-statistics",
-      "checkedAt": "2026-11-10T16:11:34.898Z"
+      "checkedAt": "2026-11-10T17:59:14.197Z"
     },
     {
       "sourceId": "SRC-008",
@@ -73,7 +73,7 @@
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/sites/default/files/2026-02/OMWithAnnex.pdf",
-      "checkedAt": "2026-11-10T16:11:34.929Z"
+      "checkedAt": "2026-11-10T17:59:14.202Z"
     },
     {
       "sourceId": "SRC-009",
@@ -82,7 +82,7 @@
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/sites/default/files/2026-02/SOPBrucellosis.pdf",
-      "checkedAt": "2026-11-10T16:11:34.932Z"
+      "checkedAt": "2026-11-10T17:59:14.267Z"
     },
     {
       "sourceId": "SRC-010",
@@ -91,7 +91,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://icar.gov.in/sites/default/files/Circulars/ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf",
-      "checkedAt": "2026-11-10T16:11:34.957Z"
+      "checkedAt": "2026-11-10T17:59:14.289Z"
     },
     {
       "sourceId": "SRC-011",
@@ -100,7 +100,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://imdpune.gov.in/Reports/Statewise%20annual%20climate/2024/Climate_Statement_2024_Andhra_Pradesh_Draft.pdf",
-      "checkedAt": "2026-11-10T16:11:34.972Z"
+      "checkedAt": "2026-11-10T17:59:14.294Z"
     },
     {
       "sourceId": "SRC-012",
@@ -109,7 +109,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://mausam.imd.gov.in/responsive/monsooninformation_monsoon_activity.php",
-      "checkedAt": "2026-11-10T16:11:35.353Z"
+      "checkedAt": "2026-11-10T17:59:14.317Z"
     },
     {
       "sourceId": "SRC-013",
@@ -118,7 +118,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://nbagr.res.in/buffalo-breed",
-      "checkedAt": "2026-11-10T16:11:38.194Z"
+      "checkedAt": "2026-11-10T17:59:15.991Z"
     },
     {
       "sourceId": "SRC-014",
@@ -127,7 +127,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://nddb.coop/farmer/animal-nutrition/feeding-of-dairy-animals",
-      "checkedAt": "2026-11-10T16:11:38.419Z"
+      "checkedAt": "2026-11-10T17:59:15.994Z"
     },
     {
       "sourceId": "SRC-015",
@@ -136,7 +136,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://nddb.coop/services/animalnutrition/cattlefeed",
-      "checkedAt": "2026-11-10T16:11:39.729Z"
+      "checkedAt": "2026-11-10T17:59:16.092Z"
     },
     {
       "sourceId": "SRC-016",
@@ -145,25 +145,29 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://nddb.coop/services/animalnutrition/programmes/ration-balancing-programme",
-      "checkedAt": "2026-11-10T16:11:40.918Z"
+      "checkedAt": "2026-11-10T17:59:19.415Z"
     },
     {
       "sourceId": "SRC-017",
       "title": "West Godavari District Animal Husbandry Department",
       "url": "https://westgodavari.ap.gov.in/departments/ah/",
-      "method": "HEAD",
-      "status": 200,
-      "finalUrl": "https://westgodavari.ap.gov.in/departments/ah/",
-      "checkedAt": "2026-11-10T16:11:41.085Z"
+      "method": "GET",
+      "status": null,
+      "finalUrl": null,
+      "checkedAt": "2026-11-10T17:59:19.527Z",
+      "error": "fetch failed",
+      "headError": "fetch failed"
     },
     {
       "sourceId": "SRC-018",
       "title": "West Godavari District Officers directory",
       "url": "https://westgodavari.ap.gov.in/district-officers/",
-      "method": "HEAD",
-      "status": 200,
-      "finalUrl": "https://westgodavari.ap.gov.in/district-officers/",
-      "checkedAt": "2026-11-10T16:11:41.177Z"
+      "method": "GET",
+      "status": null,
+      "finalUrl": null,
+      "checkedAt": "2026-11-10T17:59:19.609Z",
+      "error": "fetch failed",
+      "headError": "fetch failed"
     },
     {
       "sourceId": "SRC-019",
@@ -172,7 +176,7 @@
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/en/schemes-programmes/lhdcp",
-      "checkedAt": "2026-11-10T16:11:41.221Z"
+      "checkedAt": "2026-11-10T17:59:19.706Z"
     },
     {
       "sourceId": "SRC-020",
@@ -181,7 +185,7 @@
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/en/schemes/programmes/nadcp",
-      "checkedAt": "2026-11-10T16:11:41.324Z"
+      "checkedAt": "2026-11-10T17:59:24.420Z"
     },
     {
       "sourceId": "SRC-021",
@@ -190,7 +194,7 @@
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/index.php/node/3282",
-      "checkedAt": "2026-11-10T16:11:41.467Z"
+      "checkedAt": "2026-11-10T17:59:24.426Z"
     },
     {
       "sourceId": "SRC-022",
@@ -199,7 +203,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.dahd.gov.in/offerings/schemes-and-services/details/national-livestock-mission-nlm-EzMwQTMtQWa",
-      "checkedAt": "2026-11-10T16:11:41.489Z"
+      "checkedAt": "2026-11-10T17:59:24.678Z"
     },
     {
       "sourceId": "SRC-023",
@@ -208,7 +212,7 @@
       "method": "GET",
       "status": 404,
       "finalUrl": "https://www.dahd.gov.in/sites/default/files/2025-05/OperationalGuidelinesforLHDCP21052025.pdf",
-      "checkedAt": "2026-11-10T16:11:41.546Z"
+      "checkedAt": "2026-11-10T17:59:24.706Z"
     },
     {
       "sourceId": "SRC-024",
@@ -217,7 +221,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.fssai.gov.in/upload/advisories/2026/03/69b2835b23822Advisory%20dated%2011.03.2026%20related%20to%20Milk%20Producers%20and%20Milk%20vendors.pdf",
-      "checkedAt": "2026-11-10T16:11:41.631Z"
+      "checkedAt": "2026-11-10T17:59:24.720Z"
     },
     {
       "sourceId": "SRC-025",
@@ -226,7 +230,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nabard.org/auth/writereaddata/tender/0501223757west-godavari.pdf",
-      "checkedAt": "2026-11-10T16:11:41.716Z"
+      "checkedAt": "2026-11-10T17:59:24.741Z"
     },
     {
       "sourceId": "SRC-026",
@@ -235,7 +239,7 @@
       "method": "GET",
       "status": null,
       "finalUrl": null,
-      "checkedAt": "2026-11-10T16:11:41.765Z",
+      "checkedAt": "2026-11-10T17:59:24.787Z",
       "error": "fetch failed",
       "headError": "fetch failed"
     },
@@ -246,7 +250,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/ccnddb/milkipedia",
-      "checkedAt": "2026-11-10T16:11:41.816Z"
+      "checkedAt": "2026-11-10T17:59:24.824Z"
     },
     {
       "sourceId": "SRC-028",
@@ -255,7 +259,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/disease/mastitis/clinical",
-      "checkedAt": "2026-11-10T16:11:41.846Z"
+      "checkedAt": "2026-11-10T17:59:24.848Z"
     },
     {
       "sourceId": "SRC-029",
@@ -264,7 +268,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/disease/others/bloat",
-      "checkedAt": "2026-11-10T16:11:41.859Z"
+      "checkedAt": "2026-11-10T17:59:24.904Z"
     },
     {
       "sourceId": "SRC-030",
@@ -273,7 +277,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/disease/viral/fmd",
-      "checkedAt": "2026-11-10T16:11:41.897Z"
+      "checkedAt": "2026-11-10T17:59:25.009Z"
     },
     {
       "sourceId": "SRC-031",
@@ -282,7 +286,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/general/fly-control",
-      "checkedAt": "2026-11-10T16:11:41.944Z"
+      "checkedAt": "2026-11-10T17:59:25.011Z"
     },
     {
       "sourceId": "SRC-032",
@@ -291,7 +295,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/general/new-born-calf",
-      "checkedAt": "2026-11-10T16:11:41.983Z"
+      "checkedAt": "2026-11-10T17:59:25.080Z"
     },
     {
       "sourceId": "SRC-033",
@@ -300,7 +304,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/general/tick-control",
-      "checkedAt": "2026-11-10T16:11:42.097Z"
+      "checkedAt": "2026-11-10T17:59:25.167Z"
     },
     {
       "sourceId": "SRC-034",
@@ -309,7 +313,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/farmer/animal-health/general/worm-control",
-      "checkedAt": "2026-11-10T16:11:42.110Z"
+      "checkedAt": "2026-11-10T17:59:25.178Z"
     },
     {
       "sourceId": "SRC-035",
@@ -318,7 +322,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/hi/node/1340",
-      "checkedAt": "2026-11-10T16:11:42.118Z"
+      "checkedAt": "2026-11-10T17:59:25.222Z"
     },
     {
       "sourceId": "SRC-036",
@@ -327,7 +331,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/node/1279",
-      "checkedAt": "2026-11-10T16:11:42.153Z"
+      "checkedAt": "2026-11-10T17:59:25.254Z"
     },
     {
       "sourceId": "SRC-037",
@@ -336,7 +340,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/node/1376",
-      "checkedAt": "2026-11-10T16:11:42.197Z"
+      "checkedAt": "2026-11-10T17:59:25.363Z"
     },
     {
       "sourceId": "SRC-038",
@@ -345,7 +349,7 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/node/1901",
-      "checkedAt": "2026-11-10T16:11:42.218Z"
+      "checkedAt": "2026-11-10T17:59:25.393Z"
     },
     {
       "sourceId": "SRC-039",
@@ -354,7 +358,25 @@
       "method": "HEAD",
       "status": 200,
       "finalUrl": "https://www.nddb.coop/sites/default/files/handbook_of_good_dairy_husbandry_practices_low.pdf",
-      "checkedAt": "2026-11-10T16:11:42.302Z"
+      "checkedAt": "2026-11-10T17:59:25.415Z"
+    },
+    {
+      "sourceId": "SRC-040",
+      "title": "NDDB: Procurement Manual",
+      "url": "https://www.nddb.coop/sites/default/files/NDDB-Procurement-Manual.pdf",
+      "method": "HEAD",
+      "status": 200,
+      "finalUrl": "https://www.nddb.coop/sites/default/files/NDDB-Procurement-Manual.pdf",
+      "checkedAt": "2026-11-10T17:59:25.466Z"
+    },
+    {
+      "sourceId": "SRC-041",
+      "title": "DAHD reply published by Press Information Bureau (2 Dec 2025)",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2197547&lang=2&reg=48",
+      "method": "HEAD",
+      "status": 401,
+      "finalUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2197547&lang=2&reg=48",
+      "checkedAt": "2026-11-10T17:59:25.552Z"
     }
   ]
 }

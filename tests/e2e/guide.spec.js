@@ -244,6 +244,43 @@ test('finance studio calculates a scenario but keeps the result explicitly unver
   await expect(page.locator('#studio-results')).toContainText('Month 12');
 });
 
+test('finance studio saves and restores assumptions and exports report data',async({page})=>{
+  await page.goto('/pages/finance-studio.html');
+  await page.locator('[name="pricingMode"]').selectOption('fat-snf');
+  await page.locator('[name="fatRate"]').fill('183.5');
+  await page.locator('[name="snfRate"]').fill('41.25');
+  await page.locator('[name="milkFat1"]').fill('7.2');
+  await page.locator('[name="milkSnf1"]').fill('9.1');
+  await page.locator('[name="yield1"]').fill('8.4');
+  await page.locator('[name="purchase1"]').fill('245000');
+  await page.getByRole('button',{name:'Build monthly plan'}).click();
+  page.once('dialog',dialog=>dialog.accept('Verified input example'));
+  await page.getByRole('button',{name:'Save scenario'}).click();
+  await expect(page.locator('#saved-scenarios')).toContainText('Load Verified input example');
+  await page.reload();
+  await expect(page.locator('#saved-scenarios')).toContainText('Load Verified input example');
+  await page.locator('#saved-scenarios button[data-load="0"]').click();
+  await expect(page.locator('[name="pricingMode"]')).toHaveValue('fat-snf');
+  await expect(page.locator('[name="fatRate"]')).toHaveValue('183.5');
+  await expect(page.locator('[name="snfRate"]')).toHaveValue('41.25');
+  await expect(page.locator('[name="milkFat1"]')).toHaveValue('7.2');
+  await expect(page.locator('[name="milkSnf1"]')).toHaveValue('9.1');
+  await expect(page.locator('[name="yield1"]')).toHaveValue('8.4');
+  const [csvDownload]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'Export monthly CSV'}).click()]);
+  const csvText=fs.readFileSync(await csvDownload.path(),'utf8');
+  expect(csvDownload.suggestedFilename()).toBe('godavari-monthly-cashflow.csv');
+  expect(csvText).toContain('Month,Saleable litres,Pooled fat %,Pooled SNF %');
+  expect(csvText).toContain('7.2,9.1');
+  const [jsonDownload]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'Export JSON'}).click()]);
+  const json=JSON.parse(fs.readFileSync(await jsonDownload.path(),'utf8'));
+  expect(json.plan.base.fatRate).toBe(183.5);
+  expect(json.plan.animals[0].purchasePrice).toBe(245000);
+  await page.emulateMedia({media:'print'});
+  await expect(page.locator('#studio-results table').first().locator('tbody tr')).toHaveCount(12);
+  await expect(page.locator('#studio-results table').first().locator('tbody tr').last()).toContainText('12');
+  await expect(page.locator('#studio-results')).toContainText('INSUFFICIENT EVIDENCE');
+});
+
 test('farm animal records save in browser storage and survive reload',async({page})=>{
   await page.goto('/pages/records.html');
   await page.locator('#animal-form [name="id"]').fill('BUF-E2E-01');
