@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot after shared-language selector release: public `main` at `f2ff775debe7d715522b6a44a55d34fcbd141ebf`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot after health-library expansion: public `main` at `28e7f584c7f310493f1038fb89e65754eb2d638a`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -19,7 +19,7 @@ Snapshot after shared-language selector release: public `main` at `f2ff775debe7d
 - Published employee aid has an editable illustrative schedule and handover summary with session-only checkoffs; no employee field test has occurred.
 - Published milking page has a 20-step visual SOP; trained-milker, veterinarian, food-safety and buyer review remains open.
 - Published feed page has a user-input fodder area coverage estimator and ration discussion-note form; it generates no individualized prescription. West Godavari yields, crop calendar, prices and nutritionist review remain open.
-- Published health page has 25 source-linked summaries and filters; summaries are not vet reviewed and are not an exhaustive clinical encyclopedia.
+- Published health page has 26 source-linked summaries and filters; summaries are not vet reviewed and are not an exhaustive clinical encyclopedia.
 - Published vaccination/medicine reference is non-prescriptive and links to editable health records; no vaccine calendar or medicine schedule is generated.
 - Published seasonal guide has checklists and an accessible readiness diagram, citing IMD 2024 observations only as one-year context; current alerts and parcel survey remain necessary.
 - Published IPM guide adds prevention-first mosquito/fly/tick/rodent guidance. Exact-SHA CI and live page/search checks passed in run `42777877013`.
@@ -36,4 +36,4 @@ Snapshot after shared-language selector release: public `main` at `f2ff775debe7d
 
 ## Release evidence
 
-Latest verified public release: `f2ff775debe7d715522b6a44a55d34fcbd141ebf`; exact-SHA workflow `42779209471` passed build/test and Pages deploy, and live home/nav/service-worker routes returned HTTP 200 with the language selector present. Browser visual verification failed to initialize. The larger health encyclopedia and licensed local clinical review remain incomplete.
+Latest verified public release: `28e7f584c7f310493f1038fb89e65754eb2d638a`; exact-SHA workflow `42779896582` passed build/test and Pages deploy, and live health/library routes returned HTTP 200 with new condition entries. The shared-language selector release `f2ff775debe7d715522b6a44a55d34fcbd141ebf` also passed CI and live route verification. Browser visual verification failed to initialize. The larger health encyclopedia and licensed local clinical review remain incomplete.
