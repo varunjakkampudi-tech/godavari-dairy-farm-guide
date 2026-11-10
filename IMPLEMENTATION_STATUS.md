@@ -1,6 +1,6 @@
 # Implementation status
 
-Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is in [PROGRESS.md](PROGRESS.md) and [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md). Latest verified public app code is `f838042c7941bf5fa58249a74b2ef0bde0818932`; exact-SHA Actions run `42819679385` passed build/test, Pages deployment and post-deploy smoke. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is in [PROGRESS.md](PROGRESS.md) and [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md). Latest verified public app code is `f253cb1cdb73cf922eb4605efbda7e34db00b4a7`; exact-SHA Actions run `42834114210` passed build/test, Pages deployment and post-deploy smoke. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -15,7 +15,7 @@ Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is
 - Published purchase comparison: on-page four-animal worksheet with dated AM/PM yield observations and evidence-gap display; page-session only, non-ranking and not a professional assessment.
 - Published breed registry library filters/sorts the current NBAGR buffalo breed list and separates the CIRB Godavari regional profile. A build defect that left an obsolete table fragment has been fixed; exact-SHA browser coverage now exercises filter, search and sort. The app intentionally does not invent missing breed-specific production, price or availability values.
 - Published purchase guidance includes a vet-preparation checklist and four-animal staged plan; local professional review remains open.
-- Published conceptual layout has shed, ventilation/roof heat and rain/wastewater SVGs, text flow diagrams and cost-quote collection guidance; it is not surveyed or construction-ready.
+- Published conceptual layout has shed plan and front/side/section elevations, ventilation/roof heat and rain/wastewater SVGs, text flow diagrams and an interactive browser-local quote collector. Exact-SHA run `42834114210` and live browser verification passed; site survey and engineering approval remain open.
 - Published employee aid has an editable illustrative schedule and handover summary with session-only checkoffs; no employee field test has occurred.
 - Published milking page has a 20-step visual SOP; trained-milker, veterinarian, food-safety and buyer review remains open.
 - Published feed page has a user-input fodder area coverage estimator and ration discussion-note form; it generates no individualized prescription. West Godavari yields, crop calendar, prices and nutritionist review remain open.
@@ -38,4 +38,4 @@ Implementation and gap snapshot updated 10 Nov 2026. Current release evidence is
 
 ## Release evidence
 
-Latest app code release `f838042c7941bf5fa58249a74b2ef0bde0818932`; exact-SHA run `42819679385` passed build, dependency audit, 53 unit tests, 32 browser/accessibility tests, content audit, Pages deployment and live post-deploy route/asset smoke. The 32 browser tests include ten axe route scans, expanded health-library rendering/search/filter, source-register download, emergency routing, purchase comparison evidence, breed registry interactions, records CRUD/backup/security, preferences, mobile and offline checks. Broader browser, accessibility, source validity and professional reviews remain incomplete. See [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md) for current evidence.
+Latest app code release `f253cb1cdb73cf922eb4605efbda7e34db00b4a7`; exact-SHA run `42834114210` passed build, dependency audit, 56 unit tests, 34 browser/accessibility tests, content audit, Pages deployment and live post-deploy route/asset smoke. The 34 browser tests include eleven axe route scans, expanded health-library rendering/search/filter, source-register download, emergency routing, purchase comparison evidence, breed registry interactions, records CRUD/backup/security, preferences, mobile and offline checks. Broader browser, accessibility, source validity and professional reviews remain incomplete. See [VERIFICATION_EVIDENCE.md](VERIFICATION_EVIDENCE.md) for current evidence.
