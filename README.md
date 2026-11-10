@@ -21,7 +21,7 @@ npm test
 
 - Responsive multi-page guide covering feasibility, breed comparison, buying, layout, feed, daily operations, milking, health/emergency contacts, seasonal care, breeding/calves, markets, staff, vaccination, pests, legal questions and local fieldwork.
 - Search filters page content; light/dark preference persists in this browser.
-- Calculator annualizes saleable milk by lactating days, separately totals monthly and annual costs, and calculates a break-even milk price. Enter the actual buyer settlement rate and dated cost quotes. Results are not a forecast.
+- The [annual calculator](pages/finance.html) and [finance studio](pages/finance-studio.html) estimate animal-level 365-day production calendars, monthly cash flow, EMI, depreciation, break-even, working capital and price/staff/herd/yield stress cases. Save scenarios locally, print a planning report, or export CSV/JSON. They are assumption-driven models, not forecasts; missing local evidence is reported as `INSUFFICIENT EVIDENCE`.
 - Animal, milk and expense registers are stored in browser local storage. JSON/CSV export and validated JSON import are included.
 - A service worker caches the static app for repeat/offline use after the first successful load.
 - A printable [90-day launch and employee workbook](pages/launch-workbook.html) organizes buyer, site, veterinary, finance and startup checks.
@@ -42,7 +42,7 @@ Health pages focus on recognizing warning signs, safe immediate actions, and cal
 ## Project structure
 
 ```text
-assets/       shared styles, navigation, calculator, records, offline support
+assets/       shared styles, navigation, calculators, records, offline support
 pages/        separate subject guides and tools
 research/     sources and verification log
 scripts/      reproducible page builder
