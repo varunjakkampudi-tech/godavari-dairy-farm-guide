@@ -26,6 +26,8 @@ jobs:
         run: npm run build
       - name: Test calculations, import validation, and local links
         run: npm test
+      - name: Audit page metadata, local links, images, and key markers
+        run: npm run audit:content
       - name: Upload site artifact
         uses: actions/upload-artifact@v7
         with:
