@@ -1,6 +1,6 @@
 # Verification log and fieldwork queue
 
-Updated 8 November 2026 (Asia/Kolkata).
+Updated 10 November 2026 (Asia/Kolkata).
 
 ## Checked online
 
@@ -13,6 +13,10 @@ Updated 8 November 2026 (Asia/Kolkata).
 | Veterinary referral geography | West Godavari district AH page places the district office in Gunupudi, Bhimavaram and identifies SIAH at Tanuku as a referral facility. | Official district service listing | Emergency response time, current clinic hours, phone availability or services offered today; call and confirm. |
 | FSSAI milk producer registration | FSSAI advisory dated 11 March 2026 says producers outside a registered dairy cooperative member arrangement that sells/supplies all milk to that society, and milk vendors, should obtain the applicable FSSAI registration/licence. | Current official advisory found | Correct licence category and conditions for this specific proposed arrangement; confirm with FSSAI/FoSCoS before starting sales. |
 | Consumer prices | NCDFI lists state consumer prices; a consumer price is not a procurement rate. | Distinction confirmed | Producer payment at any specific West Godavari centre. |
+| Raw-milk handling | NDDB Milkipedia describes smallholder collection and states raw milk at normal temperatures remains in good condition only for a few hours; chilling at collection and equipment cleaning are emphasized. | Official reference rechecked 10 Nov 2026 | A safe ambient-time target for a particular farm, buyer's acceptance rules, or local cold-chain capacity. Arrange prompt collection/cooling using the buyer's actual requirements. |
+| Silage | NDDB handbook describes cereal fodder crops, harvest moisture, chopping, packing/sealing, storage and gradual introduction. | Official general method rechecked 10 Nov 2026 | West Godavari plot-specific yield, seasonal crop performance, silo design for a flood-prone plot, or a ration recommendation. |
+| Fodder programme | DAHD National Livestock Mission page describes fodder seed and entrepreneurship components. | Official scheme information rechecked 10 Nov 2026 | Eligibility, current budget availability, application status or subsidy approval for this proposed small buffalo dairy. |
+| Public release | GitHub Actions run 42756794222 passed `build-test` (including all 9 tests) and `deploy-pages`; live page loaded in browser. | Verified 10 Nov 2026 | Does not certify completeness of the business research or professional review. |
 
 ## Required field verification before a business recommendation
 
