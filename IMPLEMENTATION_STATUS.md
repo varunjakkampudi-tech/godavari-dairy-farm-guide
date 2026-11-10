@@ -1,6 +1,6 @@
 # Implementation status
 
-Snapshot after IPM release: public `main` at `a1cfd7867316d6dbf8b5406044c314386a009bae`; the generic accessible breed illustration is the current local change and is not yet published. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
+Snapshot after generic breed illustration release: public `main` at `32f6a9275b314920664c2c0dad6b35ba1e6923e1`. This file distinguishes working code from externally verifiable requirements. Use [MASTER_CHECKLIST.md](MASTER_CHECKLIST.md) as the canonical item inventory.
 
 ## Available now
 
@@ -23,7 +23,8 @@ Snapshot after IPM release: public `main` at `a1cfd7867316d6dbf8b5406044c314386a
 - Published vaccination/medicine reference is non-prescriptive and links to editable health records; no vaccine calendar or medicine schedule is generated.
 - Published seasonal guide has checklists and an accessible readiness diagram, citing IMD 2024 observations only as one-year context; current alerts and parcel survey remain necessary.
 - Published IPM guide adds prevention-first mosquito/fly/tick/rodent guidance. Exact-SHA CI and live page/search checks passed in run `42777877013`.
-- Local breed media update adds an original, generic accessible buffalo silhouette; build/tests pass, exact-SHA publication pending. Breed-specific authentic media and livestock expert review remain open.
+- Published breed media includes an original, generic accessible buffalo silhouette. Breed-specific authentic media and livestock expert review remain open.
+- Local-only localization change adds a persisted English/Telugu switch for shared navigation and basic controls, marks localized chrome with `lang`, and displays a notice that substantive Telugu translation is not yet reviewed. Unit/source checks pass; browser visual verification is unavailable in this session.
 
 ## Major gaps
 
@@ -31,8 +32,8 @@ Snapshot after IPM release: public `main` at `a1cfd7867316d6dbf8b5406044c314386a
 - Breed registry filter and purchase comparison exist, but full breed profiles/photos and a nutrient-calculating ration planner are absent. The symptom navigator is a first-response routing aid, not a complete disease knowledge base or clinically reviewed decision tool. Local buyer/supplier directory, verified farmer case study and phone-confirmed emergency service directory remain absent.
 - The finance studio is not a fully validated financial product: no price-by-fat/SNF settlement mode, detailed amortization, validated animal lactation curves, multi-year projections, verified local costs or accountant review. Several cost categories remain approximate or manually grouped.
 - Records use a generic event ledger for many categories. Module-specific reporting/forms, additional quota/data-loss tests and professional review remain.
-- There is no bilingual localization system, comprehensive employee mode (the current schedule is a starter task aid), automated browser suite, accessibility/security pipeline or complete requirement coverage. The PWA install flow was only synthetically prompted; actual installation and mobile behavior remain unverified.
+- Telugu localization is partial: shared navigation and basic controls have a persisted language switch, but substantive guide content remains English and the strings need native-speaker review. A comprehensive employee mode, automated browser suite, accessibility/security pipeline and full requirement coverage are absent. The PWA install flow was only synthetically prompted; actual installation and mobile behavior remain unverified.
 
 ## Release evidence
 
-Latest verified public release: `a1cfd7867316d6dbf8b5406044c314386a009bae`; exact-SHA workflow `42777877013` passed build/test and Pages deploy, and the live pest page/search index returned HTTP 200 with the IPM text/source present. Current generic breed illustration changes pass the local build and 43 tests; exact-SHA release verification is pending. The larger health encyclopedia and licensed local clinical review remain incomplete.
+Latest verified public release: `32f6a9275b314920664c2c0dad6b35ba1e6923e1`; exact-SHA workflow `42778471939` passed build/test and Pages deploy, and the live breed page/SVG returned HTTP 200. IPM release `a1cfd7867316d6dbf8b5406044c314386a009bae` also passed exact-SHA workflow `42777877013`, with live pest page verified. The current localization candidate passes the local build and 44 tests; browser visual verification failed to initialize and exact-SHA deployment is pending. The larger health encyclopedia and licensed local clinical review remain incomplete.
