@@ -175,7 +175,22 @@ test('decision evidence requires note, date and source and persists across reloa
   await expect(page.locator('#business-review-date')).not.toBeEmpty();
 });
 
-test('finance studio calculates a scenario but keeps the result explicitly unverified',async({page})=>{
+test('buyer-entered fat/SNF settlement calculates net realization without supplying default local rates',async({page})=>{
+  await page.goto('/pages/finance-studio.html');
+  await expect(page.locator('#settlement-result')).toContainText('No settlement calculated');
+  await page.locator('#settlement-basis').selectOption('fat-snf');
+  await page.locator('#settlement-litres').fill('100');
+  await page.locator('#settlement-fat').fill('7');
+  await page.locator('#settlement-snf').fill('9');
+  await page.locator('#settlement-fat-rate').fill('180');
+  await page.locator('#settlement-snf-rate').fill('40');
+  await page.locator('#settlement-deductions').fill('20');
+  await page.getByRole('button',{name:'Calculate tested settlement'}).click();
+  await expect(page.locator('#settlement-result')).toContainText('₹1,620');
+  await expect(page.locator('#settlement-result')).toContainText('₹1,600');
+  await expect(page.locator('#settlement-result')).toContainText('₹16/L');
+  await expect(page.locator('#settlement-result')).toContainText('does not verify');
+});test('finance studio calculates a scenario but keeps the result explicitly unverified',async({page})=>{
   await page.goto('/pages/finance-studio.html');
   await page.locator('[name="price"]').fill('60');
   await page.locator('[name="lease"]').fill('10000');

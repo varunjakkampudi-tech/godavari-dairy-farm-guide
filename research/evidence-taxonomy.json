@@ -41,6 +41,10 @@
     "market_context_not_producer_price": {
       "label": "Market context, not a farm-gate price",
       "boundary": "Consumer or general market context cannot be used as a milk procurement rate or farm revenue input."
+    },
+    "official_statistical_release": {
+      "label": "Official statistical release",
+      "boundary": "A dated official aggregate statistic or government answer. Preserve its population, period, unit, geography and inclusions; it is not a local quote or individual outcome."
     }
   },
   "claim_classes": {
