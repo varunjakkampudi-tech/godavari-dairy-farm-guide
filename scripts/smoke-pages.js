@@ -14,7 +14,7 @@ const routes = [
 ];
 const assets = [
   'assets/site.css', 'assets/nav.js', 'assets/site.js', 'assets/search-index.json',
-  'manifest.webmanifest', 'sw.js', 'offline.html', 'assets/brand-mark.svg', 'assets/favicon.svg', 'assets/seasonal-feed-planner.js'
+  'manifest.webmanifest', 'sw.js', 'offline.html', 'pages/faq.html', 'assets/brand-mark.svg', 'assets/favicon.svg', 'assets/seasonal-feed-planner.js'
 ];
 
 async function get(path) {

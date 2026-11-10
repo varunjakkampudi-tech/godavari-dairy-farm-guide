@@ -2,7 +2,7 @@ const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 const fs=require('node:fs');
 
-for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html','/pages/health.html','/pages/layout.html','/pages/feeding.html','/pages/vaccination.html']){
+for(const route of ['/','/pages/getting-started.html','/pages/records.html','/pages/visual-library.html','/pages/breeding-calves.html','/pages/legal.html','/pages/emergency.html','/pages/research.html','/pages/operations.html','/pages/health.html','/pages/layout.html','/pages/feeding.html','/pages/vaccination.html','/pages/faq.html']){
   test(`automated accessibility scan ${route}`,async({page})=>{
     await page.goto(route);
     const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
@@ -454,11 +454,11 @@ test('malicious record text is rendered as text and malformed imports preserve e
   await expect(page.locator('#animal-list')).toContainText('BUF-XSS-01');
 });
 
-test('theme toggle exposes the active mode and keeps its mode label accurate',async({page})=>{await page.goto('/');const toggle=page.locator('#theme-toggle');await expect(toggle).toHaveAttribute('aria-pressed','false');await expect(toggle).toHaveAttribute('aria-label','Switch to dark mode');await toggle.click();await expect(toggle).toHaveAttribute('aria-pressed','true');await expect(toggle).toHaveAttribute('aria-label','Switch to light mode');await toggle.click();await expect(toggle).toHaveAttribute('aria-pressed','false')});test('global search, Telugu preference, dark theme and employee checklist persist',async({page})=>{
+test('theme toggle exposes the active mode and keeps its mode label accurate',async({page})=>{await page.goto('/');const toggle=page.locator('#theme-toggle');await expect(toggle).toHaveAttribute('aria-pressed','false');await expect(toggle).toHaveAttribute('aria-label','Switch to dark mode');await toggle.click();await expect(toggle).toHaveAttribute('aria-pressed','true');await expect(toggle).toHaveAttribute('aria-label','Switch to light mode');await toggle.click();await expect(toggle).toHaveAttribute('aria-pressed','false')});test('global search filters topics and deep-links breed and symptom entries with Telugu aliases',async({page})=>{await page.goto('/');await page.locator('#site-search').fill('₹70–₹80 per litre');await page.locator('#search-category').selectOption('faq');await expect(page.locator('header #search-results')).toContainText('confirmed buffalo-milk buying price');await page.locator('header #search-results a').filter({hasText:'confirmed buffalo-milk buying price'}).click();await expect(page).toHaveURL(/faq.html#faq-milk-price/);await expect(page.locator('#faq-milk-price')).toBeVisible();await page.goto('/');await page.locator('#site-search').fill('Mastitis');await expect(page.locator('header #search-results')).toBeVisible();await expect(page.locator('header #search-results')).toContainText('Mastitis / udder inflammation');await expect(page.locator('#search-results a').first()).toHaveAttribute('href',/health\.html#condition-mastitis-udder-inflammation/);await page.locator('#search-category').selectOption('breed');await expect(page.locator('header #search-results')).toContainText('No results');await page.locator('#site-search').fill('Godavari');await expect(page.locator('header #search-results')).toContainText('Godavari buffalo');await page.locator('#search-results a').filter({hasText:'Godavari buffalo'}).click();await expect(page).toHaveURL(/breeds\.html#breed-godavari/);await expect(page.locator('#breed-godavari')).toBeVisible();await page.goto('/');await page.locator('#site-search').fill('జ్వరం');await expect(page.locator('header #search-results')).toContainText(/fever|health/i);await page.locator('#site-search').press('Enter');await expect(page).toHaveURL(/health\.html#condition-/);expect(await page.evaluate(()=>!!document.getElementById(location.hash.slice(1)))).toBeTruthy()});test('global search, Telugu preference, dark theme and employee checklist persist',async({page})=>{
   await page.goto('/');
   await page.locator('#site-search').fill('Hygienic milking');
-  await expect(page.locator('#search-results')).toBeVisible();
-  await expect(page.locator('#search-results')).toContainText('Hygienic milking standard procedure');
+  await expect(page.locator('header #search-results')).toBeVisible();
+  await expect(page.locator('header #search-results')).toContainText('Hygienic milking standard procedure');
   await page.locator('#language-toggle').selectOption('te');
   await expect(page.locator('#translation-note')).toBeVisible();
   await expect(page.locator('#language-toggle')).toHaveValue('te');
@@ -511,7 +511,7 @@ test('employee operations provide repeatable daily/weekly/monthly/seasonal check
 
 test('key app pages remain usable at a narrow mobile viewport',async({page})=>{
   await page.setViewportSize({width:390,height:844});
-  for(const route of ['/','/pages/breeds.html','/pages/buying.html','/pages/operations.html','/pages/emergency.html','/pages/finance-studio.html','/pages/feeding.html']){
+  for(const route of ['/','/pages/breeds.html','/pages/buying.html','/pages/operations.html','/pages/emergency.html','/pages/finance-studio.html','/pages/feeding.html','/pages/faq.html']){
     await page.goto(route);
     await expect(page.locator('h1')).toBeVisible();
     const overflow=await page.evaluate(()=>({width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,items:[...document.querySelectorAll('body *')].map(e=>({tag:e.tagName,id:e.id,cls:String(e.className||''),left:Math.round(e.getBoundingClientRect().left),right:Math.round(e.getBoundingClientRect().right),width:Math.round(e.getBoundingClientRect().width)})).filter(x=>x.right>document.documentElement.clientWidth||x.left<0).slice(0,12)}));
@@ -528,6 +528,8 @@ test('cached guide and browser-local farm records remain available offline',asyn
   await context.setOffline(true);
   await page.goto('/pages/health.html');
   await expect(page.getByRole('heading',{name:/health/i}).first()).toBeVisible();
+  await page.locator('#site-search').fill('mastitis');
+  await expect(page.locator('header #search-results')).toContainText('Mastitis / udder inflammation');
   await page.goto('/pages/records.html');
   await expect(page.locator('#animal-list')).toContainText('BUF-OFFLINE-01');
 });

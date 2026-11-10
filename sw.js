@@ -1,7 +1,7 @@
-const CACHE = 'gdfg-static-v33';
+const CACHE = 'gdfg-static-v35';
 const SHELL = [
   './', './index.html', './offline.html', './manifest.webmanifest',
-  './assets/site.css', './assets/favicon.svg', './assets/brand-mark.svg', './assets/search-index.json',
+  './assets/site.css', './pages/faq.html', './assets/favicon.svg', './assets/brand-mark.svg', './assets/search-index.json',
   './assets/site.js', './assets/nav.js', './assets/calculator-core.js', './assets/finance.js',
   './assets/finance-simulator.js', './assets/records-core.js', './assets/records.js',
   './assets/market-core.js', './assets/market-tool.js', './assets/register-sw.js',
