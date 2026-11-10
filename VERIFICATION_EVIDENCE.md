@@ -2,7 +2,7 @@
 
 ## FSSAI milk-producer cooperative exception wording
 
-Reviewed the official [FSSAI advisory dated 11 March 2026](https://www.fssai.gov.in/upload/advisories/2026/03/69b2835b23822Advisory%20dated%2011.03.2026%20related%20to%20Milk%20Producers%20and%20Milk%20vendors.pdf) on 10 November 2026. Corrected the legal guide's earlier ambiguous wording: the advisory's stated cooperative exception requires both registered membership and selling/supplying all milk to that society; vendors are covered. Added Node and Playwright regression checks, expanded axe coverage to the legal route, and aligned the research inventory and verification log. Current local verification passes build, 51/51 unit tests, 24/24 browser tests (six axe scans), content audit and npm audit. This does not establish the licence category for a specific operating arrangement or replace legal/FoSCoS confirmation; exact-SHA CI and publication are pending.
+Reviewed the official [FSSAI advisory dated 11 March 2026](https://www.fssai.gov.in/upload/advisories/2026/03/69b2835b23822Advisory%20dated%2011.03.2026%20related%20to%20Milk%20Producers%20and%20Milk%20vendors.pdf) on 10 November 2026. Corrected the legal guide's earlier ambiguous wording: the advisory's stated cooperative exception requires both registered membership and selling/supplying all milk to that society; vendors are covered. Added Node and Playwright regression checks, expanded axe coverage to the legal route, and aligned the research inventory and verification log. Local verification passed build, 51/51 unit tests, 24/24 browser tests (six axe scans), content audit and npm audit. Exact-SHA Actions run [42807937229](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42807937229) passed build-test, deployment and post-deploy smoke for `fb3093f`; a direct live GET confirmed the corrected legal text and official advisory link at HTTP 200. This does not establish the licence category for a specific operating arrangement or replace legal/FoSCoS confirmation.
 
 ## Per-animal breeding calendar release
 
@@ -14,7 +14,7 @@ Commit `3e34216` refined the buffalo-and-river logo and favicon and coordinated 
 
 ## Current checkout and remote evidence
 
-Local checkout and `origin/main` are at `3e34216`. Exact-SHA Actions run `42805860954` passed build, 50 Node tests, 22 Chromium tests, dependency/content audits, Pages deployment and live smoke.
+Local checkout and `origin/main` are at `fb3093f`. Exact-SHA Actions run `42807937229` passed build, 51 Node tests, 24 Chromium tests, dependency/content audits, Pages deployment and live smoke.
 
 - CSV export browser regression `d8d41a7c4f975beb74bacf7d2d3d5ff22841fcf6`: Playwright captures all four actual CSV downloads from the records UI, reads their contents, verifies the animal record and confirms a formula-like `=HYPERLINK(...)` note is quoted and apostrophe-prefixed. Local `npm test` 49/49; `npm run test:e2e` 19/19; content audit 24 pages/0 errors/0 warnings; npm audit 0 vulnerabilities. Exact-SHA run [42801831052](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide/actions/runs/42801831052) passed CI, Pages deploy and live route/asset smoke. Formula assertions cover this record export flow, not every spreadsheet or CSV consumer.
 
