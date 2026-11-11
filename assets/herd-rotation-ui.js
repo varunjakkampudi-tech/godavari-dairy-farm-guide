@@ -12,15 +12,13 @@ const status=document.getElementById("status");
 try{
 const options=read();
 baseline=core.simulate(options);
-const stress=core.simulate({...options,averageYield:options.averageYield*0.8,realizedPrice:Math.max(0,options.realizedPrice-10),adultFeedDay:options.adultFeedDay*1.2,extraDelay:options.extraDelay+60,buyerDelay:Math.min(180,options.buyerDelay+15),adultLossCount:2,adultLossDays:60});
+const stress=core.simulate({...options,averageYield:options.averageYield*0.8,realizedPrice:Math.max(0,options.realizedPrice-10),adultFeedDay:options.adultFeedDay*1.2,extraDelay:Math.min(360,options.extraDelay+60),buyerDelay:Math.min(180,options.buyerDelay+15),adultLossCount:2,adultLossDays:60});
 const table=document.getElementById("comparison");table.textContent="";
 for(const [label,scenario] of [["Baseline",baseline],["Stress: −20% milk, −₹10/L, +20% feed, +60d calving delay, 2 milking adults unavailable for 60d",stress]]){
 const s=scenario.summary,tr=document.createElement("tr");
 for(const v of [label,inr(s.totalEarned),inr(s.totalCashExpense),inr(s.minCash),inr(s.closingCash),s.negativeOperatingMonths+" / 24",s.zeroMilkDays])cell(tr,v);
 table.appendChild(tr);
 }
-// Fix count display: 24 months are modeled unless overridden by a future extension.
-for(const tr of table.querySelectorAll("tr"))tr.children[5].textContent=tr.children[5].textContent.replace(" / undefined"," / 24");
 const rows=document.getElementById("monthrows");rows.textContent="";
 for(const m of baseline.months){const tr=document.createElement("tr");for(const v of [m.month,m.adultCountEnd,m.avgMilking.toFixed(1),m.calvesHeldEnd,num(m.saleableLitres),inr(m.cashReceived),inr(m.operatingCosts),inr(m.animalPurchases),inr(m.closingCash)])cell(tr,v);rows.appendChild(tr)}
 status.textContent="Baseline: earned milk sales "+inr(baseline.summary.totalEarned)+", cash operating costs "+inr(baseline.summary.totalCashExpense)+", 24-month minimum balance "+inr(baseline.summary.minCash)+", and "+baseline.summary.negativeOperatingMonths+" months of negative operating cash margin. Cash includes the unspent portion of the original ₹15 lakh—not profit.";
