@@ -46,6 +46,21 @@ The scenario uses a normalized declining lactation curve—not a fitted Murrah p
 
 The [24-month phased simulator](../pages/herd-rotation-simulator.html) exposes the baseline and a downside case: 20% lower milking yield, ₹10/L lower realized milk price, 20% more expensive adult feed, 60 days longer calving cycle, two temporarily nonmilking adults for 60 days and a longer buyer settlement delay. Stress parameters are scenario judgments and **not probability estimates**. Even if the baseline has no zero-milk day, it can still lose cash or fall below minimum reserve.
 
+## Executed deterministic model evidence (11 November 2026)
+
+The fetched branch simulation core was executed with its own default inputs and independent accounting/staging/boundary assertions. The checks **passed**, but these are not a substitute for the repository's Node test suite, browser tests or hosted CI. Amounts are rounded to nearest rupee; these are **hypothetical model outputs**, not observed farm results.
+
+| Case | 24-month milk revenue earned | Operating cash expenses | 24-month closing liquidity | Lowest liquidity | Negative operating-cash months |
+|---|---:|---:|---:|---:|---:|
+| 8 L/day sustained lactation average, ₹75/L | ₹19,33,016 | ₹23,93,500 | **−₹1,92,367** | **−₹1,92,367** | 23/24 |
+| 10 L/day sustained average, ₹75/L | ₹24,16,270 | ₹23,93,500 | ₹2,80,417 | ₹1,87,145 | 14/24 |
+| 10 L/day sustained average, ₹80/L | ₹25,77,355 | ₹23,93,500 | ₹4,38,011 | ₹2,44,565 | 9/24 |
+| 12 L/day sustained average, ₹75/L | ₹28,99,524 | ₹23,93,500 | ₹7,53,200 | ₹3,05,391 | 4/24 |
+
+Default earned revenue differs from cash received because the buyer pays with a 15-day delay, including unsettled end-of-horizon receivables. Closing liquidity is the portion of ₹15 lakh left after modeled setup, animal purchases, receipts and operating outflows; it is not net accounting profit. These cases ignore depreciation, finance interest, unpaid owner labor and real-world loss events.
+
+**Important:** The 10 L/day scenario at ₹75/L still violates the proposed ₹3.10 lakh minimum liquidity buffer (minimum ~₹1.87 lakh). In a simplified numerical search with all other assumptions unchanged, preserving at least ₹3.10 lakh in every modeled day required around **12.2 L/day sustained average** per actively lactating animal at ₹75/L. This is *not* a suggested target or achievable guarantee; reported standard Murrah breed yields are often materially lower. The correct response is to revisit herd size, buyer rate, costs, financing, and viability—not to assume unusually high productivity.
+
 ## Conditional go/no-go gates
 
 | Gate | Required written/observable proof | Status |
