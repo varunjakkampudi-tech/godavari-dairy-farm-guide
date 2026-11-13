@@ -8,6 +8,10 @@ Practical planning and operations app for a small buffalo dairy in West Godavari
 
 [Open the live guide](https://varunjakkampudi-tech.github.io/godavari-dairy-farm-guide/) · [Source repository](https://github.com/varunjakkampudi-tech/godavari-dairy-farm-guide) · [Completion and evidence tracker](PROGRESS.md)
 
+## Hybrid milk + calf business plan (proposal, 13 November 2026)
+
+Read the [complete hybrid milk-shop supply, dairy collection, animal-rotation and calf-sale plan](plans/HYBRID-MILK-CALF-BUSINESS-PLAN.md). It includes a phased 2-animal partner pilot, 10-adult illustration, milk-channel allocation, calf unit economics, cash-flow and downside scenarios, safety/compliance gates and a verification checklist. **No zero-loss or guaranteed-profit claim is made.** The illustrated pilot loses cash; the illustrated ten-adult operating surplus excludes financing, depreciation and some rearing costs. This document is proposed for review and does not replace the existing calculators or veterinary/field verification.
+
 ## Open and use
 
 Open `index.html` in a modern browser, or serve the folder using a local static web server. The app has no backend, database server, paid API, or runtime dependency. GitHub Pages paths are relative and the deployment workflow uses static files. The install prompt requires a supported browser and HTTPS; offline pages are cached after the first successful online visit.
